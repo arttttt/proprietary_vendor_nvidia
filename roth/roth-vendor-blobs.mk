@@ -28,7 +28,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/bin/rm_ts_server:system/bin/rm_ts_server \
     vendor/nvidia/roth/proprietary/bin/tf_daemon:system/bin/tf_daemon \
     vendor/nvidia/roth/proprietary/bin/wlbwservice:system/bin/wlbwservice \
-    vendor/nvidia/roth/proprietary/etc/bluetooth/bdaddr:system/etc/bluetooth/bdaddr \
     vendor/nvidia/roth/proprietary/etc/enctune.conf:system/etc/enctune.conf \
     vendor/nvidia/roth/proprietary/etc/firmware/bcm43241.hcd:system/etc/firmware/bcm43241.hcd \
     vendor/nvidia/roth/proprietary/etc/firmware/nvavp_aud_ucode.bin:system/etc/firmware/nvavp_aud_ucode.bin \
@@ -105,6 +104,8 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/lib/liboemcrypto.so:system/lib/liboemcrypto.so \
     vendor/nvidia/roth/proprietary/lib/libpowerservice_client.so:system/lib/libpowerservice_client.so \
     vendor/nvidia/roth/proprietary/lib/libpowerservice.so:system/lib/libpowerservice.so \
+    vendor/nvidia/roth/proprietary/lib/librm31080.so:system/lib/librm31080.so \
+    vendor/nvidia/roth/proprietary/lib/librm_ts_service.so:system/lib/librm_ts_service.so \
     vendor/nvidia/roth/proprietary/lib/libsensors.base.so:system/lib/libsensors.base.so \
     vendor/nvidia/roth/proprietary/lib/libsensors.mpl.so:system/lib/libsensors.mpl.so \
     vendor/nvidia/roth/proprietary/lib/libsensors.nvs_input.so:system/lib/libsensors.nvs_input.so \
@@ -113,7 +114,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/lib/libtsechdcp.so:system/lib/libtsechdcp.so \
     vendor/nvidia/roth/proprietary/lib/libtsec_wrapper.so:system/lib/libtsec_wrapper.so \
     vendor/nvidia/roth/proprietary/lib/libWVphoneAPI.so:system/lib/libWVphoneAPI.so \
-    vendor/nvidia/roth/proprietary/lib/nvcms/device.cfg:system/lib/nvcms/device.cfg \
     vendor/nvidia/roth/proprietary/vendor/firmware/bcm43241/fw_bcmdhd_apsta.bin:system/vendor/firmware/bcm43241/fw_bcmdhd_apsta.bin \
     vendor/nvidia/roth/proprietary/vendor/firmware/bcm43241/fw_bcmdhd.bin:system/vendor/firmware/bcm43241/fw_bcmdhd.bin \
     vendor/nvidia/roth/proprietary/vendor/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
