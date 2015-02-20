@@ -110,7 +110,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/lib/libsensors.nvs_input.so:system/lib/libsensors.nvs_input.so \
     vendor/nvidia/roth/proprietary/lib/libstagefrighthw.so:system/lib/libstagefrighthw.so \
     vendor/nvidia/roth/proprietary/lib/libtf_crypto_sst.so:system/lib/libtf_crypto_sst.so \
-    vendor/nvidia/roth/proprietary/lib/libtinyalsa.so:system/lib/libtinyalsa.so \
     vendor/nvidia/roth/proprietary/lib/libtsechdcp.so:system/lib/libtsechdcp.so \
     vendor/nvidia/roth/proprietary/lib/libtsec_wrapper.so:system/lib/libtsec_wrapper.so \
     vendor/nvidia/roth/proprietary/lib/libWVphoneAPI.so:system/lib/libWVphoneAPI.so \
