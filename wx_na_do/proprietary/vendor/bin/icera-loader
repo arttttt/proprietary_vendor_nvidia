@@ -36,7 +36,7 @@ SetUsbSuspend()
     while [ $loop -lt 9 ]
     do
         usbdev="/sys/bus/usb/devices/${loop}-1"
-        if [ -e $usbdev ]; then
+        if [ -e "$usbdev/product" ]; then
             product=`cat $usbdev/product`
             if [ "$product" == "Bruce" ]; then
                 ALOGD "Bruce device found: ${usbdev}"

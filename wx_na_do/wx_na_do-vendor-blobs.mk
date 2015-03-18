@@ -31,5 +31,5 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/wx_na_do/proprietary/vendor/firmware/icera/nvidia-e1729-nala/audioConfig.bin:system/vendor/firmware/icera/nvidia-e1729-nala/audioConfig.bin \
     vendor/nvidia/wx_na_do/proprietary/vendor/firmware/icera/nvidia-e1729-nala/loader.wrapped:system/vendor/firmware/icera/nvidia-e1729-nala/loader.wrapped \
     vendor/nvidia/wx_na_do/proprietary/vendor/firmware/icera/nvidia-e1729-nala/modem.wrapped:system/vendor/firmware/icera/nvidia-e1729-nala/modem.wrapped \
-    vendor/nvidia/wx_na_do/proprietary/vendor/firmware/icera/nvidia-e1729-nala/productConfig.bin:system/vendor/firmware/icera/nvidia-e1729-nala/productConfig.bin \
+    vendor/nvidia/wx_na_do/proprietary/vendor/firmware/icera/nvidia-e1729-nala/productConfig.bin:system/vendor/firmware/icera/nvidia-e1729-nala/productConfig.bin
     vendor/nvidia/wx_na_do/proprietary/vendor/firmware/icera/nvidia-e1729-nala/secondary_boot.wrapped:system/vendor/firmware/icera/nvidia-e1729-nala/secondary_boot.wrapped
