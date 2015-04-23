@@ -189,4 +189,22 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/para_10_09_01_c0.so:system/vendor/lib/para_10_09_01_c0.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/para_10_09_02_c0.so:system/vendor/lib/para_10_09_02_c0.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/para_10_0a_00_b0.so:system/vendor/lib/para_10_0a_00_b0.so \
-    vendor/nvidia/shieldtablet/proprietary/vendor/lib/para_10_0b_00_a0.so:system/vendor/lib/para_10_0b_00_a0.so
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/para_10_0b_00_a0.so:system/vendor/lib/para_10_0b_00_a0.so \
+    vendor/nvidia/shieldtablet/proprietary/etc/ril_atc.config:system/etc/ril_atc.config \
+    vendor/nvidia/shieldtablet/proprietary/vendor/bin/crash-check-arm:system/vendor/bin/crash-check-arm \
+    vendor/nvidia/shieldtablet/proprietary/vendor/bin/downloader:system/vendor/bin/downloader \
+    vendor/nvidia/shieldtablet/proprietary/vendor/bin/icera-crashlogs:system/vendor/bin/icera-crashlogs \
+    vendor/nvidia/shieldtablet/proprietary/vendor/bin/icera-loader:system/vendor/bin/icera-loader \
+    vendor/nvidia/shieldtablet/proprietary/vendor/bin/icera_log_serial_arm:system/vendor/bin/icera_log_serial_arm \
+    vendor/nvidia/shieldtablet/proprietary/vendor/bin/icera-switcherd:system/vendor/bin/icera-switcherd \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libril-icera.so:system/vendor/lib/libril-icera.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729/audioConfig.bin:system/vendor/firmware/icera/nvidia-e1729/audioConfig.bin \
+    vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729/loader.wrapped:system/vendor/firmware/icera/nvidia-e1729/loader.wrapped \
+    vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729/modem.wrapped:system/vendor/firmware/icera/nvidia-e1729/modem.wrapped \
+    vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729/productConfig.bin:system/vendor/firmware/icera/nvidia-e1729/productConfig.bin \
+    vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729/secondary_boot.wrapped:system/vendor/firmware/icera/nvidia-e1729/secondary_boot.wrapped \
+    vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729-nala/audioConfig.bin:system/vendor/firmware/icera/nvidia-e1729-nala/audioConfig.bin \
+    vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729-nala/loader.wrapped:system/vendor/firmware/icera/nvidia-e1729-nala/loader.wrapped \
+    vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729-nala/modem.wrapped:system/vendor/firmware/icera/nvidia-e1729-nala/modem.wrapped \
+    vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729-nala/productConfig.bin:system/vendor/firmware/icera/nvidia-e1729-nala/productConfig.bin \
+    vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729-nala/secondary_boot.wrapped:system/vendor/firmware/icera/nvidia-e1729-nala/secondary_boot.wrapped
