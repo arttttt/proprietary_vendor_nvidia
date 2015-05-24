@@ -16,7 +16,6 @@
 
 PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/bin/glgps_nvidiaTegra2android:system/bin/glgps_nvidiaTegra2android \
-    vendor/nvidia/shieldtablet/proprietary/bin/gpslogd:system/bin/gpslogd \
     vendor/nvidia/shieldtablet/proprietary/bin/gps_select.sh:system/bin/gps_select.sh \
     vendor/nvidia/shieldtablet/proprietary/bin/set_hwui_params.sh:system/bin/set_hwui_params.sh \
     vendor/nvidia/shieldtablet/proprietary/bin/ussr_setup.sh:system/bin/ussr_setup.sh \
