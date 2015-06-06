@@ -206,4 +206,8 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729-nala/loader.wrapped:system/vendor/firmware/icera/nvidia-e1729-nala/loader.wrapped \
     vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729-nala/modem.wrapped:system/vendor/firmware/icera/nvidia-e1729-nala/modem.wrapped \
     vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729-nala/productConfig.bin:system/vendor/firmware/icera/nvidia-e1729-nala/productConfig.bin \
-    vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729-nala/secondary_boot.wrapped:system/vendor/firmware/icera/nvidia-e1729-nala/secondary_boot.wrapped
+    vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729-nala/secondary_boot.wrapped:system/vendor/firmware/icera/nvidia-e1729-nala/secondary_boot.wrapped \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libblake_jni.so:system/vendor/lib/libblake_jni.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/liblota.so:system/vendor/lib/liblota.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/hw/blake.tegra.so:system/vendor/lib/hw/blake.tegra.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/bin/blake:system/vendor/bin/blake
