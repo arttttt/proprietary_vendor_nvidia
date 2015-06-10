@@ -210,4 +210,25 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libblake_jni.so:system/vendor/lib/libblake_jni.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/liblota.so:system/vendor/lib/liblota.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/hw/blake.tegra.so:system/vendor/lib/hw/blake.tegra.so \
-    vendor/nvidia/shieldtablet/proprietary/vendor/bin/blake:system/vendor/bin/blake
+    vendor/nvidia/shieldtablet/proprietary/vendor/bin/blake:system/vendor/bin/blake \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/blake_connecting.mp4:system/vendor/oem/media/blake_connecting.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/blake_error.mp4:system/vendor/oem/media/blake_error.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/blake_found.mp4:system/vendor/oem/media/blake_found.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/blake_success.mp4:system/vendor/oem/media/blake_success.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/blake_usb_end.mp4:system/vendor/oem/media/blake_usb_end.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/blake_usb_loop.mp4:system/vendor/oem/media/blake_usb_loop.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/blake_usb_start.mp4:system/vendor/oem/media/blake_usb_start.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/jarvis_connecting.mp4:system/vendor/oem/media/jarvis_connecting.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/jarvis_error.mp4:system/vendor/oem/media/jarvis_error.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/jarvis_found.mp4:system/vendor/oem/media/jarvis_found.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/jarvis_success.mp4:system/vendor/oem/media/jarvis_success.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/pair_end.mp4:system/vendor/oem/media/pair_end.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/pair_loop.mp4:system/vendor/oem/media/pair_loop.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/pair_start.mp4:system/vendor/oem/media/pair_start.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/sync_test.mp4:system/vendor/oem/media/sync_test.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/update_error_intro.mp4:system/vendor/oem/media/update_error_intro.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/update_error.mp4:system/vendor/oem/media/update_error.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/update_idle.mp4:system/vendor/oem/media/update_idle.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/update_in_progress.mp4:system/vendor/oem/media/update_in_progress.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/update_intro.mp4:system/vendor/oem/media/update_intro.mp4 \
+    vendor/nvidia/shieldtablet/proprietary/vendor/oem/media/update_success.mp4:system/vendor/oem/media/update_success.mp4
