@@ -122,10 +122,12 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/vendor/lib/libwvm.so:system/vendor/lib/libwvm.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libWVStreamControlAPI_L1.so:system/vendor/lib/libWVStreamControlAPI_L1.so \
     vendor/nvidia/roth/proprietary/vendor/lib/mediadrm/libwvdrmengine.so:system/vendor/lib/mediadrm/libwvdrmengine.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libblake_jni.so:system/vendor/lib/libblake_jni.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/liblota.so:system/vendor/lib/liblota.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/hw/blake.tegra.so:system/vendor/lib/hw/blake.tegra.so \
-    vendor/nvidia/roth/proprietary/vendor/bin/blake:system/vendor/bin/blake \
+    vendor/nvidia/shield_common/proprietary/vendor/lib/libblake_jni.so:system/vendor/lib/libblake_jni.so \
+    vendor/nvidia/shield_common/proprietary/vendor/lib/liblota.so:system/vendor/lib/liblota.so \
+    vendor/nvidia/shield_common/proprietary/vendor/lib/hw/blake.tegra.so:system/vendor/lib/hw/blake.tegra.so \
+    vendor/nvidia/shield_common/proprietary/vendor/lib/hw/audio.nvwc.tegra.so:system/vendor/lib/hw/audio.nvwc.tegra.so \
+    vendor/nvidia/shield_common/proprietary/vendor/lib/hw/audio.nvrc.tegra.so:system/vendor/lib/hw/audio.nvrc.tegra.so \
+    vendor/nvidia/shield_common/proprietary/vendor/bin/blake:system/vendor/bin/blake \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/blake_connecting.mp4:system/vendor/oem/media/blake_connecting.mp4 \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/blake_error.mp4:system/vendor/oem/media/blake_error.mp4 \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/blake_found.mp4:system/vendor/oem/media/blake_found.mp4 \
