@@ -45,6 +45,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/etc/firmware/tegra21x/nvhost_tsec.fw:system/etc/firmware/tegra21x/nvhost_tsec.fw \
     vendor/nvidia/foster/proprietary/etc/firmware/tegra21x/vic04_ucode.bin:system/etc/firmware/tegra21x/vic04_ucode.bin \
     vendor/nvidia/foster/proprietary/etc/firmware/tegra_xusb_firmware:system/etc/firmware/tegra_xusb_firmware \
+    vendor/nvidia/foster/proprietary/etc/firmware/tegra210x_xusb_firmware:system/etc/firmware/tegra210x_xusb_firmware \
     vendor/nvidia/foster/proprietary/etc/hdcpsrm/hdcp1x.srm:system/etc/hdcpsrm/hdcp1x.srm \
     vendor/nvidia/foster/proprietary/etc/hdcpsrm/hdcp2x.srm:system/etc/hdcpsrm/hdcp2x.srm \
     vendor/nvidia/foster/proprietary/etc/hdcpsrm/hdcp2xtest.srm:system/etc/hdcpsrm/hdcp2xtest.srm \
