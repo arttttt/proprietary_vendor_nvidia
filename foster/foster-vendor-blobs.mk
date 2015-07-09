@@ -82,6 +82,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvaudiofx.so:system/vendor/lib/libnvaudiofx.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvaudioservice.so:system/vendor/lib/libnvaudioservice.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvblit.so:system/vendor/lib/libnvblit.so \
+    vendor/nvidia/foster/proprietary/vendor/lib64/libnvblit.so:system/vendor/lib64/libnvblit.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvcapaudioservice.so:system/vendor/lib/libnvcapaudioservice.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvcapclk.so:system/vendor/lib/libnvcapclk.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvcms.so:system/vendor/lib/libnvcms.so \
@@ -89,12 +90,14 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib64/libnvcpl.so:system/vendor/lib64/libnvcpl.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvddk_2d_v2.so:system/vendor/lib/libnvddk_2d_v2.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvddk_vic.so:system/vendor/lib/libnvddk_vic.so \
+    vendor/nvidia/foster/proprietary/vendor/lib64/libnvddk_vic.so:system/vendor/lib64/libnvddk_vic.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvfusebypass.so:system/vendor/lib/libnvfusebypass.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvglsi.so:system/vendor/lib/libnvglsi.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libnvglsi.so:system/vendor/lib64/libnvglsi.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvgr.so:system/vendor/lib/libnvgr.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libnvgr.so:system/vendor/lib64/libnvgr.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvhwc_service.so:system/vendor/lib/libnvhwc_service.so \
+    vendor/nvidia/foster/proprietary/vendor/lib64/libnvhwc_service.so:system/vendor/lib64/libnvhwc_service.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvmm_audio.so:system/vendor/lib/libnvmm_audio.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvmm_contentpipe.so:system/vendor/lib/libnvmm_contentpipe.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvmmlite_audio.so:system/vendor/lib/libnvmmlite_audio.so \
@@ -130,6 +133,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib/libphs.so:system/vendor/lib/libphs.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libphs.so:system/vendor/lib64/libphs.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libtlk_secure_hdcp_up.so:system/vendor/lib/libtlk_secure_hdcp_up.so \
+    vendor/nvidia/foster/proprietary/vendor/lib64/libtlk_secure_hdcp_up.so:system/vendor/lib64/libtlk_secure_hdcp_up.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libtsechdcp.so:system/vendor/lib/libtsechdcp.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libtsechdcp.so:system/vendor/lib64/libtsechdcp.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libtsec_wrapper.so:system/vendor/lib/libtsec_wrapper.so \
