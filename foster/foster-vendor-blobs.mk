@@ -58,10 +58,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/lib/libopencv24_tegra.so:system/lib/libopencv24_tegra.so \
     vendor/nvidia/foster/proprietary/lib/libtbb.so:system/lib/libtbb.so \
     vendor/nvidia/foster/proprietary/vendor/bin/btmacwriter:system/vendor/bin/btmacwriter \
-    vendor/nvidia/foster/proprietary/vendor/bin/pbc:system/vendor/bin/pbc \
     vendor/nvidia/foster/proprietary/vendor/bin/tegrastats:system/vendor/bin/tegrastats \
-    vendor/nvidia/foster/proprietary/vendor/bin/tlk_daemon:system/vendor/bin/tlk_daemon \
-    vendor/nvidia/foster/proprietary/vendor/bin/ussrd:system/vendor/bin/ussrd \
     vendor/nvidia/foster/proprietary/vendor/firmware/bcm43241/fw_bcmdhd.bin:system/vendor/firmware/bcm43241/fw_bcmdhd.bin \
     vendor/nvidia/foster/proprietary/vendor/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/egl/libEGL_tegra.so:system/vendor/lib64/egl/libEGL_tegra.so \
@@ -75,33 +72,16 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib64/hw/gralloc.tegra.so:system/vendor/lib64/hw/gralloc.tegra.so \
     vendor/nvidia/foster/proprietary/vendor/lib/hw/hwcomposer.tegra.so:system/vendor/lib/hw/hwcomposer.tegra.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/hw/hwcomposer.tegra.so:system/vendor/lib64/hw/hwcomposer.tegra.so \
-    vendor/nvidia/foster/proprietary/vendor/lib64/hw/keystore.tegra.so:system/vendor/lib64/hw/keystore.tegra.so \
     vendor/nvidia/foster/proprietary/vendor/lib/hw/memtrack.tegra.so:system/vendor/lib/hw/memtrack.tegra.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/hw/memtrack.tegra.so:system/vendor/lib64/hw/memtrack.tegra.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/hw/pbc.tegra.so:system/vendor/lib/hw/pbc.tegra.so \
-    vendor/nvidia/foster/proprietary/vendor/lib64/hw/pbc.tegra.so:system/vendor/lib64/hw/pbc.tegra.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libaudioavp.so:system/vendor/lib/libaudioavp.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libclcore_nvidia.bc:system/vendor/lib/libclcore_nvidia.bc \
     vendor/nvidia/foster/proprietary/vendor/lib/libcuda.so:system/vendor/lib/libcuda.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libdrmdecrypt.so:system/vendor/lib/libdrmdecrypt.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libfcamdng.so:system/vendor/lib/libfcamdng.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libglcore.so:system/vendor/lib/libglcore.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libglcore.so:system/vendor/lib64/libglcore.so \
-    vendor/nvidia/foster/proprietary/vendor/lib64/libgov_boot.so:system/vendor/lib64/libgov_boot.so \
-    vendor/nvidia/foster/proprietary/vendor/lib64/libgov_combinator.so:system/vendor/lib64/libgov_combinator.so \
-    vendor/nvidia/foster/proprietary/vendor/lib64/libgov_force.so:system/vendor/lib64/libgov_force.so \
-    vendor/nvidia/foster/proprietary/vendor/lib64/libgov_generic.so:system/vendor/lib64/libgov_generic.so \
-    vendor/nvidia/foster/proprietary/vendor/lib64/libgov_gpucompute.so:system/vendor/lib64/libgov_gpucompute.so \
-    vendor/nvidia/foster/proprietary/vendor/lib64/libgov_graphics.so:system/vendor/lib64/libgov_graphics.so \
-    vendor/nvidia/foster/proprietary/vendor/lib64/libgov_il.so:system/vendor/lib64/libgov_il.so \
-    vendor/nvidia/foster/proprietary/vendor/lib64/libgov_spincircle.so:system/vendor/lib64/libgov_spincircle.so \
-    vendor/nvidia/foster/proprietary/vendor/lib64/libgov_tbc.so:system/vendor/lib64/libgov_tbc.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libnvapputil.so:system/vendor/lib/libnvapputil.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvaudiofx.so:system/vendor/lib/libnvaudiofx.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvaudioservice.so:system/vendor/lib/libnvaudioservice.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libnvavp.so:system/vendor/lib/libnvavp.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvblit.so:system/vendor/lib/libnvblit.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libnvcam_imageencoder.so:system/vendor/lib/libnvcam_imageencoder.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvcapaudioservice.so:system/vendor/lib/libnvcapaudioservice.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvcapclk.so:system/vendor/lib/libnvcapclk.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvcms.so:system/vendor/lib/libnvcms.so \
@@ -115,7 +95,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvgr.so:system/vendor/lib/libnvgr.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libnvgr.so:system/vendor/lib64/libnvgr.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvhwc_service.so:system/vendor/lib/libnvhwc_service.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libnvisp_v3.so:system/vendor/lib/libnvisp_v3.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvmm_audio.so:system/vendor/lib/libnvmm_audio.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvmm_contentpipe.so:system/vendor/lib/libnvmm_contentpipe.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvmmlite_audio.so:system/vendor/lib/libnvmmlite_audio.so \
@@ -141,27 +120,18 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib64/libnvrm_graphics.so:system/vendor/lib64/libnvrm_graphics.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvrm.so:system/vendor/lib/libnvrm.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libnvrm.so:system/vendor/lib64/libnvrm.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libnvsm.so:system/vendor/lib/libnvsm.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvstitching.so:system/vendor/lib/libnvstitching.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvtnr.so:system/vendor/lib/libnvtnr.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvtvmr.so:system/vendor/lib/libnvtvmr.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libnvvicsi_v3.so:system/vendor/lib/libnvvicsi_v3.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvwinsys.so:system/vendor/lib/libnvwinsys.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvwsi.so:system/vendor/lib/libnvwsi.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libnvwsi.so:system/vendor/lib64/libnvwsi.so \
     vendor/nvidia/foster/proprietary/vendor/lib/liboemcrypto.so:system/vendor/lib/liboemcrypto.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libphs.so:system/vendor/lib/libphs.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libphs.so:system/vendor/lib64/libphs.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libscf.so:system/vendor/lib/libscf.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libstagefright_hdcp.so:system/vendor/lib/libstagefright_hdcp.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libstagefrighthw.so:system/vendor/lib/libstagefrighthw.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libtlk_secure_hdcp_up.so:system/vendor/lib/libtlk_secure_hdcp_up.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libtsechdcp.so:system/vendor/lib/libtsechdcp.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libtsechdcp.so:system/vendor/lib64/libtsechdcp.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libtsec_wrapper.so:system/vendor/lib/libtsec_wrapper.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libtsec_wrapper.so:system/vendor/lib64/libtsec_wrapper.so \
-    vendor/nvidia/foster/proprietary/vendor/lib64/libussrd.so:system/vendor/lib64/libussrd.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libwvdrm_L1.so:system/vendor/lib/libwvdrm_L1.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libwvm.so:system/vendor/lib/libwvm.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libWVStreamControlAPI_L1.so:system/vendor/lib/libWVStreamControlAPI_L1.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/mediadrm/libwvdrmengine.so:system/vendor/lib/mediadrm/libwvdrmengine.so
+    vendor/nvidia/foster/proprietary/vendor/lib/libwvm.so:system/vendor/lib/libwvm.so
