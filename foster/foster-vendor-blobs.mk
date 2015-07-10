@@ -49,7 +49,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/etc/hdcpsrm/hdcp1x.srm:system/etc/hdcpsrm/hdcp1x.srm \
     vendor/nvidia/foster/proprietary/etc/hdcpsrm/hdcp2x.srm:system/etc/hdcpsrm/hdcp2x.srm \
     vendor/nvidia/foster/proprietary/etc/hdcpsrm/hdcp2xtest.srm:system/etc/hdcpsrm/hdcp2xtest.srm \
-    vendor/nvidia/foster/proprietary/etc/nvram_43241.txt:system/etc/nvram_43241.txt \
+    vendor/nvidia/foster/proprietary/etc/nvram_foster_e_antenna_tuned_4354.txt:system/etc/nvram_foster_e_antenna_tuned_4354.txt \
     vendor/nvidia/foster/proprietary/etc/ussrd.conf:system/etc/ussrd.conf \
     vendor/nvidia/foster/proprietary/lib/hw/power.tegra.so:system/lib/hw/power.tegra.so \
     vendor/nvidia/foster/proprietary/lib/libinvensense_hal.so:system/lib/libinvensense_hal.so \
@@ -59,7 +59,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/lib/libtbb.so:system/lib/libtbb.so \
     vendor/nvidia/foster/proprietary/vendor/bin/btmacwriter:system/vendor/bin/btmacwriter \
     vendor/nvidia/foster/proprietary/vendor/bin/tegrastats:system/vendor/bin/tegrastats \
-    vendor/nvidia/foster/proprietary/vendor/firmware/bcm43241/fw_bcmdhd.bin:system/vendor/firmware/bcm43241/fw_bcmdhd.bin \
+    vendor/nvidia/foster/proprietary/vendor/firmware/bcm4354/fw_bcmdhd.bin:system/vendor/firmware/bcm4354/fw_bcmdhd.bin \
     vendor/nvidia/foster/proprietary/vendor/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/egl/libEGL_tegra.so:system/vendor/lib64/egl/libEGL_tegra.so \
     vendor/nvidia/foster/proprietary/vendor/lib/egl/libEGL_tegra.so:system/vendor/lib/egl/libEGL_tegra.so \
@@ -130,6 +130,8 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvwsi.so:system/vendor/lib/libnvwsi.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libnvwsi.so:system/vendor/lib64/libnvwsi.so \
     vendor/nvidia/foster/proprietary/vendor/lib/liboemcrypto.so:system/vendor/lib/liboemcrypto.so \
+    vendor/nvidia/foster/proprietary/vendor/lib/libstagefright_hdcp.so:system/vendor/lib/libstagefright_hdcp.so \
+    vendor/nvidia/foster/proprietary/vendor/lib/libstagefrighthw.so:system/vendor/lib/libstagefrighthw.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libphs.so:system/vendor/lib/libphs.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libphs.so:system/vendor/lib64/libphs.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libtlk_secure_hdcp_up.so:system/vendor/lib/libtlk_secure_hdcp_up.so \
