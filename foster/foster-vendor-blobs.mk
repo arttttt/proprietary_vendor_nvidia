@@ -179,8 +179,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib/libwvdrm_L1.so:system/vendor/lib/libwvdrm_L1.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libdrmdecrypt.so:system/vendor/lib/libdrmdecrypt.so \
     vendor/nvidia/foster/proprietary/vendor/lib/mediadrm/libDxModularPluginNvGoo.so:system/vendor/lib/mediadrm/libDxModularPluginNvGoo.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/mediadrm/libdrmclearkeyplugin.so:system/vendor/lib/mediadrm/libdrmclearkeyplugin.so \
-    vendor/nvidia/foster/proprietary/vendor/lib64/mediadrm/libdrmclearkeyplugin.so:system/vendor/lib64/mediadrm/libdrmclearkeyplugin.so \
     vendor/nvidia/foster/proprietary/vendor/lib/mediadrm/libwvdrmengine.so:system/vendor/lib/mediadrm/libwvdrmengine.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libgov_boot.so:system/vendor/lib64/libgov_boot.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libgov_camera.so:system/vendor/lib64/libgov_camera.so \
