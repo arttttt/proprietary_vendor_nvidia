@@ -213,6 +213,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shield_common/proprietary/vendor/lib/hw/audio.nvwc.tegra.so:system/vendor/lib/hw/audio.nvwc.tegra.so \
     vendor/nvidia/shield_common/proprietary/vendor/lib/hw/audio.nvrc.tegra.so:system/vendor/lib/hw/audio.nvrc.tegra.so \
     vendor/nvidia/shield_common/proprietary/vendor/bin/blake:system/vendor/bin/blake \
+    vendor/nvidia/shield_common/proprietary/vendor/bin/lota:system/vendor/bin/lota \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/blake_connecting.mp4:system/vendor/oem/media/blake_connecting.mp4 \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/blake_error.mp4:system/vendor/oem/media/blake_error.mp4 \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/blake_found.mp4:system/vendor/oem/media/blake_found.mp4 \
