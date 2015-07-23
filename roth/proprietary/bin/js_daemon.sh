@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/system/bin/sh
 
 # Copyright (c) 2013, NVIDIA CORPORATION.  All rights reserved.
 # NVIDIA CORPORATION and its licensors retain all intellectual property
