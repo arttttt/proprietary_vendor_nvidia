@@ -62,6 +62,8 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvblit.so:system/vendor/lib/libnvblit.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvcapaudioservice.so:system/vendor/lib/libnvcapaudioservice.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvcapclk.so:system/vendor/lib/libnvcapclk.so \
+    vendor/nvidia/roth/proprietary/vendor/lib/libnvcap.so:system/vendor/lib/libnvcap.so \
+    vendor/nvidia/roth/proprietary/vendor/lib/libnvcap_video.so:system/vendor/lib/libnvcap_video.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvcms.so:system/vendor/lib/libnvcms.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvcpl.so:system/vendor/lib/libnvcpl.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvddk_2d.so:system/vendor/lib/libnvddk_2d.so \
