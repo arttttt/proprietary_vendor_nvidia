@@ -111,7 +111,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/vendor/lib/libtsec_wrapper.so:system/vendor/lib/libtsec_wrapper.so \
     vendor/nvidia/roth/proprietary/vendor/firmware/bcm43241/fw_bcmdhd.bin:system/vendor/firmware/bcm43241/fw_bcmdhd.bin \
     vendor/nvidia/roth/proprietary/vendor/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/hw/power.roth.so:system/vendor/lib/hw/power.roth.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libwvdrm_L1.so:system/vendor/lib/libwvdrm_L1.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libwvm.so:system/vendor/lib/libwvm.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libWVStreamControlAPI_L1.so:system/vendor/lib/libWVStreamControlAPI_L1.so \
