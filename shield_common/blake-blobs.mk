@@ -12,14 +12,31 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Apk
+PRODUCT_PACKAGES += BlakePairing
+
+# Arch specific libs and binaries
+ifeq ($(TARGET_ARCH),arm64)
+PRODUCT_COPY_FILES += \
+    vendor/nvidia/shield_common/proprietary/vendor/lib64/libblake_jni.so:system/vendor/lib64/libblake_jni.so \
+    vendor/nvidia/shield_common/proprietary/vendor/lib64/libblake_jni.so:system/vendor/lib64/liblota.so \
+    vendor/nvidia/shield_common/proprietary/vendor/lib64/hw/blake.tegra.so:system/vendor/lib64/hw/blake.tegra.so \
+    vendor/nvidia/shield_common/proprietary/vendor/bin/blake64:system/vendor/bin/blake \
+    vendor/nvidia/shield_common/proprietary/vendor/bin/lota64:system/vendor/bin/lota
+else
+PRODUCT_COPY_FILES += \
+    vendor/nvidia/shield_common/proprietary/vendor/bin/blake:system/vendor/bin/blake \
+    vendor/nvidia/shield_common/proprietary/vendor/bin/lota:system/vendor/bin/lota
+endif
+
+# Libs for all archs
 PRODUCT_COPY_FILES += \
     vendor/nvidia/shield_common/proprietary/vendor/lib/libblake_jni.so:system/vendor/lib/libblake_jni.so \
     vendor/nvidia/shield_common/proprietary/vendor/lib/liblota.so:system/vendor/lib/liblota.so \
-    vendor/nvidia/shield_common/proprietary/vendor/lib/hw/blake.tegra.so:system/vendor/lib/hw/blake.tegra.so \
-    vendor/nvidia/shield_common/proprietary/vendor/lib/hw/audio.nvwc.tegra.so:system/vendor/lib/hw/audio.nvwc.tegra.so \
-    vendor/nvidia/shield_common/proprietary/vendor/lib/hw/audio.nvrc.tegra.so:system/vendor/lib/hw/audio.nvrc.tegra.so \
-    vendor/nvidia/shield_common/proprietary/vendor/bin/blake:system/vendor/bin/blake \
-    vendor/nvidia/shield_common/proprietary/vendor/bin/lota:system/vendor/bin/lota \
+    vendor/nvidia/shield_common/proprietary/vendor/lib/hw/blake.tegra.so:system/vendor/lib/hw/blake.tegra.so
+
+# Media files
+PRODUCT_COPY_FILES += \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/blake_connecting.mp4:system/vendor/oem/media/blake_connecting.mp4 \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/blake_error.mp4:system/vendor/oem/media/blake_error.mp4 \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/blake_found.mp4:system/vendor/oem/media/blake_found.mp4 \
@@ -27,14 +44,18 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/blake_usb_end.mp4:system/vendor/oem/media/blake_usb_end.mp4 \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/blake_usb_loop.mp4:system/vendor/oem/media/blake_usb_loop.mp4 \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/blake_usb_start.mp4:system/vendor/oem/media/blake_usb_start.mp4 \
+    vendor/nvidia/shield_common/proprietary/vendor/oem/media/first_pair_end.mp4:system/vendor/oem/media/first_pair_end.mp4 \
+    vendor/nvidia/shield_common/proprietary/vendor/oem/media/first_pair_loop.mp4:system/vendor/oem/media/first_pair_loop.mp4 \
+    vendor/nvidia/shield_common/proprietary/vendor/oem/media/first_pair_start.mp4:system/vendor/oem/media/first_pair_start.mp4 \
+    vendor/nvidia/shield_common/proprietary/vendor/oem/media/init_accessories.mp4:system/vendor/oem/media/init_accessories.mp4 \
+    vendor/nvidia/shield_common/proprietary/vendor/oem/media/init_accessories_2.mp4:system/vendor/oem/media/init_accessories_2.mp4 \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/jarvis_connecting.mp4:system/vendor/oem/media/jarvis_connecting.mp4 \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/jarvis_error.mp4:system/vendor/oem/media/jarvis_error.mp4 \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/jarvis_found.mp4:system/vendor/oem/media/jarvis_found.mp4 \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/jarvis_success.mp4:system/vendor/oem/media/jarvis_success.mp4 \
-    vendor/nvidia/shield_common/proprietary/vendor/oem/media/pair_end.mp4:system/vendor/oem/media/pair_end.mp4 \
-    vendor/nvidia/shield_common/proprietary/vendor/oem/media/pair_loop.mp4:system/vendor/oem/media/pair_loop.mp4 \
-    vendor/nvidia/shield_common/proprietary/vendor/oem/media/pair_start.mp4:system/vendor/oem/media/pair_start.mp4 \
-    vendor/nvidia/shield_common/proprietary/vendor/oem/media/sync_test.mp4:system/vendor/oem/media/sync_test.mp4 \
+    vendor/nvidia/shield_common/proprietary/vendor/oem/media/search_accessories_pairing_intro.mp4:system/vendor/oem/media/search_accessories_pairing_intro.mp4 \
+    vendor/nvidia/shield_common/proprietary/vendor/oem/media/search_accessories_pairing_loop.mp4:system/vendor/oem/media/search_accessories_pairing_loop.mp4 \
+    vendor/nvidia/shield_common/proprietary/vendor/oem/media/search_accessories_pairing_outro.mp4:system/vendor/oem/media/search_accessories_pairing_outro.mp4 \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/update_error_intro.mp4:system/vendor/oem/media/update_error_intro.mp4 \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/update_error.mp4:system/vendor/oem/media/update_error.mp4 \
     vendor/nvidia/shield_common/proprietary/vendor/oem/media/update_idle.mp4:system/vendor/oem/media/update_idle.mp4 \
