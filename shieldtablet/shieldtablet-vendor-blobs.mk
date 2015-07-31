@@ -206,4 +206,4 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729-nala/loader.wrapped:system/vendor/firmware/icera/nvidia-e1729-nala/loader.wrapped \
     vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729-nala/modem.wrapped:system/vendor/firmware/icera/nvidia-e1729-nala/modem.wrapped \
     vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729-nala/productConfig.bin:system/vendor/firmware/icera/nvidia-e1729-nala/productConfig.bin \
-    vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729-nala/secondary_boot.wrapped:system/vendor/firmware/icera/nvidia-e1729-nala/secondary_boot.wrapped \
+    vendor/nvidia/shieldtablet/proprietary/vendor/firmware/icera/nvidia-e1729-nala/secondary_boot.wrapped:system/vendor/firmware/icera/nvidia-e1729-nala/secondary_boot.wrapped
