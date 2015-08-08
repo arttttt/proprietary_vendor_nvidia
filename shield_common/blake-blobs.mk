@@ -16,7 +16,7 @@
 PRODUCT_PACKAGES += BlakePairing
 
 # Arch specific libs and binaries
-ifeq ($(TARGET_ARCH),arm64)
+ifeq ($(TARGET_ARCH_ABI),arm64-v8a)
 PRODUCT_COPY_FILES += \
     vendor/nvidia/shield_common/proprietary/vendor/lib64/libblake_jni.so:system/vendor/lib64/libblake_jni.so \
     vendor/nvidia/shield_common/proprietary/vendor/lib64/libblake_jni.so:system/vendor/lib64/liblota.so \
@@ -29,7 +29,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shield_common/proprietary/vendor/bin/lota:system/vendor/bin/lota
 endif
 
-# Libs for all archs
+# Libs for all arm archs
 PRODUCT_COPY_FILES += \
     vendor/nvidia/shield_common/proprietary/vendor/lib/libblake_jni.so:system/vendor/lib/libblake_jni.so \
     vendor/nvidia/shield_common/proprietary/vendor/lib/liblota.so:system/vendor/lib/liblota.so \
