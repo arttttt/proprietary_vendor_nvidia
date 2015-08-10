@@ -15,20 +15,6 @@
 # Apk
 PRODUCT_PACKAGES += BlakePairing
 
-# Arch specific libs and binaries
-ifeq ($(TARGET_ARCH_ABI),arm64-v8a)
-PRODUCT_COPY_FILES += \
-    vendor/nvidia/shield_common/proprietary/vendor/lib64/libblake_jni.so:system/vendor/lib64/libblake_jni.so \
-    vendor/nvidia/shield_common/proprietary/vendor/lib64/libblake_jni.so:system/vendor/lib64/liblota.so \
-    vendor/nvidia/shield_common/proprietary/vendor/lib64/hw/blake.tegra.so:system/vendor/lib64/hw/blake.tegra.so \
-    vendor/nvidia/shield_common/proprietary/vendor/bin/blake64:system/vendor/bin/blake \
-    vendor/nvidia/shield_common/proprietary/vendor/bin/lota64:system/vendor/bin/lota
-else
-PRODUCT_COPY_FILES += \
-    vendor/nvidia/shield_common/proprietary/vendor/bin/blake:system/vendor/bin/blake \
-    vendor/nvidia/shield_common/proprietary/vendor/bin/lota:system/vendor/bin/lota
-endif
-
 # Libs for all arm archs
 PRODUCT_COPY_FILES += \
     vendor/nvidia/shield_common/proprietary/vendor/lib/libblake_jni.so:system/vendor/lib/libblake_jni.so \
