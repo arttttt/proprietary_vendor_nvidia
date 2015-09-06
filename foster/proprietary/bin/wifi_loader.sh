@@ -21,6 +21,7 @@ brcm_symlink=y
 automotive_device=n
 hardware= ($(getprop ro.hardware))
 wifianttuning=`cat /proc/device-tree/wifi-antenna-tuning/status`
+wifituningsku=`cat /proc/device-tree/wifi-tuning/sku`
 
 # get wifi country code from factory partition
 wifi_country_code=
@@ -70,7 +71,9 @@ elif [ $vendor_device_country = $(getprop persist.sys.commchip_vendor)"_"$(getpr
 	/system/bin/log -t "wifiloader" -p i "persist.sys.commchip_vendor defined by user. Using user-defined config"
 	#check if symlinks are available; if available, do not create symlinks
 	#this check is needed when data partition is remounted after encryption
-	if [ -L /data/misc/wifi/firmware/fw_bcmdhd.bin ]; then
+	if [ -L /data/misc/wifi/firmware/fw_bcmdhd.bin ] &&
+		[ -L /data/misc/wifi/firmware/nvram.txt ] &&
+		[ -L /data/misc/wifi/firmware/nvram.bin ]; then
 		brcm_symlink=n
 	fi
 else
@@ -79,6 +82,7 @@ else
 		/system/bin/rm /data/misc/wifi/firmware/fw_bcmdhd.bin
 		/system/bin/rm /data/misc/wifi/firmware/fw_bcmdhd_apsta.bin
 		/system/bin/rm /data/misc/wifi/firmware/nvram.txt
+		/system/bin/rm /data/misc/wifi/firmware/nvram.bin
 		if [ $device = "43341" ]; then
 			/system/bin/rm /data/misc/wifi/firmware/fw_bcmdhd_a0.bin
 			/system/bin/rm /data/misc/wifi/firmware/fw_bcmdhd_apsta_a0.bin
@@ -137,47 +141,44 @@ if [ $vendor = $BRCM ]; then
 	if [ $brcm_symlink = y ]; then
 		/system/bin/ln -s /system/vendor/firmware/bcm$chip/fw_bcmdhd.bin /data/misc/wifi/firmware/fw_bcmdhd.bin
 		/system/bin/ln -s /system/vendor/firmware/bcm$chip/fw_bcmdhd.bin /data/misc/wifi/firmware/fw_bcmdhd_apsta.bin
-		if [ $chip = "43341" ]; then
+		if [ ! -z $wifituningsku ]; then
+			/system/bin/log -t "wifiloader" -p i  "SKU specific nvram"
+			/system/bin/ln -s /system/etc/nvram_${wifituningsku}.txt /data/misc/wifi/firmware/nvram.txt
+		elif [ $chip = "43341" ]; then
 			/system/bin/ln -s /system/vendor/firmware/bcm$chip/fw_bcmdhd_a0.bin /data/misc/wifi/firmware/fw_bcmdhd_a0.bin
 			/system/bin/ln -s /system/vendor/firmware/bcm$chip/fw_bcmdhd_a0.bin /data/misc/wifi/firmware/fw_bcmdhd_apsta_a0.bin
 			/system/bin/ln -s /system/etc/nvram_rev2.txt /data/misc/wifi/firmware/nvram.txt
 			/system/bin/ln -s /system/etc/nvram_rev3.txt /data/misc/wifi/firmware/nvram_43341_rev3.txt
 			/system/bin/ln -s /system/etc/nvram_rev4.txt /data/misc/wifi/firmware/nvram_43341_rev4.txt
-		elif [ $wifi_country_code ]; then
-			/system/bin/rm /data/misc/wifi/firmware/nvram_$chip.txt.*
-			while read line
-			do
-				if [ ${line#ccode=} != $line ]; then
-					echo "ccode=$wifi_country_code" >> /data/misc/wifi/firmware/nvram_$chip.txt.$wifi_country_code
-				else
-					echo $line >> /data/misc/wifi/firmware/nvram_$chip.txt.$wifi_country_code
-				fi
-			done < /system/etc/nvram_$chip.txt
-			/system/bin/chmod 644 /data/misc/wifi/firmware/nvram_$chip.txt.$wifi_country_code
-			/system/bin/ln -s /data/misc/wifi/firmware/nvram_$chip.txt.$wifi_country_code /data/misc/wifi/firmware/nvram.txt
 		elif [ $chip = "4354" ]; then
 			if [[ "$hardware" == *"loki_e"* ]]; then
 				/system/bin/log -t "wifiloader" -p i  "loki_e found"
 				if [ $wifianttuning == "disabled" ]; then
 					/system/bin/ln -s /system/etc/nvram_loki_e_$chip.txt /data/misc/wifi/firmware/nvram.txt
+					/system/bin/ln -s /system/etc/nvram_loki_e_$chip.bin /data/misc/wifi/firmware/nvram.bin
 				else
 					/system/bin/log -t "wifiloader" -p i  "Antenna Tuned Wi-Fi"
 					/system/bin/ln -s /system/etc/nvram_loki_e_antenna_tuned_$chip.txt /data/misc/wifi/firmware/nvram.txt
+					/system/bin/ln -s /system/etc/nvram_loki_e_antenna_tuned_$chip.bin /data/misc/wifi/firmware/nvram.bin
 				fi
 			elif [[ "$hardware" == *"foster_e"* ]]; then
 				/system/bin/log -t "wifiloader" -p i  "foster_e found"
 				if [ $wifianttuning == "disabled" ]; then
 					/system/bin/ln -s /system/etc/nvram_foster_e_$chip.txt /data/misc/wifi/firmware/nvram.txt
+					/system/bin/ln -s /system/etc/nvram_foster_e_$chip.bin /data/misc/wifi/firmware/nvram.bin
 				else
 					/system/bin/log -t "wifiloader" -p i  "Antenna Tuned Wi-Fi"
 					/system/bin/ln -s /system/etc/nvram_foster_e_antenna_tuned_$chip.txt /data/misc/wifi/firmware/nvram.txt
+					/system/bin/ln -s /system/etc/nvram_foster_e_antenna_tuned_$chip.bin /data/misc/wifi/firmware/nvram.bin
 				fi
 			else
 				/system/bin/log -t "wifiloader" -p i  "Default nvram"
 				/system/bin/ln -s /system/etc/nvram_$chip.txt /data/misc/wifi/firmware/nvram.txt
+				/system/bin/ln -s /system/etc/nvram_$chip.bin /data/misc/wifi/firmware/nvram.bin
 			fi
 		else
 		/system/bin/ln -s /system/etc/nvram_$chip.txt /data/misc/wifi/firmware/nvram.txt
+		/system/bin/ln -s /system/etc/nvram_$chip.bin /data/misc/wifi/firmware/nvram.bin
 		fi
 	fi
 	if [ $automotive_device = y ]; then
