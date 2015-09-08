@@ -74,6 +74,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/rm_ts_server:system/vendor/bin/rm_ts_server \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/tegrastats:system/vendor/bin/tegrastats \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/tlk_daemon:system/vendor/bin/tlk_daemon \
+    vendor/nvidia/shieldtablet/proprietary/vendor/bin/tsechdcp_test:system/vendor/bin/tsechdcp_test \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/ussrd:system/vendor/bin/ussrd \
     vendor/nvidia/shieldtablet/proprietary/vendor/firmware/bcm43241/fw_bcmdhd.bin:system/vendor/firmware/bcm43241/fw_bcmdhd.bin \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
@@ -121,6 +122,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvfusebypass.so:system/vendor/lib/libnvfusebypass.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvglsi.so:system/vendor/lib/libnvglsi.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvgr.so:system/vendor/lib/libnvgr.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvhdcp.so:system/vendor/lib/libnvhdcp.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvhwc_service.so:system/vendor/lib/libnvhwc_service.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvisp.so:system/vendor/lib/libnvisp.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvisp_v3.so:system/vendor/lib/libnvisp_v3.so \
