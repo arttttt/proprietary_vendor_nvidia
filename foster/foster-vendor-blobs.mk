@@ -49,6 +49,10 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/etc/hdcpsrm/hdcp1x.srm:system/etc/hdcpsrm/hdcp1x.srm \
     vendor/nvidia/foster/proprietary/etc/hdcpsrm/hdcp2x.srm:system/etc/hdcpsrm/hdcp2x.srm \
     vendor/nvidia/foster/proprietary/etc/hdcpsrm/hdcp2xtest.srm:system/etc/hdcpsrm/hdcp2xtest.srm \
+    vendor/nvidia/foster/proprietary/etc/nvram_4354.bin:system/etc/nvram_4354.bin \
+    vendor/nvidia/foster/proprietary/etc/nvram_4354.txt:system/etc/nvram_4354.txt \
+    vendor/nvidia/foster/proprietary/etc/nvram_foster_e_4354.bin:system/etc/nvram_foster_e_4354.bin \
+    vendor/nvidia/foster/proprietary/etc/nvram_foster_e_4354.txt:system/etc/nvram_foster_e_4354.txt \
     vendor/nvidia/foster/proprietary/etc/nvram_foster_e_antenna_tuned_4354.bin:system/etc/nvram_foster_e_antenna_tuned_4354.bin \
     vendor/nvidia/foster/proprietary/etc/nvram_foster_e_antenna_tuned_4354.txt:system/etc/nvram_foster_e_antenna_tuned_4354.txt \
     vendor/nvidia/foster/proprietary/etc/ussrd.conf:system/etc/ussrd.conf \
