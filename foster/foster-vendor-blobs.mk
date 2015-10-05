@@ -99,6 +99,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib64/hw/keystore.tegra.so:system/vendor/lib64/hw/keystore.tegra.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/hw/memtrack.tegra.so:system/vendor/lib64/hw/memtrack.tegra.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/hw/pbc.tegra.so:system/vendor/lib64/hw/pbc.tegra.so \
+    vendor/nvidia/foster/proprietary/vendor/lib64/libaffinitydaemon.so:system/vendor/lib64/libaffinitydaemon.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libaudiopolicymanager.so:system/vendor/lib64/libaudiopolicymanager.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libclcore_nvidia.bc:system/vendor/lib64/libclcore_nvidia.bc \
     vendor/nvidia/foster/proprietary/vendor/lib64/libcuda.so:system/vendor/lib64/libcuda.so \
@@ -171,6 +172,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib/libnppc.so:system/vendor/lib/libnppc.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnppi.so:system/vendor/lib/libnppi.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvapputil.so:system/vendor/lib/libnvapputil.so \
+    vendor/nvidia/foster/proprietary/vendor/lib/libnvasfparserhal.so:system/vendor/lib/libnvasfparserhal.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvaudiofx.so:system/vendor/lib/libnvaudiofx.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvaudioservice.so:system/vendor/lib/libnvaudioservice.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvaviparserhal.so:system/vendor/lib/libnvaviparserhal.so \
@@ -199,6 +201,8 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvidia-compiler.so:system/vendor/lib/libnvidia-compiler.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvisp_v3.so:system/vendor/lib/libnvisp_v3.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvme_msenc.so:system/vendor/lib/libnvme_msenc.so \
+    vendor/nvidia/foster/proprietary/vendor/lib/libnvmm_msaudio.so:system/vendor/lib/libnvmm_msaudio.so \
+    vendor/nvidia/foster/proprietary/vendor/lib/libnvmm_asfparser.so:system/vendor/lib/libnvmm_asfparser.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvmm_audio.so:system/vendor/lib/libnvmm_audio.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvmm_aviparser.so:system/vendor/lib/libnvmm_aviparser.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvmm_camera_v3.so:system/vendor/lib/libnvmm_camera_v3.so \
@@ -206,6 +210,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvmmlite_audio.so:system/vendor/lib/libnvmmlite_audio.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvmmlite_image.so:system/vendor/lib/libnvmmlite_image.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvmmlite.so:system/vendor/lib/libnvmmlite.so \
+    vendor/nvidia/foster/proprietary/vendor/lib/libnvmmlite_msaudio.so:system/vendor/lib/libnvmmlite_msaudio.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvmmlite_utils.so:system/vendor/lib/libnvmmlite_utils.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvmmlite_video.so:system/vendor/lib/libnvmmlite_video.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvmm_parser.so:system/vendor/lib/libnvmm_parser.so \
