@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-# Copyright (c) 2013-2014, NVIDIA CORPORATION.  All rights reserved.
+# Copyright (c) 2013-2015, NVIDIA CORPORATION.  All rights reserved.
 #
 # NVIDIA CORPORATION and its licensors retain all intellectual property
 # and proprietary rights in and to this software, related documentation
@@ -26,27 +26,28 @@ do
 
     zname=`cat ${tz}/type`
     if [[ "$zname" = "CPU-therm" ]]; then
-        setprop NV_THERM_CPU_TEMP ${tz}/temp
+        setprop phs.therm.cpu_temp ${tz}/temp
         for i in ${cdevs[@]}
         do
             cdev_name=`cat ${tz}/cdev${i}/type`
             if [[ "$cdev_name" = "tegra-balanced" || "$cdev_name" = "cpu-balanced" ]]; then
                 cdev_trip=`cat ${tz}/cdev${i}_trip_point`
-                setprop NV_THERM_CPU_TRIP ${tz}/trip_point_${cdev_trip}_temp
+                setprop phs.therm.cpu_trip ${tz}/trip_point_${cdev_trip}_temp
                 break
             fi
         done
     elif [[ "$zname" = "Tdiode_skin" || ( "$skin_temp" = "" && "$zname" = "therm_est" ) ]]; then
+        temp=""
         temp=`cat ${tz}/temp`
-        if [[ $temp -ge 0 && $temp -lt 190000 ]]; then
+        if [[ "$temp" != "" && $temp -ge 0 && $temp -lt 190000 ]]; then
             skin_temp=${tz}/temp
-            setprop NV_THERM_SKIN_TEMP ${skin_temp}
+            setprop phs.therm.skin_temp ${skin_temp}
             for i in ${cdevs[@]}
             do
                 cdev_name=`cat ${tz}/cdev${i}/type`
                 if [[ "$cdev_name" = "skin-balanced" ]]; then
                     cdev_trip=`cat ${tz}/cdev${i}_trip_point`
-                    setprop NV_THERM_SKIN_TRIP ${tz}/trip_point_${cdev_trip}_temp
+                    setprop phs.therm.skin_trip ${tz}/trip_point_${cdev_trip}_temp
                     break
                 fi
             done

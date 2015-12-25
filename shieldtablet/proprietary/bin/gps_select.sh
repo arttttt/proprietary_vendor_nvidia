@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-# Copyright (c) 2012-2013, NVIDIA CORPORATION.  All rights reserved.
+# Copyright (c) 2012-2015, NVIDIA CORPORATION.  All rights reserved.
 #
 # NVIDIA CORPORATION and its licensors retain all intellectual property
 # and proprietary rights in and to this software, related documentation
@@ -16,7 +16,6 @@ if [ $(getprop ro.boot.commchip_id) == 1 ]; then
 		if [ $(getprop init.svc.gpsd) == "running" ] || [ $(getprop init.svc.gpsd) == "restarting" ]
 		then
 			stop gpsd
-			stop agps-daemon
 			/system/bin/log -t "gps_select" -p i "GPS disable"
 			break
 		fi
@@ -25,8 +24,8 @@ if [ $(getprop ro.boot.commchip_id) == 1 ]; then
 	done
 else
 	gpio=$(getprop ro.gps.gpio)
-	/system/bin/ln -s /sys/class/gpio/gpio$gpio/value /data/gps/gps_en
 	echo "enabled" > /sys/devices/platform/reg-userspace-consumer.2/state
 	/system/bin/log -t "gps_select" -p i "BRCM chip"
 	setprop ro.hardware.gps brcm
+	start gpsd
 fi
