@@ -169,6 +169,12 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/para_10_09_02_c0.so:system/vendor/lib/para_10_09_02_c0.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/para_10_0a_00_b0.so:system/vendor/lib/para_10_0a_00_b0.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/para_10_0b_00_a0.so:system/vendor/lib/para_10_0b_00_a0.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvrm_gpu.so:system/vendor/lib/libnvrm_gpu.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvcamlog.so:system/vendor/lib/libnvcamlog.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvcamerautils.so:system/vendor/lib/libnvcamerautils.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvfnet.so:system/vendor/lib/libnvfnet.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvfnetstorehdfx.so:system/vendor/lib/libnvfnetstorehdfx.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/bin/ss_status:system/vendor/bin/ss_status \
     vendor/nvidia/shieldtablet/proprietary/etc/ril_atc.config:system/etc/ril_atc.config \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/crash-check-arm:system/vendor/bin/crash-check-arm \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/downloader:system/vendor/bin/downloader \
