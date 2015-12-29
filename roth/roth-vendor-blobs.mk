@@ -50,6 +50,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/lib/libsensors.base.so:system/lib/libsensors.base.so \
     vendor/nvidia/roth/proprietary/lib/libsensors.mpl.so:system/lib/libsensors.mpl.so \
     vendor/nvidia/roth/proprietary/lib/libsensors.nvs_input.so:system/lib/libsensors.nvs_input.so \
+    vendor/nvidia/roth/proprietary/lib/libstlport.so:system/lib/libstlport.so \
     vendor/nvidia/roth/proprietary/lib/libtf_crypto_sst.so:system/lib/libtf_crypto_sst.so \
     vendor/nvidia/roth/proprietary/vendor/bin/btmacwriter:system/vendor/bin/btmacwriter \
     vendor/nvidia/roth/proprietary/vendor/bin/nvcgcserver:system/vendor/bin/nvcgcserver \
