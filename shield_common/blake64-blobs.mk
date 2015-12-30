@@ -17,8 +17,6 @@ $(call inherit-product-if-exists, vendor/nvidia/shield_common/blake-blobs.mk)
 
 # Arch specific libs and binaries
 PRODUCT_COPY_FILES += \
-    vendor/nvidia/shield_common/proprietary/vendor/lib64/libblake_jni.so:system/vendor/lib64/libblake_jni.so \
     vendor/nvidia/shield_common/proprietary/vendor/lib64/liblota.so:system/vendor/lib64/liblota.so \
-    vendor/nvidia/shield_common/proprietary/vendor/lib64/hw/blake.tegra.so:system/vendor/lib64/hw/blake.tegra.so \
     vendor/nvidia/shield_common/proprietary/vendor/bin/blake64:system/vendor/bin/blake \
     vendor/nvidia/shield_common/proprietary/vendor/bin/lota64:system/vendor/bin/lota
