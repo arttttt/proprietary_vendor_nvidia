@@ -15,3 +15,8 @@
 # Apk
 PRODUCT_PACKAGES += ConsoleUI
 
+# Libs. 32-bit only right now.
+PRODUCT_COPY_FILES += \
+    vendor/nvidia/shield_common/proprietary/vendor/lib/liblota.so:system/vendor/lib/liblota.so \
+    vendor/nvidia/shield_common/proprietary/vendor/lib/libnvhwc_service.so:system/vendor/lib/libnvhwc_service.so \
+    vendor/nvidia/shield_common/proprietary/vendor/lib/libshieldtech.so:system/vendor/lib/libshieldtech.so
