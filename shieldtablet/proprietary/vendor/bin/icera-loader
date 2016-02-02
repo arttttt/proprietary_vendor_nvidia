@@ -1,7 +1,7 @@
 #!/system/bin/sh -e
 #***********************************************************************************************
 #
-# Copyright (c) 2012-2014, NVIDIA CORPORATION.  All rights reserved.
+# Copyright (c) 2012-2015, NVIDIA CORPORATION.  All rights reserved.
 #
 #***********************************************************************************************
 
@@ -29,23 +29,47 @@ ALOGD() {
 
 SetUsbSuspend()
 {
-    local loop=1
+    local controller=1
+    local port
     local usbdev=""
     local product=""
+    local found=0
+    local product_name="Bruce"
 
-    while [ $loop -lt 9 ]
+    # Loop over existing USB controllers:
+    # sysfs access points for USB controllers will be incremental list:
+    # sys/bus/usb/devices/usb1, sys/bus/usb/devices/usb2, ...
+    while [ 1 ]
     do
-        usbdev="/sys/bus/usb/devices/${loop}-1"
-        if [ -e "$usbdev/product" ]; then
-            product=`cat $usbdev/product`
-            if [ "$product" == "Bruce" ]; then
-                ALOGD "Bruce device found: ${usbdev}"
-                echo ${1} > ${usbdev}/power/control
+        if [ -e "/sys/bus/usb/devices/usb${controller}" ]; then
+            # Loop over 127 possible ports for a given USB controller
+            port=1
+            while [ $port -le 127 ]
+            do
+                usbdev="/sys/bus/usb/devices/${controller}-${port}"
+                if [ -e "$usbdev/product" ]; then
+                    product=`cat $usbdev/product`
+                    if [ "$product" == "${product_name}" ]; then
+                        ALOGD "${product_name} device found: ${usbdev}"
+                        echo ${1} > ${usbdev}/power/control
+                        found=1
+                        break
+                    fi
+                fi
+                port=$(( $port + 1 ))
+            done
+            controller=$(( $controller + 1 ))
+            if [ ${found} -eq 1 ]; then
                 break
             fi
+        else
+            # No more available USB controller...
+            break
         fi
-        loop=$(( $loop + 1 ))
     done
+    if [ ${found} -eq 0 ]; then
+        ALOGE "${product_name} device not found"
+    fi
 }
 
 UpdateFileList()
@@ -139,8 +163,6 @@ HandleError()
 
     # restart the icera-switcher, which will restart RIL after found ports.
     start icera-switcher
-    #Start agpsd.
-    start agps-daemon
     SetUsbSuspend "auto"
 }
 
@@ -164,7 +186,6 @@ if [ -z "${FILE_LIST}" ]; then
 else
     #Stop the CPO and RIL to not interfere with modem firwmare upgrade
     SetUsbSuspend "on"
-    stop agps-daemon
     stop icera-switcher
     stop ril-daemon
     sleep 2
@@ -179,6 +200,5 @@ else
     #restart the RIL and CPO
     SetUsbSuspend "auto"
     start icera-switcher
-    start agps-daemon
 
 fi
