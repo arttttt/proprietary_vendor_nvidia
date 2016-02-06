@@ -207,6 +207,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/etc/ril_atc.config:system/etc/ril_atc.config \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/crash-check-arm:system/vendor/bin/crash-check-arm \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/downloader:system/vendor/bin/downloader \
+    vendor/nvidia/shieldtablet/proprietary/vendor/bin/modemnic:system/vendor/bin/modemnic \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/icera-crashlogs:system/vendor/bin/icera-crashlogs \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/icera-loader:system/vendor/bin/icera-loader \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/icera_log_serial_arm:system/vendor/bin/icera_log_serial_arm \
