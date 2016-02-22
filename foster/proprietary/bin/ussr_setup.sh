@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-# Copyright (c) 2013-2014, NVIDIA CORPORATION.  All rights reserved.
+# Copyright (c) 2013-2015, NVIDIA CORPORATION.  All rights reserved.
 #
 # NVIDIA CORPORATION and its licensors retain all intellectual property
 # and proprietary rights in and to this software, related documentation
@@ -37,8 +37,9 @@ do
             fi
         done
     elif [[ "$zname" = "Tdiode_skin" || ( "$skin_temp" = "" && "$zname" = "therm_est" ) ]]; then
+        temp=""
         temp=`cat ${tz}/temp`
-        if [[ $temp -ge 0 && $temp -lt 190000 ]]; then
+        if [[ "$temp" != "" && $temp -ge 0 && $temp -lt 190000 ]]; then
             skin_temp=${tz}/temp
             setprop phs.therm.skin_temp ${skin_temp}
             for i in ${cdevs[@]}

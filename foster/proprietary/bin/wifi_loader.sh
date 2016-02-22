@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-# Copyright (c) 2012-2014, NVIDIA CORPORATION.  All rights reserved.
+# Copyright (c) 2012-2015, NVIDIA CORPORATION.  All rights reserved.
 #
 # NVIDIA CORPORATION and its licensors retain all intellectual property
 # and proprietary rights in and to this software, related documentation
@@ -13,11 +13,15 @@ if [ $(getprop ro.boot.commchip_id) -gt 0 ]; then
 	setprop wifi.commchip_id $(getprop ro.boot.commchip_id)
 	exit
 fi
+
+# -----------------------------------------------------------------------------
+# SDIO Wifi Chip Detection
+# -----------------------------------------------------------------------------
+
 # vendor id defines
 BRCM=0x02d0
 TI=0x0097
 MRVL=0x02df
-brcm_symlink=y
 automotive_device=n
 hardware= ($(getprop ro.hardware))
 wifianttuning=`cat /proc/device-tree/wifi-antenna-tuning/status`
@@ -59,6 +63,21 @@ if [ -z $vendor ]; then
 	/system/bin/log -t "wifiloader" -p e "WiFi auto card detection fail"
 fi
 
+COUNT=0;
+if [ -e /system/lib/modules/bluedroid_pm.ko ]; then
+	/system/bin/log -t "wifiloader" -p i "Bluedroid_pm driver compiled as module"
+	while [ $COUNT -le 5 ]; do
+		if [ '1' -eq `lsmod | grep -c bluedroid_pm` ]; then
+			/system/bin/log -t "wifiloader" -p i "Bluedroid_pm driver loaded at $COUNT iteration"
+			break
+		fi
+		sleep 1
+		COUNT=$(($COUNT+1))
+		if [ $COUNT -eq 5 ]; then
+			/system/bin/log -t "wifiloader" -p e "Failed to detect Bluedroid_pm driver load"
+		fi
+	done
+fi
 vendor_device="$vendor"_"$device"
 vendor_device_country="$vendor"_"$device"_"$wifi_country_code"
 #Read vendor and product idea enumerated during kernel boot
@@ -69,20 +88,12 @@ if [ -z "$(getprop persist.sys.commchip_vendor)" ]; then
 	setprop persist.sys.commchip_country "$wifi_country_code"
 elif [ $vendor_device_country = $(getprop persist.sys.commchip_vendor)"_"$(getprop persist.sys.commchip_device)"_"$(getprop persist.sys.commchip_country) ]; then
 	/system/bin/log -t "wifiloader" -p i "persist.sys.commchip_vendor defined by user. Using user-defined config"
-	#check if symlinks are available; if available, do not create symlinks
-	#this check is needed when data partition is remounted after encryption
-	if [ -L /data/misc/wifi/firmware/fw_bcmdhd.bin ] &&
-		[ -L /data/misc/wifi/firmware/nvram.txt ] &&
-		[ -L /data/misc/wifi/firmware/nvram.bin ]; then
-		brcm_symlink=n
-	fi
 else
 	/system/bin/log -t "wifiloader" -p i "Comm chip replaced by user. reset symlinks if needed"
-	if [ $vendor = $BRCM ]; then
+	if [ "$vendor" = "$BRCM" ]; then
 		/system/bin/rm /data/misc/wifi/firmware/fw_bcmdhd.bin
 		/system/bin/rm /data/misc/wifi/firmware/fw_bcmdhd_apsta.bin
 		/system/bin/rm /data/misc/wifi/firmware/nvram.txt
-		/system/bin/rm /data/misc/wifi/firmware/nvram.bin
 		if [ $device = "43341" ]; then
 			/system/bin/rm /data/misc/wifi/firmware/fw_bcmdhd_a0.bin
 			/system/bin/rm /data/misc/wifi/firmware/fw_bcmdhd_apsta_a0.bin
@@ -94,11 +105,13 @@ else
 	setprop persist.sys.commchip_vendor $vendor
 	setprop persist.sys.commchip_device $device
 	setprop persist.sys.commchip_country "$wifi_country_code"
-	/system/bin/rm /data/misc/wifi/wpa_supplicant.conf
-	/system/bin/rm /data/misc/wifi/p2p_supplicant.conf
+#Enable below two when there is switch to other vendor solutions because
+#other vendor requires their conf files.
+#	/system/bin/rm /data/misc/wifi/wpa_supplicant.conf
+#	/system/bin/rm /data/misc/wifi/p2p_supplicant.conf
 fi
 
-if [ $(getprop ro.hardware) == "p1859" ]; then
+if [ "$(getprop ro.auto.device)" = "true" ]; then
 	/system/bin/log -t "wifiloader" -p i "automotive device is detected"
 	if [ -e /system/lib/modules/cfg80211.ko ]; then
 		insmod /system/lib/modules/cfg80211.ko
@@ -113,13 +126,16 @@ fi
 
 #Find device and set configurations
 #broadcomm comm chip
-if [ $vendor = $BRCM ]; then
+if [ "$vendor" = "$BRCM" ]; then
 	if [ $device = "0x4334" ]; then
 		/system/bin/log -t "wifiloader" -p i  "BCM4334 chip identified"
 		chip="4334"
 	elif [ $device = "0xa94d" ]; then
 		/system/bin/log -t "wifiloader" -p i  "BCM43341 chip identified"
 		chip="43341"
+	elif [ $device = "0x4339" ] && [ $automotive_device = y ]; then
+		/system/bin/log -t "wifiloader" -p i  "BCM89335 chip identified"
+		chip="4339"
 	elif [ $device = "0x4324" ] && [ $automotive_device = y ]
 	then
 		/system/bin/log -t "wifiloader" -p i  "BCM43241-B4 chip identified"
@@ -138,49 +154,67 @@ if [ $vendor = $BRCM ]; then
 		chip="4354"
 	fi
 
-	if [ $brcm_symlink = y ]; then
+	/system/bin/log -t "wifiloader" -p i  "chip=$chip hardware=$hardware wifi_country_code=$wifi_country_code"
+
+	if [ ! -e /data/misc/wifi/firmware/fw_bcmdhd.bin ]; then
+		/system/bin/log -t "wifiloader" -p i  "create fw_bcmdhd.bin soft link"
 		/system/bin/ln -s /system/vendor/firmware/bcm$chip/fw_bcmdhd.bin /data/misc/wifi/firmware/fw_bcmdhd.bin
+	fi
+
+	if [ ! -e /data/misc/wifi/firmware/fw_bcmdhd_apsta.bin ]; then
+		/system/bin/log -t "wifiloader" -p i  "create fw_bcmdhd_apsta.bin soft link"
 		/system/bin/ln -s /system/vendor/firmware/bcm$chip/fw_bcmdhd.bin /data/misc/wifi/firmware/fw_bcmdhd_apsta.bin
+	fi
+
+	if [ ! -e /data/misc/wifi/firmware/nvram.txt ]; then
+		/system/bin/log -t "wifiloader" -p i  "create nvram soft link"
 		if [ ! -z $wifituningsku ]; then
 			/system/bin/log -t "wifiloader" -p i  "SKU specific nvram"
 			/system/bin/ln -s /system/etc/nvram_${wifituningsku}.txt /data/misc/wifi/firmware/nvram.txt
 		elif [ $chip = "43341" ]; then
+			/system/bin/log -t "wifiloader" -p i  "nvram.txt soft link for $chip"
 			/system/bin/ln -s /system/vendor/firmware/bcm$chip/fw_bcmdhd_a0.bin /data/misc/wifi/firmware/fw_bcmdhd_a0.bin
 			/system/bin/ln -s /system/vendor/firmware/bcm$chip/fw_bcmdhd_a0.bin /data/misc/wifi/firmware/fw_bcmdhd_apsta_a0.bin
 			/system/bin/ln -s /system/etc/nvram_rev2.txt /data/misc/wifi/firmware/nvram.txt
 			/system/bin/ln -s /system/etc/nvram_rev3.txt /data/misc/wifi/firmware/nvram_43341_rev3.txt
 			/system/bin/ln -s /system/etc/nvram_rev4.txt /data/misc/wifi/firmware/nvram_43341_rev4.txt
 		elif [ $chip = "4354" ]; then
+			/system/bin/log -t "wifiloader" -p i  "nvram.txt soft link for $chip"
 			if [[ "$hardware" == *"loki_e"* ]]; then
 				/system/bin/log -t "wifiloader" -p i  "loki_e found"
 				if [ $wifianttuning == "disabled" ]; then
 					/system/bin/ln -s /system/etc/nvram_loki_e_$chip.txt /data/misc/wifi/firmware/nvram.txt
-					/system/bin/ln -s /system/etc/nvram_loki_e_$chip.bin /data/misc/wifi/firmware/nvram.bin
 				else
 					/system/bin/log -t "wifiloader" -p i  "Antenna Tuned Wi-Fi"
 					/system/bin/ln -s /system/etc/nvram_loki_e_antenna_tuned_$chip.txt /data/misc/wifi/firmware/nvram.txt
-					/system/bin/ln -s /system/etc/nvram_loki_e_antenna_tuned_$chip.bin /data/misc/wifi/firmware/nvram.bin
 				fi
 			elif [[ "$hardware" == *"foster_e"* ]]; then
 				/system/bin/log -t "wifiloader" -p i  "foster_e found"
 				if [ $wifianttuning == "disabled" ]; then
 					/system/bin/ln -s /system/etc/nvram_foster_e_$chip.txt /data/misc/wifi/firmware/nvram.txt
-					/system/bin/ln -s /system/etc/nvram_foster_e_$chip.bin /data/misc/wifi/firmware/nvram.bin
 				else
 					/system/bin/log -t "wifiloader" -p i  "Antenna Tuned Wi-Fi"
 					/system/bin/ln -s /system/etc/nvram_foster_e_antenna_tuned_$chip.txt /data/misc/wifi/firmware/nvram.txt
-					/system/bin/ln -s /system/etc/nvram_foster_e_antenna_tuned_$chip.bin /data/misc/wifi/firmware/nvram.bin
 				fi
+			elif [[ "$hardware" == *"hawkeye"* || "$hardware" == *"he2290"* ]]; then
+				/system/bin/log -t "wifiloader" -p i  "Found Hawkeye, load Hawkeye antenna tuned NVRAM"
+				/system/bin/ln -s /system/etc/nvram_hawkeye_$chip.txt /data/misc/wifi/firmware/nvram.txt
+			elif [[ "$hardware" == *"green-arrow"* || "$hardware" == *"ga2267"* ]]; then
+				/system/bin/log -t "wifiloader" -p i  "Found Green Arrow, so loading LOKI antenna tuned NVRAM file"
+				/system/bin/ln -s /system/etc/nvram_loki_e_antenna_tuned_$chip.txt /data/misc/wifi/firmware/nvram.txt
+			elif [[ "$hardware" == *"jetson_cv"* ]]; then
+				/system/bin/log -t "wifiloader" -p i  "Found jetson_cv, load jetson_cv tuned NVRAM"
+				/system/bin/ln -s /system/etc/nvram_jetsonE_cv_$chip.txt /data/misc/wifi/firmware/nvram.txt
 			else
 				/system/bin/log -t "wifiloader" -p i  "Default nvram"
 				/system/bin/ln -s /system/etc/nvram_$chip.txt /data/misc/wifi/firmware/nvram.txt
-				/system/bin/ln -s /system/etc/nvram_$chip.bin /data/misc/wifi/firmware/nvram.bin
 			fi
 		else
-		/system/bin/ln -s /system/etc/nvram_$chip.txt /data/misc/wifi/firmware/nvram.txt
-		/system/bin/ln -s /system/etc/nvram_$chip.bin /data/misc/wifi/firmware/nvram.bin
+			/system/bin/log -t "wifiloader" -p i  "set default nvram.txt soft link for $chip"
+			/system/bin/ln -s /system/etc/nvram_$chip.txt /data/misc/wifi/firmware/nvram.txt
 		fi
 	fi
+
 	if [ $automotive_device = y ]; then
 		/system/bin/log -t "wifiloader" -p i "load bcmdhd module for automotive device"
 		if [ -e /system/lib/modules/bcmdhd.ko ]; then
@@ -243,6 +277,81 @@ elif [ $vendor_device = "$MRVL""_0x912d" ]; then
 	fi
 fi
 
+# -----------------------------------------------------------------------------
+# PCI Wifi Chip Detection
+# -----------------------------------------------------------------------------
+
+# vendor id defines
+BRCM=0x14e4
+
+for path in /sys/bus/pci/devices/*; do
+	vendor=$(cat $path/vendor)
+	if [ "$vendor" = "$BRCM" ]; then
+		device=$(cat $path/device)
+		break;
+	fi
+done
+
+if [ "$vendor" = "$BRCM" ]; then
+	if [ $device = "0x4354" -o $device = "0x43ec" ]; then
+		/system/bin/log -t "wifiloader" -p i  "BCM4356 chip identified"
+		chip="4356"
+	elif [ $device = "0x4355" -o $device = "0x43ef" ]; then
+		/system/bin/log -t "wifiloader" -p i  "BCM89359-B0/B1 chip identified"
+		chip="4359"
+		chip_rev0="_b0"
+		chip_rev1="_b1"
+	fi
+
+	if [ ! -e /data/misc/wifi/firmware/fw_bcmdhd.bin$chip_rev0 ]; then
+		/system/bin/log -t "wifiloader" -p i  "create fw_bcmdhd.bin$chip_rev0 soft link"
+		/system/bin/ln -s /system/vendor/firmware/bcm$chip$chip_rev0/fw_bcmdhd.bin /data/misc/wifi/firmware/fw_bcmdhd.bin$chip_rev0
+	fi
+	if [ ! -e /data/misc/wifi/firmware/fw_bcmdhd.bin$chip_rev1 ]; then
+		/system/bin/log -t "wifiloader" -p i  "create fw_bcmdhd.bin$chip_rev1 soft link"
+		/system/bin/ln -s /system/vendor/firmware/bcm$chip$chip_rev1/fw_bcmdhd.bin /data/misc/wifi/firmware/fw_bcmdhd.bin$chip_rev1
+	fi
+
+	if [ ! -e /data/misc/wifi/firmware/fw_bcmdhd_apsta.bin$chip_rev0 ]; then
+		/system/bin/log -t "wifiloader" -p i  "create fw_bcmdhd_apsta.bin$chip_rev0 soft link"
+		/system/bin/ln -s /system/vendor/firmware/bcm$chip$chip_rev0/fw_bcmdhd.bin /data/misc/wifi/firmware/fw_bcmdhd_apsta.bin$chip_rev0
+	fi
+	if [ ! -e /data/misc/wifi/firmware/fw_bcmdhd_apsta.bin$chip_rev1 ]; then
+		/system/bin/log -t "wifiloader" -p i  "create fw_bcmdhd_apsta.bin$chip_rev1 soft link"
+		/system/bin/ln -s /system/vendor/firmware/bcm$chip$chip_rev1/fw_bcmdhd.bin /data/misc/wifi/firmware/fw_bcmdhd_apsta.bin$chip_rev1
+	fi
+
+	if [ ! -e /data/misc/wifi/firmware/nvram.txt$chip_rev0 ]; then
+		if [[ $hardware == *"p2382"* ]]; then
+			/system/bin/log -t "wifiloader" -p i  "create murata$chip_rev0 nvram soft link"
+			/system/bin/ln -s /system/etc/nvram_$chip$chip_rev0.txt /data/misc/wifi/firmware/nvram.txt$chip_rev0
+		else
+			/system/bin/log -t "wifiloader" -p i  "create nvram.txt$chip_rev0 soft link"
+			/system/bin/ln -s /system/etc/nvram_$chip$chip_rev0.txt /data/misc/wifi/firmware/nvram.txt$chip_rev0
+		fi
+	fi
+	if [ ! -e /data/misc/wifi/firmware/nvram.txt$chip_rev1 ]; then
+		if [[ $hardware == *"p2382"* ]]; then
+			/system/bin/log -t "wifiloader" -p i  "create murata$chip_rev1 nvram soft link"
+			/system/bin/ln -s /system/etc/nvram_murata_$chip$chip_rev1.txt /data/misc/wifi/firmware/nvram.txt$chip_rev1
+		else
+			/system/bin/log -t "wifiloader" -p i  "create nvram.txt$chip_rev1 soft link"
+			/system/bin/ln -s /system/etc/nvram_$chip$chip_rev1.txt /data/misc/wifi/firmware/nvram.txt$chip_rev1
+		fi
+	fi
+	/system/bin/log -t "wifiloader" -p i  "setting up symlink for firmware_path"
+	/system/bin/ln -s /sys/module/bcmdhd/parameters/firmware_path /data/misc/wifi/firmware/firmware_path
+fi
+
 #increase the wmem default and wmem max size
 echo 262144 > /proc/sys/net/core/wmem_default
 echo 262144 > /proc/sys/net/core/wmem_max
+
+datafile="/data/misc/wifi/wifi_scan_config.conf"
+etcfile="/etc/wifi/wifi_scan_config.conf"
+
+if ! /system/bin/cmp -s $datafile $etcfile ; then
+	/system/bin/log -t "wifiloader" -p i  "Linking Scan config file"
+	/system/bin/rm $datafile
+	/system/bin/ln -s $etcfile $datafile
+fi
