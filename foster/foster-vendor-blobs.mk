@@ -92,7 +92,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib64/hw/memtrack.tegra.so:system/vendor/lib64/hw/memtrack.tegra.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/hw/pbc.tegra.so:system/vendor/lib64/hw/pbc.tegra.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/hw/vulkan.tegra.so:system/vendor/lib64/hw/vulkan.tegra.so \
-    vendor/nvidia/foster/proprietary/vendor/lib64/libaudiopolicymanager.so:system/vendor/lib64/libaudiopolicymanager.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libclcore_nvidia.bc:system/vendor/lib64/libclcore_nvidia.bc \
     vendor/nvidia/foster/proprietary/vendor/lib64/libcuda.so:system/vendor/lib64/libcuda.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libglcore.so:system/vendor/lib64/libglcore.so \
@@ -121,6 +120,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib64/libnvidia-compiler.so:system/vendor/lib64/libnvidia-compiler.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libnvos.so:system/vendor/lib64/libnvos.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libnvrmapi_tegra.so:system/vendor/lib64/libnvrmapi_tegra.so \
+    vendor/nvidia/foster/proprietary/vendor/lib64/libnvrm_gpu.so:system/vendor/lib64/libnvrm_gpu.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libnvrm_graphics.so:system/vendor/lib64/libnvrm_graphics.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libnvrm.so:system/vendor/lib64/libnvrm.so \
     vendor/nvidia/foster/proprietary/vendor/lib64/libnvRSCompiler.so:system/vendor/lib64/libnvRSCompiler.so \
@@ -146,12 +146,9 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib/hw/memtrack.tegra.so:system/vendor/lib/hw/memtrack.tegra.so \
     vendor/nvidia/foster/proprietary/vendor/lib/hw/vulkan.tegra.so:system/vendor/lib/hw/vulkan.tegra.so \
     vendor/nvidia/foster/proprietary/vendor/lib/hw/pbc.tegra.so:system/vendor/lib/hw/pbc.tegra.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libaudiopolicymanager.so:system/vendor/lib/libaudiopolicymanager.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libbt-vendor.so:system/vendor/lib/libbt-vendor.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libclcore_nvidia.bc:system/vendor/lib/libclcore_nvidia.bc \
     vendor/nvidia/foster/proprietary/vendor/lib/libcuda.so:system/vendor/lib/libcuda.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libcuda.so:system/vendor/lib/libcuda.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libdrmdecrypt.so:system/vendor/lib/libdrmdecrypt.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libdrmdecrypt.so:system/vendor/lib/libdrmdecrypt.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libglcore.so:system/vendor/lib/libglcore.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvapputil.so:system/vendor/lib/libnvapputil.so \
@@ -205,6 +202,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvos.so:system/vendor/lib/libnvos.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvparser.so:system/vendor/lib/libnvparser.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvrmapi_tegra.so:system/vendor/lib/libnvrmapi_tegra.so \
+    vendor/nvidia/foster/proprietary/vendor/lib/libnvrm_gpu.so:system/vendor/lib/libnvrm_gpu.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvrm_graphics.so:system/vendor/lib/libnvrm_graphics.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvrm.so:system/vendor/lib/libnvrm.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvRSCompiler.so:system/vendor/lib/libnvRSCompiler.so \
