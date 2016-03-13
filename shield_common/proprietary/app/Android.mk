@@ -14,7 +14,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter $(TARGET_DEVICE), shieldtablet foster loki hawkeye),)
+ifneq ($(filter $(TARGET_DEVICE), roth shieldtablet foster loki hawkeye),)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := BlakePairing
