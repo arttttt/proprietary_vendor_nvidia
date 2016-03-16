@@ -13,7 +13,8 @@
 # limitations under the License.
 
 # Apk
-PRODUCT_PACKAGES += BlakePairing
+PRODUCT_PACKAGES += BlakePairing \
+                    NvShieldTech
 
 # Libs for all arm archs
 PRODUCT_COPY_FILES += \
