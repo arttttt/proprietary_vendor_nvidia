@@ -13,3 +13,4 @@
 # limitations under the License.
 
 $(call inherit-product, vendor/nvidia/foster/foster-vendor-blobs.mk)
+$(call inherit-product, vendor/nvidia/loki/loki-vendor-blobs.mk)
