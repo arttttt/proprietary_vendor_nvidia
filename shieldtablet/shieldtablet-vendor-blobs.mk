@@ -55,8 +55,10 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/lib/libmllite.so:system/lib/libmllite.so \
     vendor/nvidia/shieldtablet/proprietary/lib/libmplmpu.so:system/lib/libmplmpu.so \
     vendor/nvidia/shieldtablet/proprietary/lib/libopencv24_tegra.so:system/lib/libopencv24_tegra.so \
-    vendor/nvidia/shieldtablet/proprietary/lib/libsensors_hal.nvs.so:system/lib/libsensors_hal.nvs.so \
-    vendor/nvidia/shieldtablet/proprietary/lib/libsensors_fusion.mpl520.nvs.so:system/lib/libsensors_fusion.mpl520.nvs.so \
+    vendor/nvidia/shieldtablet/proprietary/lib/libsensors.fusion.mpl520.nvs.so:system/lib/libsensors.fusion.mpl520.nvs.so \
+    vendor/nvidia/shieldtablet/proprietary/lib/libsensors.hal-drivers.nvs.so:system/lib/libsensors.hal-drivers.nvs.so \
+    vendor/nvidia/shieldtablet/proprietary/lib/libsensors.hal.nvs.so:system/lib/libsensors.hal.nvs.so \
+    vendor/nvidia/shieldtablet/proprietary/lib/libsensors.prefusion.mpl520.nvs.so:system/lib/libsensors.prefusion.mpl520.nvs.so \
     vendor/nvidia/shieldtablet/proprietary/lib/libtbb.so:system/lib/libtbb.so \
     vendor/nvidia/shieldtablet/proprietary/lib/nvcms/device.cfg:system/lib/nvcms/device.cfg \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/btmacwriter:system/vendor/bin/btmacwriter \
