@@ -60,6 +60,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/lib/libsensors.hal.nvs.so:system/lib/libsensors.hal.nvs.so \
     vendor/nvidia/shieldtablet/proprietary/lib/libsensors.prefusion.mpl520.nvs.so:system/lib/libsensors.prefusion.mpl520.nvs.so \
     vendor/nvidia/shieldtablet/proprietary/lib/libtbb.so:system/lib/libtbb.so \
+    vendor/nvidia/shieldtablet/proprietary/lib/libvulkan.so:system/lib/libvulkan.so \
     vendor/nvidia/shieldtablet/proprietary/lib/nvcms/device.cfg:system/lib/nvcms/device.cfg \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/btmacwriter:system/vendor/bin/btmacwriter \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/FinalTestThresholdManage.ini:system/vendor/bin/FinalTestThresholdManage.ini \
@@ -88,6 +89,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/hw/keystore.tegra.so:system/vendor/lib/hw/keystore.tegra.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/hw/memtrack.tegra.so:system/vendor/lib/hw/memtrack.tegra.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/hw/ts.default.so:system/vendor/lib/hw/ts.default.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/hw/vulkan.tegra.so:system/vendor/lib/hw/vulkan.tegra.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libclcore_nvidia.bc:system/vendor/lib/libclcore_nvidia.bc \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libcuda.so:system/vendor/lib/libcuda.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libdrmdecrypt.so:system/vendor/lib/libdrmdecrypt.so \
