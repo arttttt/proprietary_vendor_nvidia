@@ -24,7 +24,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/bin/gps_select.sh:system/bin/gps_select.sh \
     vendor/nvidia/shieldtablet/proprietary/bin/hotplug:system/bin/hotplug \
     vendor/nvidia/shieldtablet/proprietary/bin/set_hwui_params.sh:system/bin/set_hwui_params.sh \
-    vendor/nvidia/shieldtablet/proprietary/bin/ussr_setup.sh:system/bin/ussr_setup.sh \
     vendor/nvidia/shieldtablet/proprietary/bin/wifi_loader.sh:system/bin/wifi_loader.sh \
     vendor/nvidia/shieldtablet/proprietary/etc/enctune.conf:system/etc/enctune.conf \
     vendor/nvidia/shieldtablet/proprietary/etc/firmware/bcm43241.hcd:system/etc/firmware/bcm43241.hcd \
@@ -49,7 +48,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/etc/hdcpsrm/hdcp2x.srm:system/etc/hdcpsrm/hdcp2x.srm \
     vendor/nvidia/shieldtablet/proprietary/etc/hdcpsrm/hdcp2xtest.srm:system/etc/hdcpsrm/hdcp2xtest.srm \
     vendor/nvidia/shieldtablet/proprietary/etc/nvram_43241.txt:system/etc/nvram_43241.txt \
-    vendor/nvidia/shieldtablet/proprietary/etc/ussrd.conf:system/etc/ussrd.conf \
     vendor/nvidia/shieldtablet/proprietary/lib/hw/gps.brcm.so:system/lib/hw/gps.brcm.so \
     vendor/nvidia/shieldtablet/proprietary/lib/hw/sensors.default.mpl520.nvs.so:system/lib/hw/sensors.default.mpl520.nvs.so \
     vendor/nvidia/shieldtablet/proprietary/lib/libmllite.so:system/lib/libmllite.so \
@@ -66,7 +64,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/FinalTestThresholdManage.ini:system/vendor/bin/FinalTestThresholdManage.ini \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/hdcp_test:system/vendor/bin/hdcp_test \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/nvtunerd:system/vendor/bin/nvtunerd \
-    vendor/nvidia/shieldtablet/proprietary/vendor/bin/pbc:system/vendor/bin/pbc \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/raydium_selftest:system/vendor/bin/raydium_selftest \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/rm_panel_setting.ini:system/vendor/bin/rm_panel_setting.ini \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/rm_test:system/vendor/bin/rm_test \
@@ -76,7 +73,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/tegrastats:system/vendor/bin/tegrastats \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/tlk_daemon:system/vendor/bin/tlk_daemon \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/tsechdcp_test:system/vendor/bin/tsechdcp_test \
-    vendor/nvidia/shieldtablet/proprietary/vendor/bin/ussrd:system/vendor/bin/ussrd \
     vendor/nvidia/shieldtablet/proprietary/vendor/firmware/bcm43241/fw_bcmdhd.bin:system/vendor/firmware/bcm43241/fw_bcmdhd.bin \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/egl/libEGL_tegra.so:system/vendor/lib/egl/libEGL_tegra.so \
@@ -175,7 +171,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvwinsys.so:system/vendor/lib/libnvwinsys.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvwsi.so:system/vendor/lib/libnvwsi.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/liboemcrypto.so:system/vendor/lib/liboemcrypto.so \
-    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libphs.so:system/vendor/lib/libphs.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/librm31080.so:system/vendor/lib/librm31080.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/librm_ts_service.so:system/vendor/lib/librm_ts_service.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libscf.so:system/vendor/lib/libscf.so \
@@ -184,7 +179,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libtlk_secure_hdcp_up.so:system/vendor/lib/libtlk_secure_hdcp_up.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libtsechdcp.so:system/vendor/lib/libtsechdcp.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libtsec_wrapper.so:system/vendor/lib/libtsec_wrapper.so \
-    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libussrd.so:system/vendor/lib/libussrd.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libwvdrm_L1.so:system/vendor/lib/libwvdrm_L1.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libwvm.so:system/vendor/lib/libwvm.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libWVStreamControlAPI_L1.so:system/vendor/lib/libWVStreamControlAPI_L1.so \
