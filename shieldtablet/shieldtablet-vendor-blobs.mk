@@ -171,6 +171,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvwinsys.so:system/vendor/lib/libnvwinsys.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libnvwsi.so:system/vendor/lib/libnvwsi.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/liboemcrypto.so:system/vendor/lib/liboemcrypto.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libphs.so:system/vendor/lib/libphs.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/librm31080.so:system/vendor/lib/librm31080.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/librm_ts_service.so:system/vendor/lib/librm_ts_service.so \
     vendor/nvidia/shieldtablet/proprietary/vendor/lib/libscf.so:system/vendor/lib/libscf.so \
