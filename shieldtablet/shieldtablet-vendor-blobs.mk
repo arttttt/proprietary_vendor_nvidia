@@ -58,7 +58,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shieldtablet/proprietary/lib/libsensors.hal.nvs.so:system/lib/libsensors.hal.nvs.so \
     vendor/nvidia/shieldtablet/proprietary/lib/libsensors.prefusion.mpl520.nvs.so:system/lib/libsensors.prefusion.mpl520.nvs.so \
     vendor/nvidia/shieldtablet/proprietary/lib/libtbb.so:system/lib/libtbb.so \
-    vendor/nvidia/shieldtablet/proprietary/lib/libvulkan.so:system/lib/libvulkan.so \
+    vendor/nvidia/shieldtablet/proprietary/vendor/lib/libvulkan.so:system/vendor/lib/libvulkan.so \
     vendor/nvidia/shieldtablet/proprietary/lib/nvcms/device.cfg:system/lib/nvcms/device.cfg \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/btmacwriter:system/vendor/bin/btmacwriter \
     vendor/nvidia/shieldtablet/proprietary/vendor/bin/FinalTestThresholdManage.ini:system/vendor/bin/FinalTestThresholdManage.ini \
