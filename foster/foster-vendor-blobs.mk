@@ -234,5 +234,4 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvaudioservice.so:system/vendor/lib/libnvaudioservice.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnvcapaudioservice.so:system/vendor/lib/libnvcapaudioservice.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libnwos.so:system/vendor/lib/libnwos.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libnwrm.so:system/vendor/lib/libnwrm.so \
-    vendor/nvidia/foster/proprietary/lib/libstlport.so:system/lib/libstlport.so
+    vendor/nvidia/foster/proprietary/vendor/lib/libnwrm.so:system/vendor/lib/libnwrm.so
