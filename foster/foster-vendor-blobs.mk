@@ -229,9 +229,4 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/foster/proprietary/vendor/lib/libwvm.so:system/vendor/lib/libwvm.so \
     vendor/nvidia/foster/proprietary/vendor/lib/libWVStreamControlAPI_L1.so:system/vendor/lib/libWVStreamControlAPI_L1.so \
     vendor/nvidia/foster/proprietary/vendor/lib/mediadrm/libDxModularPluginNvGoo.so:system/vendor/lib/mediadrm/libDxModularPluginNvGoo.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/mediadrm/libwvdrmengine.so:system/vendor/lib/mediadrm/libwvdrmengine.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libaudioavp.so:system/vendor/lib/libaudioavp.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libnvaudioservice.so:system/vendor/lib/libnvaudioservice.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libnvcapaudioservice.so:system/vendor/lib/libnvcapaudioservice.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libnwos.so:system/vendor/lib/libnwos.so \
-    vendor/nvidia/foster/proprietary/vendor/lib/libnwrm.so:system/vendor/lib/libnwrm.so
+    vendor/nvidia/foster/proprietary/vendor/lib/mediadrm/libwvdrmengine.so:system/vendor/lib/mediadrm/libwvdrmengine.so
