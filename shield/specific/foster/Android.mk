@@ -17,6 +17,42 @@ LOCAL_PATH := $(call my-dir)
 ifeq ($(TARGET_DEVICE),foster)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := enctune
+LOCAL_SRC_FILES := etc/enctune.conf
+LOCAL_MODULE_SUFFIX := .conf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := nvram_4354
+LOCAL_SRC_FILES := etc/nvram_4354.txt
+LOCAL_MODULE_SUFFIX := .txt
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := nvram_foster_e_4354
+LOCAL_SRC_FILES := etc/nvram_foster_e_4354.txt
+LOCAL_MODULE_SUFFIX := .txt
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := nvram_foster_e_antenna_tuned_4354
+LOCAL_SRC_FILES := etc/nvram_foster_e_antenna_tuned_4354.txt
+LOCAL_MODULE_SUFFIX := .txt
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := libglcore
 LOCAL_SRC_FILES := lib/libglcore.so
 LOCAL_MODULE_SUFFIX := .so
