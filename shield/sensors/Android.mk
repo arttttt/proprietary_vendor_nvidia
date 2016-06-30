@@ -82,34 +82,4 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE := hdcp1x
-LOCAL_SRC_FILES := hdcpsrm/hdcp1x.srm
-LOCAL_MODULE_SUFFIX := .srm
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/hdcpsrm
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := hdcp2x
-LOCAL_SRC_FILES := hdcpsrm/hdcp2x.srm
-LOCAL_MODULE_SUFFIX := .srm
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/hdcpsrm
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := hdcp2xtest
-LOCAL_SRC_FILES := hdcpsrm/hdcp2xtest.srm
-LOCAL_MODULE_SUFFIX := .srm
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/hdcpsrm
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-include $(BUILD_PREBUILT)
-
 endif
