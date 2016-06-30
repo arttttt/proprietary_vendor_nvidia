@@ -158,7 +158,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := gpccs
-LOCAL_SRC_FILES := gkm20b/gpccs.bin
+LOCAL_SRC_FILES := gm20b/gpccs.bin
 LOCAL_MODULE_SUFFIX := .bin
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware/gm20b
