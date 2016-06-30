@@ -68,7 +68,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libdrmwvmplugin
-LOCAL_SRC_FILES := libdrmwvmplugin.so
+LOCAL_SRC_FILES := drm/libdrmwvmplugin.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/drm
