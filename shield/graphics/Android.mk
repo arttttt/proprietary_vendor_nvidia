@@ -126,6 +126,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
+ifneq ($(filter t124 t210,$(TARGET_TEGRA_VERSION)),)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libglcore
 LOCAL_SRC_FILES := lib/libglcore.so
@@ -169,6 +170,7 @@ LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIB
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
+endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libnvblit
@@ -280,6 +282,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
+ifneq ($(filter t124 t210,$(TARGET_TEGRA_VERSION)),)
 include $(CLEAR_VARS)
 LOCAL_MODULE := libglcore
 LOCAL_SRC_FILES := lib64/libglcore.so
@@ -323,5 +326,6 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/egl
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
+endif
 
 endif
