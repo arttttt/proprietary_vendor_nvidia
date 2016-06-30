@@ -50,6 +50,17 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := libnvcamerautils
+LOCAL_SRC_FILES := lib/libnvcamerautils.so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_TARGET_ARCH := arm
+LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := libnvcam_imageencoder
 LOCAL_SRC_FILES := lib/libnvcam_imageencoder.so
 LOCAL_MODULE_SUFFIX := .so
@@ -116,8 +127,8 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libvfnet
-LOCAL_SRC_FILES := lib/libvfnet.so
+LOCAL_MODULE := libnvfnet
+LOCAL_SRC_FILES := lib/libnvfnet.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
@@ -127,8 +138,8 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libvfnetstorehdfx
-LOCAL_SRC_FILES := lib/libvfnetstorehdfx.so
+LOCAL_MODULE := libnvfnetstorehdfx
+LOCAL_SRC_FILES := lib/libnvfnetstorehdfx.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
