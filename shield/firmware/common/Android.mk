@@ -16,9 +16,9 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_BOARD_PLATFORM),tegra)
 
+ifeq ($(TARGET_TEGRA_VERSION),t210)
 include $(CLEAR_VARS)
-LOCAL_MODULE := fw_bcmdhd-4354
-LOCAL_MODULE_FILENAME := fw_bcmdhd
+LOCAL_MODULE := fw_bcmdhd
 LOCAL_SRC_FILES := bcm4354/fw_bcmdhd.bin
 LOCAL_MODULE_SUFFIX := .bin
 LOCAL_MODULE_CLASS := ETC
@@ -26,10 +26,11 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware/bcm4354
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
+endif
 
+ifneq ($(filter t114 t124,$(TARGET_TEGRA_VERSION)),)
 include $(CLEAR_VARS)
-LOCAL_MODULE := fw_bcmdhd-43241
-LOCAL_MODULE_FILENAME := fw_bcmdhd
+LOCAL_MODULE := fw_bcmdhd
 LOCAL_SRC_FILES := bcm43241/fw_bcmdhd.bin
 LOCAL_MODULE_SUFFIX := .bin
 LOCAL_MODULE_CLASS := ETC
@@ -37,6 +38,7 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware/bcm43241
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
+endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := bcm43241
