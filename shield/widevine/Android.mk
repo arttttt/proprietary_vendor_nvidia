@@ -48,7 +48,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libwvdrmengine
-LOCAL_SRC_FILES := libwvdrmengine.so
+LOCAL_SRC_FILES := mediadrm/libwvdrmengine.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/mediadrm
