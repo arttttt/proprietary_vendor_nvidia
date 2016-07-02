@@ -126,7 +126,8 @@ PRODUCT_PACKAGES += libdrmwvmplugin \
                     libWVStreamControlAPI_L1 \
                     libwvdrm_L1 \
                     libdrmdecrypt \
-                    libwvm
+                    libwvm \
+                    liboemcrypto
 
 PRODUCT_PACKAGES += libsensors_hal.nvs \
                     sensors.default.mpl520.nvs \
