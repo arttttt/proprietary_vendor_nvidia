@@ -132,7 +132,8 @@ PRODUCT_PACKAGES += libdrmwvmplugin \
 PRODUCT_PACKAGES += libsensors_hal.nvs \
                     sensors.default.mpl520.nvs \
                     libsensors_fusion.mpl520.nvs \
-                    libmllite
+                    libmllite \
+                    libmplmpu
 
 PRODUCT_PACKAGES += libscf \
                     libnvisp_v3 \
