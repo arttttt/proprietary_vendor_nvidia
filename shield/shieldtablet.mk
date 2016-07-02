@@ -91,7 +91,18 @@ PRODUCT_PACKAGES += rm_ts_server \
 
 PRODUCT_PACKAGES += libnvmm \
                     libnvmm_camera_v3 \
-                    libnvmm_utils
+                    libnvmm_utils \
+                    libnvmm_asfparser \
+                    libnvmm_contentpipe \
+                    libnvmmlite_image \
+                    libnvmmlite_utils \
+                    libnvmm_msaudio \
+                    libnvmm_writer \
+                    libnvmm_audio \
+                    libnvmmlite_audio \
+                    libnvmmlite \
+                    libnvmmlite_video \
+                    libnvmm_parser
 
 PRODUCT_PACKAGES += libnvoice \
                     libnvaudiofx
@@ -140,5 +151,7 @@ PRODUCT_PACKAGES += libscf \
                     libcuda \
                     libnvcam_imageencoder \
                     libnvtvmr \
-                    libnvavp
+                    libnvavp \
+                    libnvparser \
+                    libnvtnr
 
