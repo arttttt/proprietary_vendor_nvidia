@@ -31,7 +31,10 @@ PRODUCT_PACKAGES += keystore.tegra \
                     libnvomxilclient \
                     libstagefrighthw \
                     tlk_daemon \
-                    ss_status
+                    ss_status \
+                    libEGL_tegra \
+                    libGLESv1_CM_tegra \
+                    libGLESv2_tegra
 
 # Scripts and non exe/shared objects
 PRODUCT_PACKAGES += ss_status.sh \
@@ -139,7 +142,11 @@ PRODUCT_PACKAGES += libnvos \
                     libsensors_hal.nvs \
                     libsensors_fusion.mpl520.nvs \
                     libmllite \
-                    libmplmpu
+                    libmplmpu \
+                    libnvglsi \
+                    libnvrmapi_tegra \
+                    libnvwsi \
+                    libglcore
 
 # Dependencies from aosp calculated to be needed
 PRODUCT_PACKAGES += libdl \
