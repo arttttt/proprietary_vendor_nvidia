@@ -22,6 +22,7 @@ PRODUCT_PACKAGES += keystore.tegra \
                     audio.primary.tegra \
                     memtrack.tegra \
                     vulkan.tegra \
+                    gps.brcm \
                     sensors.default.mpl520.nvs \
                     libril-icera \
                     icera-switcherd \
@@ -34,12 +35,15 @@ PRODUCT_PACKAGES += keystore.tegra \
                     ss_status \
                     libEGL_tegra \
                     libGLESv1_CM_tegra \
-                    libGLESv2_tegra
+                    libGLESv2_tegra \
+                    glgps_nvidiaTegra2android
 
 # Scripts and non exe/shared objects
 PRODUCT_PACKAGES += ss_status.sh \
                     wifi_loader \
                     bt_loader \
+                    gps_select \
+                    modemnic \
                     set_hwui_params \
                     hdcp1x \
                     hdcp2x \
