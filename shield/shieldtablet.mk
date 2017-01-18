@@ -14,37 +14,12 @@
 # limitations under the License.
 #
 
-# Base needed libs
-PRODUCT_PACKAGES += keystore.tegra \
-                    camera.tegra \
-                    gralloc.tegra \
-                    hwcomposer.tegra \
-                    audio.primary.tegra \
-                    memtrack.tegra \
-                    vulkan.tegra \
-                    gps.brcm \
-                    sensors.default.mpl520.nvs \
-                    libril-icera \
-                    icera-switcherd \
-                    downloader \
-                    libnvomx \
-                    libnvomxadaptor \
-                    libnvomxilclient \
-                    libstagefrighthw \
-                    tlk_daemon \
-                    ss_status \
-                    libEGL_tegra \
-                    libGLESv1_CM_tegra \
-                    libGLESv2_tegra \
-                    glgps_nvidiaTegra2android
+$(call inherit-product, vendor/nvidia/shield/shieldtablet-generated.mk)
 
 # Scripts and non exe/shared objects
-PRODUCT_PACKAGES += ss_status.sh \
-                    wifi_loader \
-                    bt_loader \
+PRODUCT_PACKAGES += run_ss_status.sh \
                     gps_select \
                     modemnic \
-                    set_hwui_params \
                     hdcp1x \
                     hdcp2x \
                     hdcp2xtest
@@ -73,12 +48,7 @@ PRODUCT_PACKAGES += enctune \
                     vic03_ucode
 
 # Raydium support
-PRODUCT_PACKAGES += rm_ts_server \
-                    librm_ts_service \
-                    librm31080 \
-                    ts.default \
-                    touch_para_10 \
-                    para_10_02_00_a0 \
+PRODUCT_PACKAGES += para_10_02_00_a0 \
                     para_10_03_00_20 \
                     para_10_03_00_b0 \
                     para_10_04_00_c0 \
@@ -106,91 +76,3 @@ PRODUCT_PACKAGES += libdrmwvmplugin \
                     libdrmdecrypt \
                     libwvm \
                     liboemcrypto
-
-# Local shield calculated dependencies
-PRODUCT_PACKAGES += libnvos \
-                    libnvrm \
-                    libnvrm_graphics \
-                    libnvmm \
-                    libnvmm_utils \
-                    libnvavp \
-                    libnvddk_2d_v2 \
-                    libnvddk_vic \
-                    libnvgr \
-                    libnvmm_contentpipe \
-                    libnvmmlite \
-                    libnvmmlite_utils \
-                    libnvtvmr \
-                    libnvoice \
-                    libnvaudiofx \
-                    libnvcam_imageencoder \
-                    libscf \
-                    libnvcamlog \
-                    libnvcamerautils \
-                    libcuda \
-                    libnvrm_gpu \
-                    libphs \
-                    libnvisp_v3 \
-                    libnvmm_camera_v3 \
-                    libnvodm_imager \
-                    libnvvicsi_v3 \
-                    libopencv24_tegra \
-                    libtbb \
-                    libnvfnet \
-                    libnvfnetstorehdfx \
-                    libnvcamerahdr_v3 \
-                    libnvblit \
-                    libnvhwc_service \
-                    libtlk_secure_hdcp_up \
-                    libtsechdcp \
-                    libsensors_hal.nvs \
-                    libsensors_fusion.mpl520.nvs \
-                    libmllite \
-                    libmplmpu \
-                    libnvglsi \
-                    libnvrmapi_tegra \
-                    libnvwsi \
-                    libglcore
-
-# Dependencies from aosp calculated to be needed
-PRODUCT_PACKAGES += libdl \
-                    liblog \
-                    libcutils \
-                    libc++ \
-                    libc \
-                    libm \
-                    libutils \
-                    libz \
-                    libsync \
-                    libhardware \
-                    libbinder \
-                    libpowermanager \
-                    libui \
-                    libmedia \
-                    libOpenSLES \
-                    libstagefright \
-                    libtinyalsa \
-                    libtinycompress \
-                    libaudioutils \
-                    libexpat \
-                    libnbaio \
-                    libaudiospdif \
-                    libicuuc \
-                    libcamera_client \
-                    libgui \
-                    libhardware_legacy \
-                    libjpeg \
-                    libandroid \
-                    libEGL \
-                    libGLESv2 \
-                    libpng \
-                    libstdc++ \
-                    libjnigraphics \
-                    libprotobuf-cpp-lite \
-                    libcamera_metadata \
-                    libcameraservice \
-                    libcrypto \
-                    libnetutils \
-                    libril \
-                    librilutils \
-                    libusbhost

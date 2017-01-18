@@ -72,8 +72,8 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libsensors_hal.nvs
-LOCAL_SRC_FILES := lib64/libsensors_hal.nvs.so
+LOCAL_MODULE := libsensors.hal.nvs
+LOCAL_SRC_FILES := lib64/libsensors.hal.nvs.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm64
@@ -83,8 +83,8 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libsensors_fusion.mpl520.nvs
-LOCAL_SRC_FILES := lib64/libsensors_fusion.mpl520.nvs.so
+LOCAL_MODULE := libsensors.fusion.mpl530.nvs
+LOCAL_SRC_FILES := lib64/libsensors.fusion.mpl530.nvs.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm64
@@ -94,8 +94,8 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := sensors.default.mpl520.nvs
-LOCAL_SRC_FILES := lib64/hw/sensors.default.mpl520.nvs.so
+LOCAL_MODULE := sensors.default.mpl530.nvs
+LOCAL_SRC_FILES := lib64/hw/sensors.default.mpl530.nvs.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm64

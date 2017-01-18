@@ -1,6 +1,6 @@
 #!/system/bin/sh
 
-# ss_status.sh -- Gets current secure storage status
+# run_ss_status.sh -- Gets current secure storage status
 
 STATUSCMD="/vendor/bin/ss_status"
 LOGDIR="/data/ss/slog"

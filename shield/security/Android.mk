@@ -17,8 +17,8 @@ LOCAL_PATH := $(call my-dir)
 ifeq ($(TARGET_BOARD_PLATFORM),tegra)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := ss_status.sh
-LOCAL_SRC_FILES := bin/ss_status.sh
+LOCAL_MODULE := run_ss_status.sh
+LOCAL_SRC_FILES := bin/run_ss_status.sh
 LOCAL_MODULE_CLASS := SCRIPTS
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_EXECUTABLES)
 LOCAL_MODULE_TAGS := optional

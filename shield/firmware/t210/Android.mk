@@ -167,6 +167,16 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := gpmu_ucode
+LOCAL_SRC_FILES := gm20b/gpmu_ucode.bin
+LOCAL_MODULE_SUFFIX := .bin
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware/gm20b
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := gpmu_ucode_desc
 LOCAL_SRC_FILES := gm20b/gpmu_ucode_desc.bin
 LOCAL_MODULE_SUFFIX := .bin
