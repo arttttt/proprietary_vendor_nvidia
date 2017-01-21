@@ -40,7 +40,7 @@ PRODUCT_PACKAGES += enctune \
 PRODUCT_PACKAGES += run_ss_status.sh \
                     hdcp1x \
                     hdcp2x \
-                    hdcp2xtest \
+                    hdcp2xtest
 
 PRODUCT_PACKAGES += libdrmwvmplugin \
                     libwvdrmengine \
