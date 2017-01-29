@@ -29,13 +29,27 @@ PRODUCT_PACKAGES += enctune \
                     nvavp_vid_ucode \
                     nvavp_vid_ucode_alt \
                     tegra_xusb_firmware \
+                    tegra21x_xusb_firmware \
+                    acr_ucode \
                     fecs \
+                    fecs_sig \
                     gpccs \
                     gpmu_ucode \
+                    gpmu_ucode_desc \
+                    gpu2cde \
                     NETB_img \
-                    nvhost_msenc031 \
+                    pmu_bl \
+                    pmu_sig \
+                    nvhost_nvdec020 \
+                    nvhost_nvdec020_ns \
+                    nvhost_nvdec020_prod \
+                    nvhost_nvdec_bl020 \
+                    nvhost_nvdec_bl020_prod \
+                    nvhost_nvdec_bli_no_wpr020 \
+                    nvhost_nvenc050 \
+                    nvhost_nvjpg010 \
                     nvhost_tsec \
-                    vic03_ucode
+                    vic04_ucode
 
 PRODUCT_PACKAGES += run_ss_status.sh \
                     hdcp1x \
