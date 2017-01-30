@@ -48,6 +48,7 @@ PRODUCT_PACKAGES += \
                     downloader \
                     tlk_daemon \
                     ss_status \
+                    libtsec_wrapper \
                     rm_ts_server \
                     librm_ts_service \
                     ts.default \

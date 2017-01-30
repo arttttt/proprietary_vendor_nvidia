@@ -1,22 +1,22 @@
 PRODUCT_PACKAGES += \
-                    audio.primary.tegra \
-                    libnvos \
-                    libnvoice \
-                    libnvaudiofx \
-                    gralloc.tegra \
-                    libnvgr \
-                    libnvrm \
-                    libnvrm_graphics \
-                    libnvblit \
-                    libnvddk_vic \
-                    libnvrm_gpu \
-                    hdmi_cec.tegra \
-                    hwcomposer.tegra \
-                    libnvhwc_service \
-                    libtlk_secure_hdcp_up \
-                    libtsechdcp \
-                    memtrack.tegra \
-                    vulkan.tegra \
+                    audio.primary.tegra_32 \
+                    libnvos_32 \
+                    libnvoice_32 \
+                    libnvaudiofx_32 \
+                    gralloc.tegra_32 \
+                    libnvgr_32 \
+                    libnvrm_32 \
+                    libnvrm_graphics_32 \
+                    libnvblit_32 \
+                    libnvddk_vic_32 \
+                    libnvrm_gpu_32 \
+                    hdmi_cec.tegra_32 \
+                    hwcomposer.tegra_32 \
+                    libnvhwc_service_32 \
+                    libtlk_secure_hdcp_up_32 \
+                    libtsechdcp_32 \
+                    memtrack.tegra_32 \
+                    vulkan.tegra_32 \
                     gatekeeper.tegra \
                     hdmi_cec.tegra \
                     gralloc.tegra \
@@ -36,6 +36,15 @@ PRODUCT_PACKAGES += \
                     vulkan.tegra \
                     tlk_daemon \
                     ss_status \
+                    libtsec_wrapper_32 \
+                    libtsec_wrapper \
+                    libEGL_tegra_32 \
+                    libnvglsi_32 \
+                    libnvrmapi_tegra_32 \
+                    libphs_32 \
+                    libGLESv1_CM_tegra_32 \
+                    libglcore_32 \
+                    libGLESv2_tegra_32 \
                     libEGL_tegra \
                     libnvglsi \
                     libnvrmapi_tegra \
@@ -43,23 +52,16 @@ PRODUCT_PACKAGES += \
                     libGLESv1_CM_tegra \
                     libglcore \
                     libGLESv2_tegra \
-                    libEGL_tegra \
-                    libnvglsi \
-                    libnvrmapi_tegra \
-                    libphs \
-                    libGLESv1_CM_tegra \
-                    libglcore \
-                    libGLESv2_tegra \
-                    libnvomx \
-                    libnvmm \
-                    libnvmm_utils \
-                    libnvavp \
-                    libnvddk_2d_v2 \
-                    libnvmm_contentpipe \
-                    libnvmmlite \
-                    libnvmmlite_utils \
-                    libnvtvmr \
-                    libnvomxadaptor \
-                    libnvomxilclient \
-                    nvtouch_daemon \
-                    liblr388k7
+                    libnvomx_32 \
+                    libnvmm_32 \
+                    libnvmm_utils_32 \
+                    libnvavp_32 \
+                    libnvddk_2d_v2_32 \
+                    libnvmm_contentpipe_32 \
+                    libnvmmlite_32 \
+                    libnvmmlite_utils_32 \
+                    libnvtvmr_32 \
+                    libnvomxadaptor_32 \
+                    libnvomxilclient_32 \
+                    nvtouch_daemon_32 \
+                    liblr388k7_32
