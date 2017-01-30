@@ -241,7 +241,7 @@ LOCAL_MODULE := nvhost_nvdec020
 LOCAL_SRC_FILES := tegra21x/nvhost_nvdec020.fw
 LOCAL_MODULE_SUFFIX := .fw
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware/tegra21x
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/firmware/tegra21x
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
@@ -251,7 +251,7 @@ LOCAL_MODULE := nvhost_nvdec020_ns
 LOCAL_SRC_FILES := tegra21x/nvhost_nvdec020_ns.fw
 LOCAL_MODULE_SUFFIX := .fw
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware/tegra21x
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/firmware/tegra21x
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
@@ -261,7 +261,7 @@ LOCAL_MODULE := nvhost_nvdec020_prod
 LOCAL_SRC_FILES := tegra21x/nvhost_nvdec020_prod.fw
 LOCAL_MODULE_SUFFIX := .fw
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware/tegra21x
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/firmware/tegra21x
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
@@ -271,7 +271,7 @@ LOCAL_MODULE := nvhost_nvdec_bl020
 LOCAL_SRC_FILES := tegra21x/nvhost_nvdec_bl020.fw
 LOCAL_MODULE_SUFFIX := .fw
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware/tegra21x
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/firmware/tegra21x
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
@@ -281,7 +281,7 @@ LOCAL_MODULE := nvhost_nvdec_bl020_prod
 LOCAL_SRC_FILES := tegra21x/nvhost_nvdec_bl020_prod.fw
 LOCAL_MODULE_SUFFIX := .fw
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware/tegra21x
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/firmware/tegra21x
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
@@ -291,7 +291,7 @@ LOCAL_MODULE := nvhost_nvdec_bl_no_wpr020
 LOCAL_SRC_FILES := tegra21x/nvhost_nvdec_bl_no_wpr020.fw
 LOCAL_MODULE_SUFFIX := .fw
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware/tegra21x
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/firmware/tegra21x
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
@@ -301,7 +301,7 @@ LOCAL_MODULE := nvhost_nvenc050
 LOCAL_SRC_FILES := tegra21x/nvhost_nvenc050.fw
 LOCAL_MODULE_SUFFIX := .fw
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware/tegra21x
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/firmware/tegra21x
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
@@ -311,7 +311,7 @@ LOCAL_MODULE := nvhost_nvjpg010
 LOCAL_SRC_FILES := tegra21x/nvhost_nvjpg010.fw
 LOCAL_MODULE_SUFFIX := .fw
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware/tegra21x
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/firmware/tegra21x
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
@@ -321,7 +321,7 @@ LOCAL_MODULE := nvhost_tsec
 LOCAL_SRC_FILES := tegra21x/nvhost_tsec.fw
 LOCAL_MODULE_SUFFIX := .fw
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware/tegra21x
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/firmware/tegra21x
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
@@ -331,7 +331,7 @@ LOCAL_MODULE := vic04_ucode
 LOCAL_SRC_FILES := tegra21x/vic04_ucode.bin
 LOCAL_MODULE_SUFFIX := .bin
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware/tegra21x
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/firmware/tegra21x
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
