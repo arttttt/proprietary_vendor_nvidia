@@ -19,6 +19,7 @@ $(call inherit-product, vendor/nvidia/shield/foster-generated.mk)
 PRODUCT_PACKAGES += enctune \
                     nvram_4354 \
                     fw_bcmdhd \
+                    bcm4350 \
                     nvavp_aacdec_ucode \
                     nvavp_aud_ucode \
                     nvavp_mp3dec_ucode \
