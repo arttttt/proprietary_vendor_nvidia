@@ -45,7 +45,7 @@ PRODUCT_PACKAGES += enctune \
                     nvhost_nvdec020_prod \
                     nvhost_nvdec_bl020 \
                     nvhost_nvdec_bl020_prod \
-                    nvhost_nvdec_bli_no_wpr020 \
+                    nvhost_nvdec_bl_no_wpr020 \
                     nvhost_nvenc050 \
                     nvhost_nvjpg010 \
                     nvhost_tsec \
