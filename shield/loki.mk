@@ -38,6 +38,7 @@ PRODUCT_PACKAGES += enctune \
                     gpccs \
                     gpmu_ucode \
                     gpmu_ucode_desc \
+                    gpmu_ucode_image \
                     gpu2cde \
                     NETB_img \
                     pmu_bl \
