@@ -45,6 +45,7 @@ PRODUCT_PACKAGES += \
                     libGLESv1_CM_tegra_32 \
                     libglcore_32 \
                     libGLESv2_tegra_32 \
+                    libnvwsi_32 \
                     libEGL_tegra \
                     libnvglsi \
                     libnvrmapi_tegra \
@@ -52,6 +53,7 @@ PRODUCT_PACKAGES += \
                     libGLESv1_CM_tegra \
                     libglcore \
                     libGLESv2_tegra \
+                    libnvwsi \
                     libnvomx_32 \
                     libnvmm_32 \
                     libnvmm_utils_32 \
