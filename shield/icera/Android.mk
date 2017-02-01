@@ -43,6 +43,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
+ifeq ($(TARGET_ARCH),arm)
 include $(CLEAR_VARS)
 LOCAL_MODULE := crash-check-arm
 LOCAL_SRC_FILES := bin32/crash-check-arm
@@ -92,6 +93,7 @@ LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_EXECUTABLE
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
+endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := downloader
