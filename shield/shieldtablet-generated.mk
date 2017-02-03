@@ -28,7 +28,10 @@ PRODUCT_PACKAGES += \
                     libtbb \
                     libnvfnet \
                     libnvfnetstorehdfx \
+                    libnvfnetstoredefog \
                     libnvcamerahdr_v3 \
+                    libnvcameranrr \
+                    libnvcudautils \
                     gralloc.tegra \
                     libnvblit \
                     hwcomposer.tegra \

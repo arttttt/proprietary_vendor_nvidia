@@ -28,7 +28,10 @@ PRODUCT_PACKAGES += \
                     libtbb_32 \
                     libnvfnet_32 \
                     libnvfnetstorehdfx_32 \
+                    libnvfnetstoredefog_32 \
                     libnvcamerahdr_v3_32 \
+                    libnvcameranrr_32 \
+                    libnvcudautils_32 \
                     gralloc.tegra_32 \
                     libnvblit_32 \
                     hdmi_cec.tegra_32 \
