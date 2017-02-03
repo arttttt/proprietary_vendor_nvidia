@@ -56,6 +56,7 @@ PRODUCT_PACKAGES += enctune \
 
 # Scripts / non-binary
 PRODUCT_PACKAGES += run_ss_status.sh \
+                    eks2.dat \
                     hdcp1x \
                     hdcp2x \
                     hdcp2xtest \

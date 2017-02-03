@@ -34,6 +34,7 @@ PRODUCT_PACKAGES += \
                     keystore.tegra \
                     memtrack.tegra \
                     vulkan.tegra \
+                    eks2_client \
                     tlk_daemon \
                     ss_status \
                     libtsec_wrapper_32 \

@@ -54,6 +54,7 @@ PRODUCT_PACKAGES += enctune \
                     vic04_ucode
 
 PRODUCT_PACKAGES += run_ss_status.sh \
+                    eks2.dat \
                     hdcp1x \
                     hdcp2x \
                     hdcp2xtest
