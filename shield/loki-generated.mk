@@ -69,4 +69,12 @@ PRODUCT_PACKAGES += \
                     librm_ts_service_32 \
                     ts.default_32 \
                     librm31080_32 \
-                    touch_para_10_32
+                    touch_para_10_32 \
+                    libwvm_32 \
+                    libWVStreamControlAPI_L1_32 \
+                    liboemcrypto_32 \
+                    libdrmdecrypt_32 \
+                    libdrmwvmplugin_32 \
+                    libwvdrm_L1_32 \
+                    libwvdrmengine_32 \
+                    libDxModularPluginNvGoo_32

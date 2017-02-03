@@ -57,11 +57,3 @@ PRODUCT_PACKAGES += run_ss_status.sh \
                     hdcp1x \
                     hdcp2x \
                     hdcp2xtest
-
-PRODUCT_PACKAGES += libdrmwvmplugin \
-                    libwvdrmengine \
-                    libWVStreamControlAPI_L1 \
-                    libwvdrm_L1 \
-                    libdrmdecrypt \
-                    libwvm
-

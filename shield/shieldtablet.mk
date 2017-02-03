@@ -67,12 +67,3 @@ PRODUCT_PACKAGES += para_10_02_00_a0 \
                     para_10_09_00_c0 \
                     para_10_09_02_c0 \
                     para_10_0b_00_a0
-
-# Widevine drm
-PRODUCT_PACKAGES += libdrmwvmplugin \
-                    libwvdrmengine \
-                    libWVStreamControlAPI_L1 \
-                    libwvdrm_L1 \
-                    libdrmdecrypt \
-                    libwvm \
-                    liboemcrypto

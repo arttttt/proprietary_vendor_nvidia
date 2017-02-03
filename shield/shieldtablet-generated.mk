@@ -68,4 +68,12 @@ PRODUCT_PACKAGES += \
                     libnvmmlite \
                     libnvmmlite_utils \
                     libnvomxadaptor \
-                    libnvomxilclient
+                    libnvomxilclient \
+                    libwvm \
+                    libWVStreamControlAPI_L1 \
+                    liboemcrypto \
+                    libdrmdecrypt \
+                    libdrmwvmplugin \
+                    libwvdrm_L1 \
+                    libwvdrmengine \
+                    libDxModularPluginNvGoo

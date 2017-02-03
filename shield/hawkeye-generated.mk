@@ -66,4 +66,12 @@ PRODUCT_PACKAGES += \
                     libnvomxadaptor_32 \
                     libnvomxilclient_32 \
                     nvtouch_daemon_32 \
-                    liblr388k7_32
+                    liblr388k7_32 \
+                    libwvm_32 \
+                    libWVStreamControlAPI_L1_32 \
+                    liboemcrypto_32 \
+                    libdrmdecrypt_32 \
+                    libdrmwvmplugin_32 \
+                    libwvdrm_L1_32 \
+                    libwvdrmengine_32 \
+                    libDxModularPluginNvGoo_32

@@ -64,4 +64,12 @@ PRODUCT_PACKAGES += \
                     libnvmmlite_utils_32 \
                     libnvtvmr_32 \
                     libnvomxadaptor_32 \
-                    libnvomxilclient_32
+                    libnvomxilclient_32 \
+                    libwvm_32 \
+                    libWVStreamControlAPI_L1_32 \
+                    liboemcrypto_32 \
+                    libdrmdecrypt_32 \
+                    libdrmwvmplugin_32 \
+                    libwvdrm_L1_32 \
+                    libwvdrmengine_32 \
+                    libDxModularPluginNvGoo_32
