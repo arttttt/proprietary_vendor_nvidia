@@ -39,6 +39,7 @@ PRODUCT_PACKAGES += enctune \
                     nvavp_vid_ucode \
                     nvavp_vid_ucode_alt \
                     tegra_xusb_firmware \
+                    tegra12x_xusb_firmware \
                     fecs \
                     gpccs \
                     gpmu_ucode \
