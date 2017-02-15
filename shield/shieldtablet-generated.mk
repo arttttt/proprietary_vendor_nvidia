@@ -41,11 +41,13 @@ PRODUCT_PACKAGES += \
                     keystore.tegra \
                     memtrack.tegra \
                     vulkan.tegra \
-                    sensors.default.mpl520.nvs \
-                    libsensors_hal.nvs \
-                    libsensors_fusion.mpl520.nvs \
-                    libmllite \
+                    sensors.default.api_v1.3.mpl520.nvs \
+                    libsensors.hal.nvs \
+                    libsensors.hal-drivers.nvs \
+                    libsensors.fusion.mpl520.nvs \
+                    libsensors.prefusion.mpl520.nvs \
                     libmplmpu \
+                    libmllite \
                     libril-icera \
                     icera-switcherd \
                     downloader \

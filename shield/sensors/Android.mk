@@ -17,8 +17,8 @@ LOCAL_PATH := $(call my-dir)
 ifeq ($(TARGET_BOARD_PLATFORM),tegra)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libsensors_hal.nvs
-LOCAL_SRC_FILES := lib/libsensors_hal.nvs.so
+LOCAL_MODULE := libsensors.hal.nvs
+LOCAL_SRC_FILES := lib/libsensors.hal.nvs.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
@@ -28,8 +28,8 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libsensors_fusion.mpl520.nvs
-LOCAL_SRC_FILES := lib/libsensors_fusion.mpl520.nvs.so
+LOCAL_MODULE := libsensors.hal-drivers.nvs
+LOCAL_SRC_FILES := lib/libsensors.hal-drivers.nvs.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
@@ -39,8 +39,30 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := sensors.default.mpl520.nvs
-LOCAL_SRC_FILES := lib/hw/sensors.default.mpl520.nvs.so
+LOCAL_MODULE := libsensors.fusion.mpl520.nvs
+LOCAL_SRC_FILES := lib/libsensors.fusion.mpl520.nvs.so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_TARGET_ARCH := arm
+LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := libsensors.prefusion.mpl520.nvs
+LOCAL_SRC_FILES := lib/libsensors.prefusion.mpl520.nvs.so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_TARGET_ARCH := arm
+LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := sensors.default.api_v1.3.mpl520.nvs
+LOCAL_SRC_FILES := lib/hw/sensors.default.api_v1.3.mpl520.nvs.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
