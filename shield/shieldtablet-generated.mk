@@ -87,5 +87,4 @@ PRODUCT_PACKAGES += \
                     libdrmdecrypt \
                     libdrmwvmplugin \
                     libwvdrm_L1 \
-                    libwvdrmengine \
-                    libDxModularPluginNvGoo
+                    libwvdrmengine
