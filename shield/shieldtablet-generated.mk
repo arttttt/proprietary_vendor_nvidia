@@ -66,10 +66,19 @@ PRODUCT_PACKAGES += \
                     libnvwsi \
                     glgps_nvidiaTegra2android \
                     gps.tegra \
-                    libnvomx \
+                    libnvmm_audio \
+                    libnvmm_msaudio \
+                    libnvmm_parser \
                     libnvmm_contentpipe \
-                    libnvmmlite \
+                    libnvmm_writer \
+                    libnvmmlite_audio \
                     libnvmmlite_utils \
+                    libnvmmlite \
+                    libnvmmlite_image \
+                    libnvparser \
+                    libnvmmlite_video \
+                    libnvtnr \
+                    libnvomx \
                     libnvomxadaptor \
                     libnvomxilclient \
                     libwvm \

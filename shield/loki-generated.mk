@@ -78,10 +78,19 @@ PRODUCT_PACKAGES += \
                     libglcore \
                     libGLESv2_tegra \
                     libnvwsi \
-                    libnvomx_32 \
+                    libnvmm_audio_32 \
+                    libnvmm_msaudio_32 \
+                    libnvmm_parser_32 \
                     libnvmm_contentpipe_32 \
-                    libnvmmlite_32 \
+                    libnvmm_writer_32 \
+                    libnvmmlite_audio_32 \
                     libnvmmlite_utils_32 \
+                    libnvmmlite_32 \
+                    libnvmmlite_image_32 \
+                    libnvparser_32 \
+                    libnvmmlite_video_32 \
+                    libnvtnr_32 \
+                    libnvomx_32 \
                     libnvomxadaptor_32 \
                     libnvomxilclient_32 \
                     rm_ts_server_32 \
