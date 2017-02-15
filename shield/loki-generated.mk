@@ -58,6 +58,13 @@ PRODUCT_PACKAGES += \
                     keystore.tegra \
                     memtrack.tegra \
                     vulkan.tegra \
+                    sensors.default.mpl530.nvs \
+                    libsensors.hal.nvs \
+                    libsensors.hal-drivers.nvs \
+                    libsensors.fusion.mpl530.nvs \
+                    libsensors.prefusion.mpl530.nvs \
+                    libmplmpu \
+                    libmllite \
                     eks2_client \
                     tlk_daemon \
                     ss_status \
