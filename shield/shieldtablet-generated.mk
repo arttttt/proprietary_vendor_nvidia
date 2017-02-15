@@ -65,7 +65,7 @@ PRODUCT_PACKAGES += \
                     libGLESv2_tegra \
                     libnvwsi \
                     glgps_nvidiaTegra2android \
-                    gps.brcm \
+                    gps.tegra \
                     libnvomx \
                     libnvmm_contentpipe \
                     libnvmmlite \
