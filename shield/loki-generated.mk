@@ -58,7 +58,7 @@ PRODUCT_PACKAGES += \
                     keystore.tegra \
                     memtrack.tegra \
                     vulkan.tegra \
-                    sensors.default.mpl530.nvs \
+                    sensors.default.api_v1.4.mpl530.nvs \
                     libsensors.hal.nvs \
                     libsensors.hal-drivers.nvs \
                     libsensors.fusion.mpl530.nvs \
