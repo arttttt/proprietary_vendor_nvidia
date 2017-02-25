@@ -17,7 +17,6 @@ PRODUCT_PACKAGES += \
                     libtsechdcp_32 \
                     memtrack.tegra_32 \
                     vulkan.tegra_32 \
-                    gatekeeper.tegra \
                     hdmi_cec.tegra \
                     gralloc.tegra \
                     libnvgr \
