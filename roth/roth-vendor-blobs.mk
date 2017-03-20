@@ -19,15 +19,8 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/bin/input_cfboost_init.sh:system/bin/input_cfboost_init.sh \
     vendor/nvidia/roth/proprietary/bin/js_daemon.sh:system/bin/js_daemon.sh \
     vendor/nvidia/roth/proprietary/bin/nvcpuvoltcapd:system/bin/nvcpuvoltcapd \
-    vendor/nvidia/roth/proprietary/vendor/bin/rm_ts_server:system/vendor/bin/rm_ts_server \
-    vendor/nvidia/roth/proprietary/bin/tf_daemon:system/bin/tf_daemon \
     vendor/nvidia/roth/proprietary/bin/wifi_loader.sh:system/bin/wifi_loader.sh \
     vendor/nvidia/roth/proprietary/bin/wlbwservice:system/bin/wlbwservice \
-    vendor/nvidia/roth/proprietary/etc/enctune.conf:system/etc/enctune.conf \
-    vendor/nvidia/roth/proprietary/etc/firmware/bcm43241.hcd:system/etc/firmware/bcm43241.hcd \
-    vendor/nvidia/roth/proprietary/etc/firmware/tegra11x/nvhost_msenc02.fw:system/etc/firmware/tegra11x/nvhost_msenc02.fw \
-    vendor/nvidia/roth/proprietary/etc/firmware/tegra11x/nvhost_tsec.fw:system/etc/firmware/tegra11x/nvhost_tsec.fw \
-    vendor/nvidia/roth/proprietary/etc/nvram_43241.txt:system/etc/nvram_43241.txt \
     vendor/nvidia/roth/proprietary/lib/egl/libEGL_tegra_impl.so:system/lib/egl/libEGL_tegra_impl.so \
     vendor/nvidia/roth/proprietary/lib/egl/libEGL_tegra.so:system/lib/egl/libEGL_tegra.so \
     vendor/nvidia/roth/proprietary/lib/egl/libGLESv1_CM_tegra_impl.so:system/lib/egl/libGLESv1_CM_tegra_impl.so \
@@ -38,15 +31,12 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/lib/hw/gps.brcm.so:system/lib/hw/gps.brcm.so \
     vendor/nvidia/roth/proprietary/lib/hw/keystore.tegra.so:system/lib/hw/keystore.tegra.so \
     vendor/nvidia/roth/proprietary/lib/hw/sensors.roth.so:system/lib/hw/sensors.roth.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/hw/ts.default.so:system/vendor/lib/hw/ts.default.so \
     vendor/nvidia/roth/proprietary/lib/libdrmdecrypt.so:system/lib/libdrmdecrypt.so \
     vendor/nvidia/roth/proprietary/lib/libinvensense_hal.so:system/lib/libinvensense_hal.so \
     vendor/nvidia/roth/proprietary/lib/libmllite.so:system/lib/libmllite.so \
     vendor/nvidia/roth/proprietary/lib/libmplmpu.so:system/lib/libmplmpu.so \
     vendor/nvidia/roth/proprietary/lib/libnvoice.so:system/lib/libnvoice.so \
     vendor/nvidia/roth/proprietary/lib/liboemcrypto.so:system/lib/liboemcrypto.so \
-    vendor/nvidia/roth/proprietary/lib/librm31080.so:system/lib/librm31080.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/librm_ts_service.so:system/vendor/lib/librm_ts_service.so \
     vendor/nvidia/roth/proprietary/lib/libsecure_hdcp_up.so:system/lib/libsecure_hdcp_up.so \
     vendor/nvidia/roth/proprietary/lib/libsensors.base.so:system/lib/libsensors.base.so \
     vendor/nvidia/roth/proprietary/lib/libsensors.mpl.so:system/lib/libsensors.mpl.so \
@@ -57,11 +47,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/vendor/bin/nvcgcserver:system/vendor/bin/nvcgcserver \
     vendor/nvidia/roth/proprietary/vendor/bin/nv_hciattach:system/vendor/bin/nv_hciattach \
     vendor/nvidia/roth/proprietary/vendor/bin/pbc:system/vendor/bin/pbc \
-    vendor/nvidia/roth/proprietary/vendor/firmware/bcm43241/fw_bcmdhd.bin:system/vendor/firmware/bcm43241/fw_bcmdhd.bin \
-    vendor/nvidia/roth/proprietary/vendor/firmware/nvavp_aud_ucode.bin:system/vendor/firmware/nvavp_aud_ucode.bin \
-    vendor/nvidia/roth/proprietary/vendor/firmware/nvavp_os_0ff00000.bin:system/vendor/firmware/nvavp_os_0ff00000.bin \
-    vendor/nvidia/roth/proprietary/vendor/firmware/nvavp_os_eff00000.bin:system/vendor/firmware/nvavp_os_eff00000.bin \
-    vendor/nvidia/roth/proprietary/vendor/firmware/nvavp_vid_ucode_alt.bin:system/vendor/firmware/nvavp_vid_ucode_alt.bin \
     vendor/nvidia/roth/proprietary/vendor/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
     vendor/nvidia/roth/proprietary/vendor/lib/hw/gralloc.tegra.so:system/vendor/lib/hw/gralloc.tegra.so \
     vendor/nvidia/roth/proprietary/vendor/lib/hw/hwcomposer.tegra.so:system/vendor/lib/hw/hwcomposer.tegra.so \
