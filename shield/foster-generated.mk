@@ -30,7 +30,6 @@ PRODUCT_PACKAGES += \
                     libnvhwc_service \
                     libtlk_secure_hdcp_up \
                     libtsechdcp \
-                    keystore.tegra \
                     memtrack.tegra \
                     vulkan.tegra \
                     eks2_client \
