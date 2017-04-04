@@ -15,6 +15,10 @@
 #
 
 $(call inherit-product, vendor/nvidia/shield/loki-generated.mk)
+$(call inherit-product, vendor/nvidia/shield/app/shieldtech.mk)
+#$(call inherit-product, vendor/nvidia/shield/app/blakepairing.mk)
+$(call inherit-product, vendor/nvidia/shield/app/consoleui.mk)
+$(call inherit-product, vendor/nvidia/shield/app/nvcamera.mk)
 
 # Firmware
 PRODUCT_PACKAGES += enctune \

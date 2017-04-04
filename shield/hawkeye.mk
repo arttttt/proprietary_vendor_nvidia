@@ -15,6 +15,10 @@
 #
 
 $(call inherit-product, vendor/nvidia/shield/hawkeye-generated.mk)
+$(call inherit-product, vendor/nvidia/shield/app/shieldtech.mk)
+#$(call inherit-product, vendor/nvidia/shield/app/blakepairing.mk)
+$(call inherit-product, vendor/nvidia/shield/app/consoleui.mk)
+$(call inherit-product, vendor/nvidia/shield/app/nvcamera.mk)
 
 PRODUCT_PACKAGES += enctune \
                     nvram_4354 \

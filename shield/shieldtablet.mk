@@ -15,6 +15,10 @@
 #
 
 $(call inherit-product, vendor/nvidia/shield/shieldtablet-generated.mk)
+$(call inherit-product, vendor/nvidia/shield/app/shieldtech.mk)
+#$(call inherit-product, vendor/nvidia/shield/app/blakepairing.mk)
+$(call inherit-product, vendor/nvidia/shield/app/consoleui.mk)
+$(call inherit-product, vendor/nvidia/shield/app/nvcamera.mk)
 
 # Scripts and non exe/shared objects
 PRODUCT_PACKAGES += run_ss_status.sh \
