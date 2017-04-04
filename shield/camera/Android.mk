@@ -204,8 +204,8 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libjni_nvmosaic_shield
-LOCAL_SRC_FILES := lib/libjni_nvmosaic_shield.so
+LOCAL_MODULE := libjni_nvmosaic
+LOCAL_SRC_FILES := lib/libjni_nvmosaic.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
