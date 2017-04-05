@@ -33,6 +33,7 @@ PRODUCT_PACKAGES += enctune \
                     nvram_43241 \
                     bcm43241 \
                     fw_bcmdhd \
+                    public.libraries \
                     nvavp_aacdec_ucode \
                     nvavp_aud_ucode \
                     nvavp_mp3dec_ucode \
