@@ -22,7 +22,8 @@ PRODUCT_PACKAGES += \
     liblota \
     libhidraw \
     libnvhwc_service \
-    libshieldtech
+    libshieldtech \
+    libadaptordecoder
 
 ifeq ($(TARGET_ARCH),arm64)
 PRODUCT_PACKAGES += \
