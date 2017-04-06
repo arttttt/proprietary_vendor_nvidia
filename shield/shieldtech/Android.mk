@@ -103,7 +103,7 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libadaptordecoder.so
+LOCAL_MODULE := libadaptordecoder
 LOCAL_SRC_FILES := lib/libadaptordecoder.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
