@@ -1,3 +1,4 @@
+libadaptordecoder.so
 libnvomxadaptor.so
 libtsec_wrapper.so
 libnvos.so
