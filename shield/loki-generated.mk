@@ -69,15 +69,19 @@ PRODUCT_PACKAGES += \
                     libtsec_wrapper_32 \
                     libtsec_wrapper \
                     libEGL_tegra_32 \
+                    libtsec_wrapper_32 \
                     libnvglsi_32 \
                     libnvrmapi_tegra_32 \
+                    libnvcpl_32 \
                     libGLESv1_CM_tegra_32 \
                     libglcore_32 \
                     libGLESv2_tegra_32 \
                     libnvwsi_32 \
                     libEGL_tegra \
+                    libtsec_wrapper \
                     libnvglsi \
                     libnvrmapi_tegra \
+                    libnvcpl \
                     libphs \
                     libGLESv1_CM_tegra \
                     libglcore \

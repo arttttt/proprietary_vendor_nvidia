@@ -60,8 +60,10 @@ PRODUCT_PACKAGES += \
                     librm31080 \
                     touch_para_10 \
                     libEGL_tegra \
+                    libtsec_wrapper \
                     libnvglsi \
                     libnvrmapi_tegra \
+                    libnvcpl \
                     libGLESv1_CM_tegra \
                     libglcore \
                     libGLESv2_tegra \
