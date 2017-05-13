@@ -1,0 +1,5 @@
+security/bin32/tf_daemon
+raydium/bin32/rm_ts_server
+raydium/lib/hw/ts.default.so
+raydium/lib/librm31080.so
+raydium/lib/touch_para_10.so
