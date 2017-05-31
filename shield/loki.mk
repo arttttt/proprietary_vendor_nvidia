@@ -22,6 +22,7 @@ $(call inherit-product, vendor/nvidia/shield/app/nvcamera.mk)
 
 # Firmware
 PRODUCT_PACKAGES += enctune \
+                    model_frontal \
                     nvram_4354 \
                     fw_bcmdhd \
                     bcm4350 \
