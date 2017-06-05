@@ -26,8 +26,8 @@ PRODUCT_PACKAGES += run_ss_status.sh \
 
 # Firmware
 PRODUCT_PACKAGES += enctune \
-                    nvram_43241 \
-                    bcm43241 \
+                    nvram_4356 \
+                    bcm4356 \
                     fw_bcmdhd \
                     public.libraries \
                     nvavp_aacdec_ucode \

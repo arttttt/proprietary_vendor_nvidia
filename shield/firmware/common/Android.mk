@@ -28,6 +28,17 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 endif
 
+ifeq ($(TARGET_DEVICE),jetson)
+include $(CLEAR_VARS)
+LOCAL_MODULE := fw_bcmdhd
+LOCAL_SRC_FILES := bcm4356/fw_bcmdhd.bin
+LOCAL_MODULE_SUFFIX := .bin
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+else
 ifneq ($(filter t114 t124,$(TARGET_TEGRA_VERSION)),)
 include $(CLEAR_VARS)
 LOCAL_MODULE := fw_bcmdhd
@@ -38,6 +49,7 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
+endif
 endif
 
 include $(CLEAR_VARS)
