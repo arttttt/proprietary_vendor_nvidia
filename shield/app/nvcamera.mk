@@ -18,7 +18,7 @@ PRODUCT_PACKAGES += NvCamera
 # Libs
 PRODUCT_PACKAGES += \
     libcom_nvidia_nvcamera_util_NativeUtils \
-    libjni_nvmosaic_shield \
+    libjni_nvmosaic \
     libnvjni_jpegutil \
     libnvjni_tinyplanet \
     libnvraw_creator
