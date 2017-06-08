@@ -26,7 +26,7 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := nvram_4356
+LOCAL_MODULE := nvram
 LOCAL_SRC_FILES := etc/nvram.txt
 LOCAL_MODULE_SUFFIX := .txt
 LOCAL_MODULE_CLASS := ETC
