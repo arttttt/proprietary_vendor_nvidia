@@ -21,4 +21,5 @@ PRODUCT_PACKAGES += \
     libjni_nvmosaic \
     libnvjni_jpegutil \
     libnvjni_tinyplanet \
-    libnvraw_creator
+    libnvraw_creator \
+    libnvstitching
