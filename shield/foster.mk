@@ -24,6 +24,14 @@ PRODUCT_PACKAGES += enctune \
                     bcm4350 \
                     public.libraries \
                     adsp \
+                    libnvaecfx \
+                    nvaacdec \
+                    nvadma \
+                    nvapm \
+                    nvmp3dec \
+                    nvoice \
+                    nvspkprot \
+                    nvsrc \
                     nvavp_aacdec_ucode \
                     nvavp_aud_ucode \
                     nvavp_mp3dec_ucode \
