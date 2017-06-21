@@ -23,6 +23,7 @@ PRODUCT_PACKAGES += enctune \
                     fw_bcmdhd \
                     bcm4350 \
                     public.libraries \
+                    adsp \
                     nvavp_aacdec_ucode \
                     nvavp_aud_ucode \
                     nvavp_mp3dec_ucode \

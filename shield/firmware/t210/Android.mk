@@ -17,6 +17,16 @@ LOCAL_PATH := $(call my-dir)
 ifeq ($(TARGET_TEGRA_VERSION),t210)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := adsp
+LOCAL_SRC_FILES := adsp.elf
+LOCAL_MODULE_SUFFIX := .elf
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := nvavp_aacdec_ucode
 LOCAL_SRC_FILES := nvavp_aacdec_ucode.bin
 LOCAL_MODULE_SUFFIX := .bin
