@@ -83,4 +83,6 @@ PRODUCT_PACKAGES += \
                     libdrmdecrypt_32 \
                     libdrmwvmplugin_32 \
                     libwvdrm_L1_32 \
-                    libwvdrmengine_32
+                    libwvdrmengine_32 \
+                    libcuda_32 \
+                    libcuda
