@@ -39,6 +39,7 @@ PRODUCT_PACKAGES += \
                     libnvhwc_service_32 \
                     libtlk_secure_hdcp_up_32 \
                     libtsechdcp_32 \
+                    keystore.tegra_32 \
                     memtrack.tegra_32 \
                     vulkan.tegra_32 \
                     hdmi_cec.tegra \
@@ -54,6 +55,7 @@ PRODUCT_PACKAGES += \
                     libnvhwc_service \
                     libtlk_secure_hdcp_up \
                     libtsechdcp \
+                    keystore.tegra \
                     memtrack.tegra \
                     vulkan.tegra \
                     sensors.default.api_v1.4.mpl530.nvs \

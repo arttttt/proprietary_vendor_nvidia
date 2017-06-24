@@ -2,11 +2,13 @@ hal/lib/hw/audio.primary.tegra.so
 hal/lib/hw/gralloc.tegra.so
 hal/lib/hw/hdmi_cec.tegra.so
 hal/lib/hw/hwcomposer.tegra.so
+hal/lib/hw/keystore.tegra.so
 hal/lib/hw/memtrack.tegra.so
 hal/lib/hw/vulkan.tegra.so
 hal/lib64/hw/hdmi_cec.tegra.so
 hal/lib64/hw/gralloc.tegra.so
 hal/lib64/hw/hwcomposer.tegra.so
+hal/lib64/hw/keystore.tegra.so
 hal/lib64/hw/memtrack.tegra.so
 hal/lib64/hw/vulkan.tegra.so
 security/bin64/eks2_client
@@ -37,3 +39,5 @@ widevine/lib/liboemcrypto.so
 widevine/lib/libdrmdecrypt.so
 widevine/lib/drm/libdrmwvmplugin.so
 widevine/lib/mediadrm/libwvdrmengine.so
+common/lib/libcuda.so
+common/lib64/libcuda.so

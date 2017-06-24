@@ -3,11 +3,13 @@ hal/lib/hw/camera.tegra.so
 hal/lib/hw/gralloc.tegra.so
 hal/lib/hw/hdmi_cec.tegra.so
 hal/lib/hw/hwcomposer.tegra.so
+hal/lib/hw/keystore.tegra.so
 hal/lib/hw/memtrack.tegra.so
 hal/lib/hw/vulkan.tegra.so
 hal/lib64/hw/hdmi_cec.tegra.so
 hal/lib64/hw/gralloc.tegra.so
 hal/lib64/hw/hwcomposer.tegra.so
+hal/lib64/hw/keystore.tegra.so
 hal/lib64/hw/memtrack.tegra.so
 hal/lib64/hw/vulkan.tegra.so
 sensors/lib64/hw/sensors.default.api_v1.4.mpl530.nvs.so
