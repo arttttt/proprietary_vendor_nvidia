@@ -62,6 +62,7 @@ PRODUCT_PACKAGES += enctune \
 
 # Scripts / non-binary
 PRODUCT_PACKAGES += run_ss_status.sh \
+                    gps_select \
                     eks2.dat \
                     hdcp1x \
                     hdcp2x \

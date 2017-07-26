@@ -69,7 +69,7 @@ PRODUCT_PACKAGES += \
                     libGLESv2_tegra \
                     libnvwsi \
                     glgps_nvidiaTegra2android \
-                    gps.tegra \
+                    gps.brcm \
                     libnvmm_audio \
                     libnvmm_msaudio \
                     libnvmm_parser \

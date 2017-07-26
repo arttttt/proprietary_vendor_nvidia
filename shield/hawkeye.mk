@@ -60,6 +60,7 @@ PRODUCT_PACKAGES += enctune \
                     vic04_ucode
 
 PRODUCT_PACKAGES += run_ss_status.sh \
+                    gps_select \
                     eks2.dat \
                     hdcp1x \
                     hdcp2x \

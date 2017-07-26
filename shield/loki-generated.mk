@@ -89,6 +89,8 @@ PRODUCT_PACKAGES += \
                     libglcore \
                     libGLESv2_tegra \
                     libnvwsi \
+                    glgps_nvidiaTegra2android \
+                    gps.brcm \
                     libnvmm_audio_32 \
                     libnvmm_msaudio_32 \
                     libnvmm_parser_32 \
