@@ -88,4 +88,6 @@ PRODUCT_PACKAGES += \
                     libwvdrmengine_32 \
                     libcuda_32 \
                     libcuda \
-                    pbc2
+                    pbc2 \
+                    pbc.tegra \
+                    pbc.tegra_32

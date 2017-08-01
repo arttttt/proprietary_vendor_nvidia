@@ -118,4 +118,6 @@ PRODUCT_PACKAGES += \
                     libdrmwvmplugin_32 \
                     libwvdrm_L1_32 \
                     libwvdrmengine_32 \
-                    pbc2
+                    pbc2 \
+                    pbc.tegra \
+                    pbc.tegra_32
