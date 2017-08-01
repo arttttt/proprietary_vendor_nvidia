@@ -17,6 +17,7 @@
 $(call inherit-product, vendor/nvidia/shield/jetson-tk1-generated.mk)
 $(call inherit-product, vendor/nvidia/shield/app/shieldtech.mk)
 #$(call inherit-product, vendor/nvidia/shield/app/blakepairing.mk)
+$(call inherit-product, vendor/nvidia/shield/ussrd/ussrd.mk)
 
 # Scripts and non exe/shared objects
 PRODUCT_PACKAGES += run_ss_status.sh \
