@@ -87,4 +87,5 @@ PRODUCT_PACKAGES += \
                     libwvdrm_L1_32 \
                     libwvdrmengine_32 \
                     libcuda_32 \
-                    libcuda
+                    libcuda \
+                    pbc2
