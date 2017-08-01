@@ -60,7 +60,7 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libgov_boot.so
+LOCAL_MODULE := libgov_boot
 LOCAL_SRC_FILES := lib/libgov_boot.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -71,7 +71,7 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libgov_camera.so
+LOCAL_MODULE := libgov_camera
 LOCAL_SRC_FILES := lib/libgov_camera.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -82,7 +82,7 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libgov_force.so
+LOCAL_MODULE := libgov_force
 LOCAL_SRC_FILES := lib/libgov_force.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -93,7 +93,7 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libgov_generic.so
+LOCAL_MODULE := libgov_generic
 LOCAL_SRC_FILES := lib/libgov_generic.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -104,7 +104,7 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libgov_gpucompute.so
+LOCAL_MODULE := libgov_gpucompute
 LOCAL_SRC_FILES := lib/libgov_gpucompute.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -115,7 +115,7 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libgov_graphics.so
+LOCAL_MODULE := libgov_graphics
 LOCAL_SRC_FILES := lib/libgov_graphics.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -126,7 +126,7 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libgov_il.so
+LOCAL_MODULE := libgov_il
 LOCAL_SRC_FILES := lib/libgov_il.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -137,7 +137,7 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libgov_spincircle.so
+LOCAL_MODULE := libgov_spincircle
 LOCAL_SRC_FILES := lib/libgov_spincircle.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -148,7 +148,7 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libgov_tbc.so
+LOCAL_MODULE := libgov_tbc
 LOCAL_SRC_FILES := lib/libgov_tbc.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
@@ -159,7 +159,7 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libgov_ui.so
+LOCAL_MODULE := libgov_ui
 LOCAL_SRC_FILES := lib/libgov_ui.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
