@@ -20,11 +20,6 @@ PRODUCT_PACKAGES += \
     blake \
     lota
 
-# Audio hals
-PRODUCT_PACKAGES += \
-    audio.nvrc.tegra \
-    audio.nvwc.tegra
-
 # Media files
 PRODUCT_COPY_FILES += \
     vendor/nvidia/shield/shieldtech/media/sync_test.mp4:system/vendor/oem/media/sync_test.mp4 \
