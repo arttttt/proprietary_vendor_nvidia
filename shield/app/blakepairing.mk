@@ -47,7 +47,24 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/pair_success_JARVIS.mp4:system/vendor/oem/media/blakepairing/pairing/pair_success_JARVIS.mp4 \
     vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/pair_success_PEPPER.mp4:system/vendor/oem/media/blakepairing/pairing/pair_success_PEPPER.mp4 \
     vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/pair_success_THUNDERSTRIKE.mp4:system/vendor/oem/media/blakepairing/pairing/pair_success_THUNDERSTRIKE.mp4 \
-    vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/pair_found_BLAKE.mp4:system/vendor/oem/media/blakepairing/pairing/pair_found_BLAKE.mp4 \
-    vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/pair_found_THUNDERSTRIKE.mp4:system/vendor/oem/media/blakepairing/pairing/pair_found_THUNDERSTRIKE.mp4 \
-    vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/pair_loop.mp4:system/vendor/oem/media/blakepairing/pairing/pair_loop.mp4 \
-    vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/pair_start.mp4:system/vendor/oem/media/blakepairing/pairing/pair_start.mp4
+    vendor/nvidia/shield/shieldtech/media/blakepairing/battery/replace_pepper_battery.mp4:system/vendor/oem/media/blakepairing/battery/replace_pepper_battery.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/first_pair/BJ/EU/first_pair_loop.mp4:system/vendor/oem/media/blakepairing/first_pair/BJ/EU/first_pair_loop.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/first_pair/BJ/first_pair_loop.mp4:system/vendor/oem/media/blakepairing/first_pair/BJ/first_pair_loop.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/first_pair/BJ/first_pair_start.mp4:system/vendor/oem/media/blakepairing/first_pair/BJ/first_pair_start.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/first_pair/TP/AP/first_pair_loop.mp4:system/vendor/oem/media/blakepairing/first_pair/TP/AP/first_pair_loop.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/first_pair/TP/CN/first_pair_loop.mp4:system/vendor/oem/media/blakepairing/first_pair/TP/CN/first_pair_loop.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/first_pair/TP/EU/first_pair_loop.mp4:system/vendor/oem/media/blakepairing/first_pair/TP/EU/first_pair_loop.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/first_pair/TP/first_pair_loop.mp4:system/vendor/oem/media/blakepairing/first_pair/TP/first_pair_loop.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/first_pair/TP/first_pair_start.mp4:system/vendor/oem/media/blakepairing/first_pair/TP/first_pair_start.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/BJ/pair_found_BLAKE.mp4:system/vendor/oem/media/blakepairing/pairing/BJ/pair_found_BLAKE.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/BJ/pair_found_JARVIS.mp4:system/vendor/oem/media/blakepairing/pairing/BJ/pair_found_JARVIS.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/BJ/pair_found_PEPPER.mp4:system/vendor/oem/media/blakepairing/pairing/BJ/pair_found_PEPPER.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/BJ/pair_found_THUNDERSTRIKE.mp4:system/vendor/oem/media/blakepairing/pairing/BJ/pair_found_THUNDERSTRIKE.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/BJ/pair_loop.mp4:system/vendor/oem/media/blakepairing/pairing/BJ/pair_loop.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/BJ/pair_start.mp4:system/vendor/oem/media/blakepairing/pairing/BJ/pair_start.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/TP/pair_found_BLAKE.mp4:system/vendor/oem/media/blakepairing/pairing/TP/pair_found_BLAKE.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/TP/pair_found_JARVIS.mp4:system/vendor/oem/media/blakepairing/pairing/TP/pair_found_JARVIS.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/TP/pair_found_PEPPER.mp4:system/vendor/oem/media/blakepairing/pairing/TP/pair_found_PEPPER.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/TP/pair_found_THUNDERSTRIKE.mp4:system/vendor/oem/media/blakepairing/pairing/TP/pair_found_THUNDERSTRIKE.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/TP/pair_loop.mp4:system/vendor/oem/media/blakepairing/pairing/TP/pair_loop.mp4 \
+    vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/TP/pair_start.mp4:system/vendor/oem/media/blakepairing/pairing/TP/pair_start.mp4
