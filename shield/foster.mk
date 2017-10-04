@@ -18,6 +18,7 @@ $(call inherit-product, vendor/nvidia/shield/foster-generated.mk)
 $(call inherit-product, vendor/nvidia/shield/app/shieldtech.mk)
 #$(call inherit-product, vendor/nvidia/shield/app/blakepairing.mk)
 $(call inherit-product, vendor/nvidia/shield/ussrd/ussrd.mk)
+$(call inherit-product, vendor/nvidia/shield/widevine/widevine.mk)
 
 PRODUCT_PACKAGES += enctune \
                     nvram_4354 \

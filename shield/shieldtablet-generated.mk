@@ -83,11 +83,4 @@ PRODUCT_PACKAGES += \
                     libnvtnr \
                     libnvomx \
                     libnvomxadaptor \
-                    libnvomxilclient \
-                    libwvm \
-                    libWVStreamControlAPI_L1 \
-                    liboemcrypto \
-                    libdrmdecrypt \
-                    libdrmwvmplugin \
-                    libwvdrm_L1 \
-                    libwvdrmengine
+                    libnvomxilclient

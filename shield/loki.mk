@@ -20,6 +20,7 @@ $(call inherit-product, vendor/nvidia/shield/app/shieldtech.mk)
 $(call inherit-product, vendor/nvidia/shield/app/consoleui.mk)
 $(call inherit-product, vendor/nvidia/shield/app/nvcamera.mk)
 $(call inherit-product, vendor/nvidia/shield/ussrd/ussrd.mk)
+$(call inherit-product, vendor/nvidia/shield/widevine/widevine.mk)
 
 # Firmware
 PRODUCT_PACKAGES += enctune \
