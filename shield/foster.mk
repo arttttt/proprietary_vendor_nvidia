@@ -17,13 +17,18 @@
 $(call inherit-product, vendor/nvidia/shield/foster-generated.mk)
 $(call inherit-product, vendor/nvidia/shield/app/shieldtech.mk)
 #$(call inherit-product, vendor/nvidia/shield/app/blakepairing.mk)
+$(call inherit-product, vendor/nvidia/shield/app/consoleui.mk)
+$(call inherit-product, vendor/nvidia/shield/app/nvcamera.mk)
 $(call inherit-product, vendor/nvidia/shield/ussrd/ussrd.mk)
 $(call inherit-product, vendor/nvidia/shield/widevine/widevine.mk)
 
+# Firmware
 PRODUCT_PACKAGES += \
                     nvram_darcy_a00 \
                     nvram_foster_e_4354 \
                     nvram_foster_e_antenna_tuned_4354 \
+                    nvram_loki_e_4354 \
+                    nvram_loki_e_antenna_tuned_4354 \
                     fw_bcmdhd \
                     bcm4350 \
                     public.libraries \
@@ -69,9 +74,31 @@ PRODUCT_PACKAGES += \
                     nvhost_tsec \
                     vic04_ucode
 
+# Scripts / non-binary
 PRODUCT_PACKAGES += run_ss_status.sh \
+                    gps_select \
                     eks2.dat \
                     hdcp1x \
                     hdcp2x \
                     hdcp2xtest
 
+# Raydium support
+PRODUCT_PACKAGES += para_10_02_00_a0 \
+                    para_10_03_00_20 \
+                    para_10_03_00_b0 \
+                    para_10_04_00_c0 \
+                    para_10_06_00_b0 \
+                    para_10_08_00_20 \
+                    para_10_08_00_b0 \
+                    para_10_09_01_c0 \
+                    para_10_0a_00_b0 \
+                    para_10_02_00_20 \
+                    para_10_02_00_b0 \
+                    para_10_03_00_a0 \
+                    para_10_04_00_b0 \
+                    para_10_05_00_c0 \
+                    para_10_07_00_b0 \
+                    para_10_08_00_a0 \
+                    para_10_09_00_c0 \
+                    para_10_09_02_c0 \
+                    para_10_0b_00_a0
