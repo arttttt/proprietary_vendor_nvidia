@@ -20,8 +20,10 @@ $(call inherit-product, vendor/nvidia/shield/app/shieldtech.mk)
 $(call inherit-product, vendor/nvidia/shield/ussrd/ussrd.mk)
 $(call inherit-product, vendor/nvidia/shield/widevine/widevine.mk)
 
-PRODUCT_PACKAGES += enctune \
-                    nvram_4354 \
+PRODUCT_PACKAGES += \
+                    nvram_darcy_a00 \
+                    nvram_foster_e_4354 \
+                    nvram_foster_e_antenna_tuned_4354 \
                     fw_bcmdhd \
                     bcm4350 \
                     public.libraries \

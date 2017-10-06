@@ -31,8 +31,7 @@ PRODUCT_PACKAGES += run_ss_status.sh \
                     hdcp2xtest
 
 # Firmware
-PRODUCT_PACKAGES += enctune \
-                    model_frontal \
+PRODUCT_PACKAGES += \
                     nvram_43241 \
                     bcm43241 \
                     fw_bcmdhd \

@@ -16,45 +16,27 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_BOARD_PLATFORM),tegra)
 
-ifeq ($(TARGET_TEGRA_VERSION),t210)
 include $(CLEAR_VARS)
 LOCAL_MODULE := fw_bcmdhd
-LOCAL_SRC_FILES := bcm4354/fw_bcmdhd.bin
-LOCAL_MODULE_SUFFIX := .bin
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-include $(BUILD_PREBUILT)
-endif
-
-ifeq ($(TARGET_DEVICE),jetson)
-include $(CLEAR_VARS)
-LOCAL_MODULE := fw_bcmdhd
+ifeq ($(TARGET_DEVICE),hawkeye)
+LOCAL_SRC_FILES := bcm4354/sdio-ag-p2p-pno-aoe-pktfilter-keepalive-sr-mchan-pktctx-proptxstatus-ampduhostreorder-lpc-pwropt-txbf-wl11u-mfp-tdls-ltecx-wfds-mchandump-dfsago-tab.bin
+else ifeq ($(TARGET_TEGRA_VERSION),t210)
+LOCAL_SRC_FILES := bcm4354/sdio-ag-p2p-pno-aoe-pktfilter-keepalive-sr-mchan-pktctx-proptxstatus-ampduhostreorder-lpc-pwropt-txbf-wl11u-mfp-tdls-ltecx-wfds-mchandump-atv.bin
+else ifeq ($(TARGET_DEVICE),jetson)
 LOCAL_SRC_FILES := bcm4356/fw_bcmdhd.bin
+else ifneq ($(filter t114 t124,$(TARGET_TEGRA_VERSION)),)
+LOCAL_SRC_FILES := bcm43241/sdio-ag-pno-p2p-proptxstatus-dmatxrc-rxov-pktfilter-keepalive-aoe-vsdb-wapi-wl11d-sr-srvsdb-opt1.bin
+endif
 LOCAL_MODULE_SUFFIX := .bin
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
-else
-ifneq ($(filter t114 t124,$(TARGET_TEGRA_VERSION)),)
-include $(CLEAR_VARS)
-LOCAL_MODULE := fw_bcmdhd
-LOCAL_SRC_FILES := bcm43241/fw_bcmdhd.bin
-LOCAL_MODULE_SUFFIX := .bin
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-include $(BUILD_PREBUILT)
-endif
-endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := bcm4350
-LOCAL_SRC_FILES := bcm4354/bcm4350.hcd
+LOCAL_SRC_FILES := bcm4354/BCM4354_003.001.012.0163.0000_Nvidia_NV54_TEST_ONLY.hcd
 LOCAL_MODULE_SUFFIX := .hcd
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/firmware
@@ -64,7 +46,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := bcm43241
-LOCAL_SRC_FILES := bcm43241/bcm43241.hcd
+LOCAL_SRC_FILES := bcm43241/AB113_BCM43241B0_0012_Azurewave_AW-AH691_TEST.HCD
 LOCAL_MODULE_SUFFIX := .hcd
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/firmware
@@ -78,6 +60,64 @@ LOCAL_SRC_FILES := bcm4356/BCM2045A0-13d3-3488.hcd
 LOCAL_MODULE_SUFFIX := .hcd
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/firmware/brcm
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := nvram_43241
+ifeq ($(TARGET_DEVICE),roth)
+LOCAL_SRC_FILES := bcm43241/nvram_roth_43241.txt
+else
+LOCAL_SRC_FILES := bcm43241/bcm943241ipaagb_p100_hwoob.txt
+endif
+LOCAL_MODULE_SUFFIX := .txt
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := nvram_darcy_a00
+LOCAL_SRC_FILES := bcm4354/nvram_darcy_a00.txt
+LOCAL_MODULE_SUFFIX := .txt
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := nvram_foster_e_4354
+LOCAL_SRC_FILES := bcm4354/nvram_foster_e_4354.txt
+LOCAL_MODULE_SUFFIX := .txt
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := nvram_foster_e_antenna_tuned_4354
+LOCAL_SRC_FILES := bcm4354/nvram_foster_e_antenna_tuned_4354.txt
+LOCAL_MODULE_SUFFIX := .txt
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := nvram_loki_e_4354
+LOCAL_SRC_FILES := bcm4354/nvram_loki_e_4354.txt
+LOCAL_MODULE_SUFFIX := .txt
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := nvram_loki_e_antenna_tuned_4354
+LOCAL_SRC_FILES := bcm4354/nvram_loki_e_antenna_tuned_4354.txt
+LOCAL_MODULE_SUFFIX := .txt
+LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)

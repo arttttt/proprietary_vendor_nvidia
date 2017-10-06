@@ -17,24 +17,6 @@ LOCAL_PATH := $(call my-dir)
 ifeq ($(TARGET_DEVICE),roth)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := enctune
-LOCAL_SRC_FILES := etc/enctune.conf
-LOCAL_MODULE_SUFFIX := .conf
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := nvram_43241
-LOCAL_SRC_FILES := etc/nvram_43241.txt
-LOCAL_MODULE_SUFFIX := .txt
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE := libEGL_tegra
 LOCAL_SRC_FILES := lib/egl/libEGL_tegra.so
 LOCAL_MODULE_SUFFIX := .so

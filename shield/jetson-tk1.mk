@@ -26,7 +26,7 @@ PRODUCT_PACKAGES += run_ss_status.sh \
                     hdcp2xtest
 
 # Firmware
-PRODUCT_PACKAGES += enctune \
+PRODUCT_PACKAGES += \
                     nvram_4356 \
                     bcm4356 \
                     fw_bcmdhd \

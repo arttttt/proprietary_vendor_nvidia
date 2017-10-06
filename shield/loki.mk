@@ -23,9 +23,9 @@ $(call inherit-product, vendor/nvidia/shield/ussrd/ussrd.mk)
 $(call inherit-product, vendor/nvidia/shield/widevine/widevine.mk)
 
 # Firmware
-PRODUCT_PACKAGES += enctune \
-                    model_frontal \
-                    nvram_4354 \
+PRODUCT_PACKAGES += \
+                    nvram_loki_e_4354 \
+                    nvram_loki_e_antenna_tuned_4354 \
                     fw_bcmdhd \
                     bcm4350 \
                     public.libraries \

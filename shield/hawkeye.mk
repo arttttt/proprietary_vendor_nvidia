@@ -22,9 +22,8 @@ $(call inherit-product, vendor/nvidia/shield/app/nvcamera.mk)
 $(call inherit-product, vendor/nvidia/shield/ussrd/ussrd.mk)
 $(call inherit-product, vendor/nvidia/shield/widevine/widevine.mk)
 
-PRODUCT_PACKAGES += enctune \
-                    model_frontal \
-                    nvram_4354 \
+PRODUCT_PACKAGES += \
+                    nvram_hawkeye_4354 \
                     fw_bcmdhd \
                     bcm4350 \
                     public.libraries \

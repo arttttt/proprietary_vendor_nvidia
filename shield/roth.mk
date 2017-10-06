@@ -25,7 +25,7 @@ PRODUCT_PACKAGES += hdcp1x \
                     hdcp2xtest
 
 # Firmware
-PRODUCT_PACKAGES += enctune \
+PRODUCT_PACKAGES += \
                     nvram_43241 \
                     bcm43241 \
                     fw_bcmdhd \
