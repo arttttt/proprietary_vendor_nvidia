@@ -16,16 +16,6 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_BOARD_PLATFORM),tegra)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE := ussr_setup
-LOCAL_SRC_FILES := bin/ussr_setup.sh
-LOCAL_MODULE_SUFFIX := .sh
-LOCAL_MODULE_CLASS := SCRIPTS
-LOCAL_MODULE_PATH := $(TARGET_OUT_EXECUTABLES)
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-include $(BUILD_PREBUILT)
-
 ifeq ($(TARGET_ARCH),arm)
 include $(CLEAR_VARS)
 LOCAL_MODULE := ussrd
