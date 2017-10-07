@@ -24,6 +24,7 @@ $(call inherit-product, vendor/nvidia/shield/widevine/widevine.mk)
 
 # Firmware
 PRODUCT_PACKAGES += \
+                    model_frontal \
                     nvram_darcy_a00 \
                     nvram_foster_e_4354 \
                     nvram_foster_e_antenna_tuned_4354 \

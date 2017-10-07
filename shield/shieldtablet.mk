@@ -32,6 +32,7 @@ PRODUCT_PACKAGES += run_ss_status.sh \
 
 # Firmware
 PRODUCT_PACKAGES += \
+                    model_frontal \
                     nvram_43241 \
                     bcm43241 \
                     fw_bcmdhd \
