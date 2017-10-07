@@ -17,6 +17,16 @@ LOCAL_PATH := $(call my-dir)
 ifeq ($(TARGET_BOARD_PLATFORM),tegra)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := model_frontal
+LOCAL_SRC_FILES := etc/model_frontal.xml
+LOCAL_MODULE_SUFFIX := .xml
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_ETC)
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := libopencv24_tegra
 LOCAL_SRC_FILES := lib/libopencv24_tegra.so
 LOCAL_MODULE_SUFFIX := .so
