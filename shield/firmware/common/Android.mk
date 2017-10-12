@@ -66,11 +66,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := nvram_43241
-ifeq ($(TARGET_DEVICE),roth)
-LOCAL_SRC_FILES := bcm43241/nvram_roth_43241.txt
-else
 LOCAL_SRC_FILES := bcm43241/bcm943241ipaagb_p100_hwoob.txt
-endif
 LOCAL_MODULE_SUFFIX := .txt
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_TAGS := optional

@@ -31,12 +31,10 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/lib/hw/gps.brcm.so:system/lib/hw/gps.brcm.so \
     vendor/nvidia/roth/proprietary/lib/hw/keystore.tegra.so:system/lib/hw/keystore.tegra.so \
     vendor/nvidia/roth/proprietary/lib/hw/sensors.roth.so:system/lib/hw/sensors.roth.so \
-    vendor/nvidia/roth/proprietary/lib/libdrmdecrypt.so:system/lib/libdrmdecrypt.so \
     vendor/nvidia/roth/proprietary/lib/libinvensense_hal.so:system/lib/libinvensense_hal.so \
     vendor/nvidia/roth/proprietary/lib/libmllite.so:system/lib/libmllite.so \
     vendor/nvidia/roth/proprietary/lib/libmplmpu.so:system/lib/libmplmpu.so \
     vendor/nvidia/roth/proprietary/lib/libnvoice.so:system/lib/libnvoice.so \
-    vendor/nvidia/roth/proprietary/lib/liboemcrypto.so:system/lib/liboemcrypto.so \
     vendor/nvidia/roth/proprietary/lib/libsecure_hdcp_up.so:system/lib/libsecure_hdcp_up.so \
     vendor/nvidia/roth/proprietary/lib/libsensors.base.so:system/lib/libsensors.base.so \
     vendor/nvidia/roth/proprietary/lib/libsensors.mpl.so:system/lib/libsensors.mpl.so \
@@ -47,7 +45,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/vendor/bin/nvcgcserver:system/vendor/bin/nvcgcserver \
     vendor/nvidia/roth/proprietary/vendor/bin/nv_hciattach:system/vendor/bin/nv_hciattach \
     vendor/nvidia/roth/proprietary/vendor/bin/pbc:system/vendor/bin/pbc \
-    vendor/nvidia/roth/proprietary/vendor/lib/drm/libdrmwvmplugin.so:system/vendor/lib/drm/libdrmwvmplugin.so \
     vendor/nvidia/roth/proprietary/vendor/lib/hw/gralloc.tegra.so:system/vendor/lib/hw/gralloc.tegra.so \
     vendor/nvidia/roth/proprietary/vendor/lib/hw/hwcomposer.tegra.so:system/vendor/lib/hw/hwcomposer.tegra.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libardrv_dynamic.so:system/vendor/lib/libardrv_dynamic.so \
@@ -100,8 +97,4 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvwsi.so:system/vendor/lib/libnvwsi.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libstagefrighthw.so:system/vendor/lib/libstagefrighthw.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libtsechdcp.so:system/vendor/lib/libtsechdcp.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libtsec_wrapper.so:system/vendor/lib/libtsec_wrapper.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libwvdrm_L1.so:system/vendor/lib/libwvdrm_L1.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libwvm.so:system/vendor/lib/libwvm.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libWVStreamControlAPI_L1.so:system/vendor/lib/libWVStreamControlAPI_L1.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/mediadrm/libwvdrmengine.so:system/vendor/lib/mediadrm/libwvdrmengine.so
+    vendor/nvidia/roth/proprietary/vendor/lib/libtsec_wrapper.so:system/vendor/lib/libtsec_wrapper.so

@@ -19,6 +19,7 @@ $(call inherit-product, vendor/nvidia/roth/roth-vendor.mk)
 $(call inherit-product, vendor/nvidia/shield/app/shieldtech.mk)
 #$(call inherit-product, vendor/nvidia/shield/app/blakepairing.mk)
 $(call inherit-product, vendor/nvidia/shield/app/consoleui.mk)
+$(call inherit-product, vendor/nvidia/shield/widevine/widevine.mk)
 
 PRODUCT_PACKAGES += hdcp1x \
                     hdcp2x \
