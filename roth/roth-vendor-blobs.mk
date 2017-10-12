@@ -30,15 +30,8 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/lib/hw/audio.primary.tegra.so:system/lib/hw/audio.primary.tegra.so \
     vendor/nvidia/roth/proprietary/lib/hw/gps.brcm.so:system/lib/hw/gps.brcm.so \
     vendor/nvidia/roth/proprietary/lib/hw/keystore.tegra.so:system/lib/hw/keystore.tegra.so \
-    vendor/nvidia/roth/proprietary/lib/hw/sensors.roth.so:system/lib/hw/sensors.roth.so \
-    vendor/nvidia/roth/proprietary/lib/libinvensense_hal.so:system/lib/libinvensense_hal.so \
-    vendor/nvidia/roth/proprietary/lib/libmllite.so:system/lib/libmllite.so \
-    vendor/nvidia/roth/proprietary/lib/libmplmpu.so:system/lib/libmplmpu.so \
     vendor/nvidia/roth/proprietary/lib/libnvoice.so:system/lib/libnvoice.so \
     vendor/nvidia/roth/proprietary/lib/libsecure_hdcp_up.so:system/lib/libsecure_hdcp_up.so \
-    vendor/nvidia/roth/proprietary/lib/libsensors.base.so:system/lib/libsensors.base.so \
-    vendor/nvidia/roth/proprietary/lib/libsensors.mpl.so:system/lib/libsensors.mpl.so \
-    vendor/nvidia/roth/proprietary/lib/libsensors.nvs_input.so:system/lib/libsensors.nvs_input.so \
     vendor/nvidia/roth/proprietary/lib/libstlport.so:system/lib/libstlport.so \
     vendor/nvidia/roth/proprietary/lib/libtf_crypto_sst.so:system/lib/libtf_crypto_sst.so \
     vendor/nvidia/roth/proprietary/vendor/bin/btmacwriter:system/vendor/bin/btmacwriter \
