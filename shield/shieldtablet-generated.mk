@@ -53,13 +53,13 @@ PRODUCT_PACKAGES += \
                     downloader \
                     tlk_daemon \
                     ss_status \
-                    libtsec_wrapper \
                     rm_ts_server \
                     librm_ts_service \
                     ts.default \
                     librm31080 \
                     touch_para_10 \
                     libEGL_tegra \
+                    libtsec_wrapper \
                     libnvglsi \
                     libnvrmapi_tegra \
                     libnvcpl \

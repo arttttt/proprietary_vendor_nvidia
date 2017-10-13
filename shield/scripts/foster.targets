@@ -33,7 +33,7 @@ nvmm/lib/libnvmm_parser.so
 nvmm/lib/libnvmm_writer.so
 nvmm/lib/libnvmmlite_audio.so
 nvmm/lib/libnvmmlite_image.so
-nvmm/lib/libnvmmlite_video.so
+nvmm/lib/libnvmmlite_video.t210.so
 media/lib/libnvomx.so
 media/lib/libnvomxadaptor.so
 media/lib/libnvomxilclient.so

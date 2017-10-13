@@ -11,7 +11,6 @@ icera/bin32/icera-switcherd
 icera/bin32/downloader
 security/bin32/tlk_daemon
 security/bin32/ss_status
-security/lib/libtsec_wrapper.t124.so
 raydium/bin32/rm_ts_server
 raydium/lib/hw/ts.default.so
 raydium/lib/librm31080.so
@@ -32,8 +31,3 @@ nvmm/lib/libnvmmlite_video.t124.so
 media/lib/libnvomx.so
 media/lib/libnvomxadaptor.so
 media/lib/libnvomxilclient.so
-widevine/lib/libwvm.so
-widevine/lib/liboemcrypto.t124.so
-widevine/lib/libdrmdecrypt.so
-widevine/lib/drm/libdrmwvmplugin.so
-widevine/lib/mediadrm/libwvdrmengine.so
