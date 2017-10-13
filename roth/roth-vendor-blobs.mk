@@ -44,9 +44,7 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvglsi.so:system/vendor/lib/libnvglsi.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvodm_dtvtuner.so:system/vendor/lib/libnvodm_dtvtuner.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvodm_hdmi.so:system/vendor/lib/libnvodm_hdmi.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvodm_imager.so:system/vendor/lib/libnvodm_imager.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvodm_misc.so:system/vendor/lib/libnvodm_misc.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvodm_query.so:system/vendor/lib/libnvodm_query.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvos.so:system/vendor/lib/libnvos.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvrm_graphics.so:system/vendor/lib/libnvrm_graphics.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvrm.so:system/vendor/lib/libnvrm.so \
@@ -55,5 +53,4 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvtestresults.so:system/vendor/lib/libnvtestresults.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvwinsys.so:system/vendor/lib/libnvwinsys.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvwsi.so:system/vendor/lib/libnvwsi.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libtsechdcp.so:system/vendor/lib/libtsechdcp.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libtsec_wrapper.so:system/vendor/lib/libtsec_wrapper.so
+    vendor/nvidia/roth/proprietary/vendor/lib/libtsechdcp.so:system/vendor/lib/libtsechdcp.so

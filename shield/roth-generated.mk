@@ -3,6 +3,7 @@ PRODUCT_PACKAGES += \
                     libnvoice \
                     libnvaudiofx \
                     tf_daemon \
+                    libtsec_wrapper \
                     rm_ts_server \
                     librm_ts_service \
                     ts.default \
@@ -30,5 +31,7 @@ PRODUCT_PACKAGES += \
                     libnvddk_2d \
                     libnvfusebypass \
                     libnvomx \
+                    libnvodm_imager \
+                    libnvodm_query \
                     libnvomxadaptor \
                     libnvomxilclient
