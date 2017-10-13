@@ -1,9 +1,26 @@
 PRODUCT_PACKAGES += \
                     audio.primary.tegra \
+                    libnvos \
+                    libcplconnectclient \
                     libnvoice \
                     libnvaudiofx \
-                    tf_daemon \
+                    libEGL_tegra \
+                    libGLESv1_CM_tegra \
+                    libGLESv2_tegra \
+                    libEGL_tegra_impl \
+                    libnvcpl \
+                    libnvglsi \
+                    libnvrm \
+                    libnvrm_graphics \
+                    libnvwsi \
+                    libnvcms \
+                    libnvddk_2d_v2 \
+                    libardrv_dynamic \
                     libtsec_wrapper \
+                    libGLESv1_CM_tegra_impl \
+                    libGLESv2_tegra_impl \
+                    libnvddk_2d \
+                    tf_daemon \
                     rm_ts_server \
                     librm_ts_service \
                     ts.default \
@@ -24,11 +41,7 @@ PRODUCT_PACKAGES += \
                     libnvmmlite_image \
                     libnvparser \
                     libnvtvmr \
-                    libardrv_dynamic \
-                    libnvddk_2d_v2 \
-                    libnvcms \
                     libnvmmlite_video \
-                    libnvddk_2d \
                     libnvfusebypass \
                     libnvomx \
                     libnvodm_imager \

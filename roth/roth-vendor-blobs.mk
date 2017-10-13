@@ -20,12 +20,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/bin/nvcpuvoltcapd:system/bin/nvcpuvoltcapd \
     vendor/nvidia/roth/proprietary/bin/wifi_loader.sh:system/bin/wifi_loader.sh \
     vendor/nvidia/roth/proprietary/bin/wlbwservice:system/bin/wlbwservice \
-    vendor/nvidia/roth/proprietary/lib/egl/libEGL_tegra_impl.so:system/lib/egl/libEGL_tegra_impl.so \
-    vendor/nvidia/roth/proprietary/lib/egl/libEGL_tegra.so:system/lib/egl/libEGL_tegra.so \
-    vendor/nvidia/roth/proprietary/lib/egl/libGLESv1_CM_tegra_impl.so:system/lib/egl/libGLESv1_CM_tegra_impl.so \
-    vendor/nvidia/roth/proprietary/lib/egl/libGLESv1_CM_tegra.so:system/lib/egl/libGLESv1_CM_tegra.so \
-    vendor/nvidia/roth/proprietary/lib/egl/libGLESv2_tegra_impl.so:system/lib/egl/libGLESv2_tegra_impl.so \
-    vendor/nvidia/roth/proprietary/lib/egl/libGLESv2_tegra.so:system/lib/egl/libGLESv2_tegra.so \
     vendor/nvidia/roth/proprietary/lib/hw/keystore.tegra.so:system/lib/hw/keystore.tegra.so \
     vendor/nvidia/roth/proprietary/lib/libsecure_hdcp_up.so:system/lib/libsecure_hdcp_up.so \
     vendor/nvidia/roth/proprietary/lib/libtf_crypto_sst.so:system/lib/libtf_crypto_sst.so \
@@ -36,21 +30,15 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/vendor/lib/hw/gralloc.tegra.so:system/vendor/lib/hw/gralloc.tegra.so \
     vendor/nvidia/roth/proprietary/vendor/lib/hw/hwcomposer.tegra.so:system/vendor/lib/hw/hwcomposer.tegra.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libcgdrv.so:system/vendor/lib/libcgdrv.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libcplconnectclient.so:system/vendor/lib/libcplconnectclient.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvapputil.so:system/vendor/lib/libnvapputil.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvblit.so:system/vendor/lib/libnvblit.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvcontrol_jni.so:system/vendor/lib/libnvcontrol_jni.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvcpl.so:system/vendor/lib/libnvcpl.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvglsi.so:system/vendor/lib/libnvglsi.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvodm_dtvtuner.so:system/vendor/lib/libnvodm_dtvtuner.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvodm_hdmi.so:system/vendor/lib/libnvodm_hdmi.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvodm_misc.so:system/vendor/lib/libnvodm_misc.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvos.so:system/vendor/lib/libnvos.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvrm_graphics.so:system/vendor/lib/libnvrm_graphics.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvrm.so:system/vendor/lib/libnvrm.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvsm.so:system/vendor/lib/libnvsm.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvtestio.so:system/vendor/lib/libnvtestio.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvtestresults.so:system/vendor/lib/libnvtestresults.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvwinsys.so:system/vendor/lib/libnvwinsys.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvwsi.so:system/vendor/lib/libnvwsi.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libtsechdcp.so:system/vendor/lib/libtsechdcp.so
