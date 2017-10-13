@@ -2,12 +2,14 @@
 
 DEVICE="";
 TARGETARCH="aarch64";
+TARGETVERSION="t210";
 
 finddep()
 {
   deploc="";
   echo "$1 $2" >> deplist_checked.txt;
-  filearr=($(find .. -name "$1.so"))
+  filearr=($(find .. -name "$1.${TARGETVERSION}.so"))
+  filearr+=($(find .. -name "$1.so"))
   for possdep in ${filearr[@]};
   do
     if [ "$(file -b ${possdep} |awk -F, '{ gsub(/^[ \t]+/,"",$2); print $2 }')" == "$2" ]; then
@@ -48,6 +50,7 @@ getdeps()
 
 DEVICE=${1};
 if [ -n "${2}" ]; then TARGETARCH=${2}; fi;
+if [ -n "${3}" ]; then TARGETVERSION=${3}; fi;
 
 > deplist_checked.txt
 
@@ -56,12 +59,14 @@ echo "PRODUCT_PACKAGES += \\" > deplist_targets.txt
 echo "PRODUCT_PACKAGES += \\" > deplist_notfound.txt
 
 while read file; do
-  filename="$(echo "${file}" |rev |cut -d. -f2- |cut -d/ -f1 |rev)"
+  filename="$(echo "${file}" |sed 's/.'${TARGETVERSION}'//' |rev |cut -d. -f2- |cut -d/ -f1 |rev)"
   if [ "${TARGETARCH}" == "aarch64" -a "$(file -b ../${file} |awk -F, '{ gsub(/^[ \t]+/,"",$2); print $2 }')" == "ARM" ]; then
     filename=${filename}_32;
   fi;
   echo "                    ${filename} \\" >> ../${DEVICE}-generated.mk;
   getdeps ../${file};
 done < ${1}.targets;
+
+sed -i '$ s/ \\$//' ../${DEVICE}-generated.mk
 
 rm deplist_checked.txt
