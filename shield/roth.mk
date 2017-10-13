@@ -21,7 +21,8 @@ $(call inherit-product, vendor/nvidia/shield/app/shieldtech.mk)
 $(call inherit-product, vendor/nvidia/shield/app/consoleui.mk)
 $(call inherit-product, vendor/nvidia/shield/widevine/widevine.mk)
 
-PRODUCT_PACKAGES += hdcp1x \
+PRODUCT_PACKAGES += gps_select \
+                    hdcp1x \
                     hdcp2x \
                     hdcp2xtest
 
