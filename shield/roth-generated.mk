@@ -4,18 +4,23 @@ PRODUCT_PACKAGES += \
                     libcplconnectclient \
                     libnvoice \
                     libnvaudiofx \
+                    gralloc.tegra \
+                    libnvddk_2d_v2 \
+                    libardrv_dynamic \
+                    libnvrm \
+                    libnvrm_graphics \
+                    libnvcms \
+                    hwcomposer.tegra \
+                    libtsechdcp \
+                    keystore.tegra \
+                    libtf_crypto_sst \
                     libEGL_tegra \
                     libGLESv1_CM_tegra \
                     libGLESv2_tegra \
                     libEGL_tegra_impl \
                     libnvcpl \
                     libnvglsi \
-                    libnvrm \
-                    libnvrm_graphics \
                     libnvwsi \
-                    libnvcms \
-                    libnvddk_2d_v2 \
-                    libardrv_dynamic \
                     libtsec_wrapper \
                     libGLESv1_CM_tegra_impl \
                     libGLESv2_tegra_impl \
