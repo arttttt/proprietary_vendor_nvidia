@@ -90,6 +90,5 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvtvmr.so:system/vendor/lib/libnvtvmr.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvwinsys.so:system/vendor/lib/libnvwinsys.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvwsi.so:system/vendor/lib/libnvwsi.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libstagefrighthw.so:system/vendor/lib/libstagefrighthw.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libtsechdcp.so:system/vendor/lib/libtsechdcp.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libtsec_wrapper.so:system/vendor/lib/libtsec_wrapper.so
