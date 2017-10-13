@@ -30,6 +30,5 @@ PRODUCT_PACKAGES += \
                     libnvddk_2d \
                     libnvfusebypass \
                     libnvomx \
-                    libnvgr \
                     libnvomxadaptor \
                     libnvomxilclient
