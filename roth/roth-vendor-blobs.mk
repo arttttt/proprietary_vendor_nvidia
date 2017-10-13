@@ -27,12 +27,9 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/lib/egl/libGLESv1_CM_tegra.so:system/lib/egl/libGLESv1_CM_tegra.so \
     vendor/nvidia/roth/proprietary/lib/egl/libGLESv2_tegra_impl.so:system/lib/egl/libGLESv2_tegra_impl.so \
     vendor/nvidia/roth/proprietary/lib/egl/libGLESv2_tegra.so:system/lib/egl/libGLESv2_tegra.so \
-    vendor/nvidia/roth/proprietary/lib/hw/audio.primary.tegra.so:system/lib/hw/audio.primary.tegra.so \
     vendor/nvidia/roth/proprietary/lib/hw/gps.brcm.so:system/lib/hw/gps.brcm.so \
     vendor/nvidia/roth/proprietary/lib/hw/keystore.tegra.so:system/lib/hw/keystore.tegra.so \
-    vendor/nvidia/roth/proprietary/lib/libnvoice.so:system/lib/libnvoice.so \
     vendor/nvidia/roth/proprietary/lib/libsecure_hdcp_up.so:system/lib/libsecure_hdcp_up.so \
-    vendor/nvidia/roth/proprietary/lib/libstlport.so:system/lib/libstlport.so \
     vendor/nvidia/roth/proprietary/lib/libtf_crypto_sst.so:system/lib/libtf_crypto_sst.so \
     vendor/nvidia/roth/proprietary/vendor/bin/btmacwriter:system/vendor/bin/btmacwriter \
     vendor/nvidia/roth/proprietary/vendor/bin/nvcgcserver:system/vendor/bin/nvcgcserver \
@@ -41,15 +38,11 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/vendor/lib/hw/gralloc.tegra.so:system/vendor/lib/hw/gralloc.tegra.so \
     vendor/nvidia/roth/proprietary/vendor/lib/hw/hwcomposer.tegra.so:system/vendor/lib/hw/hwcomposer.tegra.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libardrv_dynamic.so:system/vendor/lib/libardrv_dynamic.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libaudioavp.so:system/vendor/lib/libaudioavp.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libcgdrv.so:system/vendor/lib/libcgdrv.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libcplconnectclient.so:system/vendor/lib/libcplconnectclient.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvapputil.so:system/vendor/lib/libnvapputil.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvaudioservice.so:system/vendor/lib/libnvaudioservice.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvavp.so:system/vendor/lib/libnvavp.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvblit.so:system/vendor/lib/libnvblit.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvcapaudioservice.so:system/vendor/lib/libnvcapaudioservice.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvcapclk.so:system/vendor/lib/libnvcapclk.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvcms.so:system/vendor/lib/libnvcms.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvcontrol_jni.so:system/vendor/lib/libnvcontrol_jni.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvcpl.so:system/vendor/lib/libnvcpl.so \
