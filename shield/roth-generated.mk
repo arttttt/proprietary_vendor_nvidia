@@ -23,10 +23,13 @@ PRODUCT_PACKAGES += \
                     libnvmmlite_image \
                     libnvparser \
                     libnvtvmr \
+                    libardrv_dynamic \
                     libnvddk_2d_v2 \
-                    libnvddk_vic \
-                    libnvgr \
+                    libnvcms \
                     libnvmmlite_video \
+                    libnvddk_2d \
+                    libnvfusebypass \
                     libnvomx \
+                    libnvgr \
                     libnvomxadaptor \
                     libnvomxilclient

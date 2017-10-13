@@ -35,15 +35,12 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/vendor/bin/pbc:system/vendor/bin/pbc \
     vendor/nvidia/roth/proprietary/vendor/lib/hw/gralloc.tegra.so:system/vendor/lib/hw/gralloc.tegra.so \
     vendor/nvidia/roth/proprietary/vendor/lib/hw/hwcomposer.tegra.so:system/vendor/lib/hw/hwcomposer.tegra.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libardrv_dynamic.so:system/vendor/lib/libardrv_dynamic.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libcgdrv.so:system/vendor/lib/libcgdrv.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libcplconnectclient.so:system/vendor/lib/libcplconnectclient.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvapputil.so:system/vendor/lib/libnvapputil.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvblit.so:system/vendor/lib/libnvblit.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvcms.so:system/vendor/lib/libnvcms.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvcontrol_jni.so:system/vendor/lib/libnvcontrol_jni.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvcpl.so:system/vendor/lib/libnvcpl.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvfusebypass.so:system/vendor/lib/libnvfusebypass.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvglsi.so:system/vendor/lib/libnvglsi.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvodm_dtvtuner.so:system/vendor/lib/libnvodm_dtvtuner.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvodm_hdmi.so:system/vendor/lib/libnvodm_hdmi.so \
