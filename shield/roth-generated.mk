@@ -8,4 +8,25 @@ PRODUCT_PACKAGES += \
                     ts.default \
                     librm31080 \
                     glgps_nvidiaTegra2android \
-                    gps.brcm
+                    gps.brcm \
+                    libnvmm_audio \
+                    libnvmm_utils \
+                    libnvavp \
+                    libnvmm \
+                    libnvmm_msaudio \
+                    libnvmm_parser \
+                    libnvmm_contentpipe \
+                    libnvmm_writer \
+                    libnvmmlite_audio \
+                    libnvmmlite_utils \
+                    libnvmmlite \
+                    libnvmmlite_image \
+                    libnvparser \
+                    libnvtvmr \
+                    libnvddk_2d_v2 \
+                    libnvddk_vic \
+                    libnvgr \
+                    libnvmmlite_video \
+                    libnvomx \
+                    libnvomxadaptor \
+                    libnvomxilclient

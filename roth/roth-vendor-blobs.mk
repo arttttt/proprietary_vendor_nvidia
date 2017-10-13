@@ -39,46 +39,23 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/roth/proprietary/vendor/lib/libcgdrv.so:system/vendor/lib/libcgdrv.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libcplconnectclient.so:system/vendor/lib/libcplconnectclient.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvapputil.so:system/vendor/lib/libnvapputil.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvavp.so:system/vendor/lib/libnvavp.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvblit.so:system/vendor/lib/libnvblit.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvcms.so:system/vendor/lib/libnvcms.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvcontrol_jni.so:system/vendor/lib/libnvcontrol_jni.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvcpl.so:system/vendor/lib/libnvcpl.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvddk_2d.so:system/vendor/lib/libnvddk_2d.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvddk_2d_v2.so:system/vendor/lib/libnvddk_2d_v2.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvfusebypass.so:system/vendor/lib/libnvfusebypass.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvglsi.so:system/vendor/lib/libnvglsi.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvmm_audio.so:system/vendor/lib/libnvmm_audio.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvmm_contentpipe.so:system/vendor/lib/libnvmm_contentpipe.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvmm_image.so:system/vendor/lib/libnvmm_image.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvmmlite_audio.so:system/vendor/lib/libnvmmlite_audio.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvmmlite_image.so:system/vendor/lib/libnvmmlite_image.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvmmlite.so:system/vendor/lib/libnvmmlite.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvmmlite_utils.so:system/vendor/lib/libnvmmlite_utils.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvmmlite_video.so:system/vendor/lib/libnvmmlite_video.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvmm_manager.so:system/vendor/lib/libnvmm_manager.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvmm_parser.so:system/vendor/lib/libnvmm_parser.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvmm_service.so:system/vendor/lib/libnvmm_service.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvmm.so:system/vendor/lib/libnvmm.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvmm_utils.so:system/vendor/lib/libnvmm_utils.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvmm_video.so:system/vendor/lib/libnvmm_video.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvmm_writer.so:system/vendor/lib/libnvmm_writer.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvodm_dtvtuner.so:system/vendor/lib/libnvodm_dtvtuner.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvodm_hdmi.so:system/vendor/lib/libnvodm_hdmi.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvodm_imager.so:system/vendor/lib/libnvodm_imager.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvodm_misc.so:system/vendor/lib/libnvodm_misc.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvodm_query.so:system/vendor/lib/libnvodm_query.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvomxadaptor.so:system/vendor/lib/libnvomxadaptor.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvomxilclient.so:system/vendor/lib/libnvomxilclient.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvomx.so:system/vendor/lib/libnvomx.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvos.so:system/vendor/lib/libnvos.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvparser.so:system/vendor/lib/libnvparser.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvrm_graphics.so:system/vendor/lib/libnvrm_graphics.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvrm.so:system/vendor/lib/libnvrm.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvsm.so:system/vendor/lib/libnvsm.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvtestio.so:system/vendor/lib/libnvtestio.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvtestresults.so:system/vendor/lib/libnvtestresults.so \
-    vendor/nvidia/roth/proprietary/vendor/lib/libnvtvmr.so:system/vendor/lib/libnvtvmr.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvwinsys.so:system/vendor/lib/libnvwinsys.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libnvwsi.so:system/vendor/lib/libnvwsi.so \
     vendor/nvidia/roth/proprietary/vendor/lib/libtsechdcp.so:system/vendor/lib/libtsechdcp.so \
