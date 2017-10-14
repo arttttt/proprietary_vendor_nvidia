@@ -28,6 +28,7 @@ PRODUCT_PACKAGES += \
                     libGLESv1_CM_tegra_impl \
                     libGLESv2_tegra_impl \
                     libnvddk_2d \
+                    libcgdrv \
                     tf_daemon \
                     rm_ts_server \
                     librm_ts_service \
