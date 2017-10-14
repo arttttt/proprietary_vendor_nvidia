@@ -40,7 +40,11 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := gralloc.tegra
+ifeq ($(TARGET_TEGRA_VERSION),t114)
+LOCAL_SRC_FILES := lib/hw/gralloc.tegra.$(TARGET_TEGRA_VERSION).so
+else
 LOCAL_SRC_FILES := lib/hw/gralloc.tegra.so
+endif
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
@@ -62,7 +66,11 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := hwcomposer.tegra
+ifeq ($(TARGET_TEGRA_VERSION),t114)
+LOCAL_SRC_FILES := lib/hw/hwcomposer.tegra.$(TARGET_TEGRA_VERSION).so
+else
 LOCAL_SRC_FILES := lib/hw/hwcomposer.tegra.so
+endif
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
@@ -73,7 +81,11 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := keystore.tegra
+ifeq ($(TARGET_TEGRA_VERSION),t114)
+LOCAL_SRC_FILES := lib/hw/keystore.tegra.$(TARGET_TEGRA_VERSION).so
+else
 LOCAL_SRC_FILES := lib/hw/keystore.tegra.so
+endif
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
