@@ -12,6 +12,9 @@ PRODUCT_PACKAGES += \
                     libnvcms \
                     hwcomposer.tegra \
                     libtsechdcp \
+                    libnvtestio \
+                    libnvapputil \
+                    libnvtestresults \
                     keystore.tegra \
                     libtf_crypto_sst \
                     libEGL_tegra \
