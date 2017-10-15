@@ -17,17 +17,18 @@ PRODUCT_PACKAGES += \
                     libnvtestresults \
                     keystore.tegra \
                     libtf_crypto_sst \
+                    nvcgcserver \
+                    libnvcpl \
+                    libnvddk_2d \
                     libEGL_tegra \
                     libGLESv1_CM_tegra \
                     libGLESv2_tegra \
                     libEGL_tegra_impl \
-                    libnvcpl \
                     libnvglsi \
                     libnvwsi \
                     libtsec_wrapper \
                     libGLESv1_CM_tegra_impl \
                     libGLESv2_tegra_impl \
-                    libnvddk_2d \
                     libcgdrv \
                     tf_daemon \
                     rm_ts_server \

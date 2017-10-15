@@ -36,3 +36,6 @@ PRODUCT_PACKAGES += \
                     nvavp_vid_ucode_alt \
                     nvhost_msenc02 \
                     nvhost_tsec
+
+# Oemcrypto
+PRODUCT_PACKAGES += libstlport

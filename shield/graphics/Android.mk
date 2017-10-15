@@ -16,6 +16,18 @@ LOCAL_PATH := $(call my-dir)
 
 ifeq ($(TARGET_BOARD_PLATFORM),tegra)
 
+ifeq ($(TARGET_ARCH),arm)
+include $(CLEAR_VARS)
+LOCAL_MODULE := nvcgcserver
+LOCAL_SRC_FILES := bin32/nvcgcserver
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_MODULE_TARGET_ARCH := arm
+LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_EXECUTABLES)
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+endif
+
 include $(CLEAR_VARS)
 LOCAL_MODULE := libardrv_dynamic
 LOCAL_SRC_FILES := lib/libardrv_dynamic.so
