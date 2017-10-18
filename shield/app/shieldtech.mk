@@ -23,6 +23,7 @@ PRODUCT_PACKAGES += \
     libfirmwareupdate \
     liblota \
     libhidraw \
+    libnvcontrol_jni \
     libnvhwc_service \
     libshieldtech \
     nvshieldtech
@@ -32,6 +33,7 @@ PRODUCT_PACKAGES += \
     libfirmwareupdate_32 \
     liblota_32 \
     libhidraw_32 \
+    libnvcontrol_jni_32 \
     libnvhwc_service_32 \
     libshieldtech_32 \
     nvshieldtech_32
