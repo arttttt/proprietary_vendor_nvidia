@@ -12,6 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+ifeq ($(NV_ANDROID_FRAMEWORK_ENHANCEMENTS),TRUE)
+
 # Apk
 PRODUCT_PACKAGES += BlakePairing
 
@@ -68,3 +70,5 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/TP/pair_found_THUNDERSTRIKE.mp4:system/vendor/oem/media/blakepairing/pairing/TP/pair_found_THUNDERSTRIKE.mp4 \
     vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/TP/pair_loop.mp4:system/vendor/oem/media/blakepairing/pairing/TP/pair_loop.mp4 \
     vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/TP/pair_start.mp4:system/vendor/oem/media/blakepairing/pairing/TP/pair_start.mp4
+
+endif

@@ -12,8 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+ifeq ($(NV_ANDROID_FRAMEWORK_ENHANCEMENTS),TRUE)
+
 # Apk
-# Missing framework hooks, so cannot include service yet
 PRODUCT_PACKAGES += \
                     NvCPLSvc \
                     NvShieldTech
@@ -37,4 +38,6 @@ PRODUCT_PACKAGES += \
     libnvhwc_service_32 \
     libshieldtech_32 \
     nvshieldtech_32
+endif
+
 endif
