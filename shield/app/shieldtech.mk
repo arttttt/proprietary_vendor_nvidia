@@ -14,7 +14,9 @@
 
 # Apk
 # Missing framework hooks, so cannot include service yet
-#PRODUCT_PACKAGES += NvShieldTech
+PRODUCT_PACKAGES += \
+                    NvCPLSvc \
+                    NvShieldTech
 
 # Libs
 PRODUCT_PACKAGES += \
