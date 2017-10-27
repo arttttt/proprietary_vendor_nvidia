@@ -1,4 +1,4 @@
-# Copyright (C) 2016 The Android Open Source Project
+# Copyright (C) 2017 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,8 +13,6 @@
 # limitations under the License.
 
 LOCAL_PATH := $(call my-dir)
-
-ifeq ($(TARGET_BOARD_PLATFORM),tegra)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := icera-feedback
@@ -146,5 +144,3 @@ LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
-
-endif
