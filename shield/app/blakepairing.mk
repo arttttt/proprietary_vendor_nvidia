@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifeq ($(NV_ANDROID_FRAMEWORK_ENHANCEMENTS),TRUE)
+ifeq ($(NV_ANDROID_FRAMEWORK_ENHANCEMENTS_BLAKE),TRUE)
 
 # Apk
 PRODUCT_PACKAGES += BlakePairing

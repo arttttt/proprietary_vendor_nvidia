@@ -16,7 +16,7 @@
 
 $(call inherit-product, vendor/nvidia/shield/roth-generated.mk)
 $(call inherit-product, vendor/nvidia/shield/app/shieldtech.mk)
-#$(call inherit-product, vendor/nvidia/shield/app/blakepairing.mk)
+$(call inherit-product, vendor/nvidia/shield/app/blakepairing.mk)
 $(call inherit-product, vendor/nvidia/shield/app/consoleui.mk)
 $(call inherit-product, vendor/nvidia/shield/widevine/widevine.mk)
 
