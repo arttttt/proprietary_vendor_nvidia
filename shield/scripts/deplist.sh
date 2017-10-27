@@ -54,7 +54,21 @@ if [ -n "${3}" ]; then TARGETVERSION=${3}; fi;
 
 > deplist_checked.txt
 
-echo "PRODUCT_PACKAGES += \\" > ../${DEVICE}-generated.mk
+echo "# Copyright (C) 2017 The Android Open Source Project" > ../${DEVICE}-generated.mk
+echo "#" >> ../${DEVICE}-generated.mk
+echo "# Licensed under the Apache License, Version 2.0 (the "License");" >> ../${DEVICE}-generated.mk
+echo "# you may not use this file except in compliance with the License." >> ../${DEVICE}-generated.mk
+echo "# You may obtain a copy of the License at" >> ../${DEVICE}-generated.mk
+echo "#" >> ../${DEVICE}-generated.mk
+echo "#      http://www.apache.org/licenses/LICENSE-2.0" >> ../${DEVICE}-generated.mk
+echo "#" >> ../${DEVICE}-generated.mk
+echo "# Unless required by applicable law or agreed to in writing, software" >> ../${DEVICE}-generated.mk
+echo "# distributed under the License is distributed on an "AS IS" BASIS," >> ../${DEVICE}-generated.mk
+echo "# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied." >> ../${DEVICE}-generated.mk
+echo "# See the License for the specific language governing permissions and" >> ../${DEVICE}-generated.mk
+echo "# limitations under the License." >> ../${DEVICE}-generated.mk
+echo "" >> ../${DEVICE}-generated.mk
+echo "PRODUCT_PACKAGES += \\" >> ../${DEVICE}-generated.mk
 echo "PRODUCT_PACKAGES += \\" > deplist_targets.txt
 echo "PRODUCT_PACKAGES += \\" > deplist_notfound.txt
 
