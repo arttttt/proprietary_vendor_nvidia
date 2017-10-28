@@ -13,6 +13,7 @@
 # limitations under the License.
 
 $(call inherit-product, vendor/nvidia/shield/hawkeye-generated.mk)
+$(call inherit-product, vendor/nvidia/shield/hawkeye-recovery.mk)
 $(call inherit-product, vendor/nvidia/shield/app/shieldtech.mk)
 $(call inherit-product, vendor/nvidia/shield/app/blakepairing.mk)
 $(call inherit-product, vendor/nvidia/shield/app/consoleui.mk)

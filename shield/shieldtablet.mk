@@ -13,6 +13,7 @@
 # limitations under the License.
 
 $(call inherit-product, vendor/nvidia/shield/shieldtablet-generated.mk)
+$(call inherit-product, vendor/nvidia/shield/shieldtablet-recovery.mk)
 $(call inherit-product, vendor/nvidia/shield/app/shieldtech.mk)
 $(call inherit-product, vendor/nvidia/shield/app/blakepairing.mk)
 $(call inherit-product, vendor/nvidia/shield/app/consoleui.mk)
