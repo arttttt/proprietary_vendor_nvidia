@@ -27,6 +27,9 @@ PRODUCT_PACKAGES += \
                     libardrv_dynamic \
                     libnvcms \
                     libnvmm_utils \
+                    libnvfusebypass \
+                    libnvmm_service \
+                    libnvmm_manager \
                     libstlport \
                     libnvoice \
                     gralloc.tegra \
@@ -70,7 +73,6 @@ PRODUCT_PACKAGES += \
                     libnvparser \
                     libnvtvmr \
                     libnvmmlite_video \
-                    libnvfusebypass \
                     libnvomx \
                     libnvodm_imager \
                     libnvodm_query \
