@@ -14,6 +14,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
+ifneq ($(TARGET_DEVICE),mocha)
 include $(CLEAR_VARS)
 LOCAL_MODULE := audio.primary.tegra
 LOCAL_SRC_FILES := lib/hw/audio.primary.tegra.so
@@ -24,6 +25,7 @@ LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIB
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
+endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := camera.tegra
