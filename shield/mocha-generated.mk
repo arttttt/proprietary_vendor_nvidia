@@ -13,7 +13,6 @@
 # limitations under the License.
 
 PRODUCT_PACKAGES += \
-                    audio.primary.tegra \
                     libnvos \
                     libnvoice \
                     libnvaudiofx \
@@ -55,22 +54,14 @@ PRODUCT_PACKAGES += \
                     keystore.tegra \
                     memtrack.tegra \
                     vulkan.tegra \
-                    sensors.default.api_v1.3.mpl520.nvs \
-                    libsensors.hal.nvs \
-                    libsensors.hal-drivers.nvs \
-                    libsensors.fusion.mpl520.nvs \
-                    libsensors.prefusion.mpl520.nvs \
                     libmplmpu \
                     libmllite \
-                    libril-icera \
-                    icera-switcherd \
                     downloader \
                     tlk_daemon \
                     ss_status \
                     rm_ts_server \
                     librm_ts_service \
                     ts.default \
-                    librm31080 \
                     touch_para_10 \
                     libEGL_tegra \
                     libtsec_wrapper \
@@ -81,8 +72,6 @@ PRODUCT_PACKAGES += \
                     libglcore \
                     libGLESv2_tegra \
                     libnvwsi \
-                    glgps_nvidiaTegra2android \
-                    gps.brcm \
                     libnvmm_audio \
                     libnvmm_msaudio \
                     libnvmm_parser \

@@ -12,8 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, vendor/nvidia/shield/shieldtablet-generated.mk)
-$(call inherit-product, vendor/nvidia/shield/shieldtablet-recovery.mk)
+$(call inherit-product, vendor/nvidia/shield/mocha-generated.mk)
 $(call inherit-product, vendor/nvidia/shield/app/shieldtech.mk)
 $(call inherit-product, vendor/nvidia/shield/app/blakepairing.mk)
 $(call inherit-product, vendor/nvidia/shield/app/consoleui.mk)
@@ -23,21 +22,12 @@ $(call inherit-product, vendor/nvidia/shield/widevine/widevine.mk)
 
 # Scripts and non exe/shared objects
 PRODUCT_PACKAGES += run_ss_status.sh \
-                    gps_select \
-                    modemnic \
                     hdcp1x \
                     hdcp2x \
                     hdcp2xtest
 
-# Bootloader update
-PRODUCT_PACKAGES += blob
-
 # Firmware
 PRODUCT_PACKAGES += \
-                    model_frontal \
-                    nvram_43241 \
-                    bcm43241 \
-                    fw_bcmdhd \
                     public.libraries \
                     nvavp_aacdec_ucode \
                     nvavp_aud_ucode \
@@ -57,24 +47,3 @@ PRODUCT_PACKAGES += \
                     nvhost_msenc031 \
                     nvhost_tsec \
                     vic03_ucode
-
-# Raydium support
-PRODUCT_PACKAGES += para_10_02_00_a0 \
-                    para_10_03_00_20 \
-                    para_10_03_00_b0 \
-                    para_10_04_00_c0 \
-                    para_10_06_00_b0 \
-                    para_10_08_00_20 \
-                    para_10_08_00_b0 \
-                    para_10_09_01_c0 \
-                    para_10_0a_00_b0 \
-                    para_10_02_00_20 \
-                    para_10_02_00_b0 \
-                    para_10_03_00_a0 \
-                    para_10_04_00_b0 \
-                    para_10_05_00_c0 \
-                    para_10_07_00_b0 \
-                    para_10_08_00_a0 \
-                    para_10_09_00_c0 \
-                    para_10_09_02_c0 \
-                    para_10_0b_00_a0
