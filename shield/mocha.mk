@@ -19,6 +19,7 @@ $(call inherit-product, vendor/nvidia/shield/app/consoleui.mk)
 $(call inherit-product, vendor/nvidia/shield/app/nvcamera.mk)
 $(call inherit-product, vendor/nvidia/shield/ussrd/ussrd.mk)
 $(call inherit-product, vendor/nvidia/shield/widevine/widevine.mk)
+$(call inherit-product, vendor/nvidia/shield/mocha/mocha-specific.mk)
 
 # Scripts and non exe/shared objects
 PRODUCT_PACKAGES += run_ss_status.sh \
