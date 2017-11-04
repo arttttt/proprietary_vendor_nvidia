@@ -62,7 +62,6 @@ PRODUCT_PACKAGES += \
                     rm_ts_server \
                     librm_ts_service \
                     ts.default \
-                    touch_para_10 \
                     libEGL_tegra \
                     libtsec_wrapper \
                     libnvglsi \
