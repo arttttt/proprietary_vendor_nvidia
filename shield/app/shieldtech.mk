@@ -18,6 +18,7 @@ ifeq ($(NV_ANDROID_FRAMEWORK_ENHANCEMENTS),TRUE)
 PRODUCT_PACKAGES += \
                     NvCPLSvc \
                     NvCPLUpdater \
+                    NvRpxService \
                     NvShieldTech
 
 # Libs
