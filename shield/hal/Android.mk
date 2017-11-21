@@ -17,11 +17,7 @@ LOCAL_PATH := $(call my-dir)
 ifneq ($(TARGET_DEVICE),mocha)
 include $(CLEAR_VARS)
 LOCAL_MODULE := audio.primary.tegra
-ifeq ($(TARGET_TEGRA_VERSION),t114)
-LOCAL_SRC_FILES := lib/hw/audio.primary.tegra.$(TARGET_TEGRA_VERSION).so
-else
 LOCAL_SRC_FILES := lib/hw/audio.primary.tegra.so
-endif
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
