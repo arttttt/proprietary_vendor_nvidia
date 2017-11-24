@@ -52,5 +52,4 @@ PRODUCT_PACKAGES += \
 
 # Executables & Apps
 PRODUCT_PACKAGES += \
-    conn_init \
-    MochaProfiles
+    conn_init
