@@ -49,7 +49,3 @@ PRODUCT_PACKAGES += \
     lights.tegra \
     libsensors.lsm6db0 \
     libsensors.mpu6515
-
-# Executables & Apps
-PRODUCT_PACKAGES += \
-    conn_init
