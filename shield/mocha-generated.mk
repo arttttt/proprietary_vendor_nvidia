@@ -70,6 +70,8 @@ PRODUCT_PACKAGES += \
                     libGLESv1_CM_tegra \
                     libglcore \
                     libGLESv2_tegra \
+                    libnvRSDriver \
+                    libnvRSCompiler \
                     libnvwsi \
                     libnvmm_audio \
                     libnvmm_msaudio \

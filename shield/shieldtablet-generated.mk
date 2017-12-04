@@ -80,6 +80,8 @@ PRODUCT_PACKAGES += \
                     libGLESv1_CM_tegra \
                     libglcore \
                     libGLESv2_tegra \
+                    libnvRSDriver \
+                    libnvRSCompiler \
                     libnvwsi \
                     glgps_nvidiaTegra2android \
                     gps.brcm \

@@ -91,6 +91,8 @@ PRODUCT_PACKAGES += \
                     libGLESv1_CM_tegra_32 \
                     libglcore_32 \
                     libGLESv2_tegra_32 \
+                    libnvRSDriver_32 \
+                    libnvRSCompiler_32 \
                     libnvwsi_32 \
                     libEGL_tegra \
                     libtsec_wrapper \
@@ -101,6 +103,9 @@ PRODUCT_PACKAGES += \
                     libGLESv1_CM_tegra \
                     libglcore \
                     libGLESv2_tegra \
+                    libnvRSDriver \
+                    libcuda \
+                    libnvRSCompiler \
                     libnvwsi \
                     glgps_nvidiaTegra2android_32 \
                     gps.brcm \

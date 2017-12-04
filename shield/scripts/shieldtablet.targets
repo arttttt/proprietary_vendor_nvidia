@@ -18,6 +18,7 @@ raydium/lib/touch_para_10.so
 graphics/lib/egl/libEGL_tegra.so
 graphics/lib/egl/libGLESv1_CM_tegra.so
 graphics/lib/egl/libGLESv2_tegra.so
+graphics/lib/libnvRSDriver.so
 graphics/lib/libnvwsi.so
 gps/bin32/glgps_nvidiaTegra2android
 gps/lib/hw/gps.brcm.so
