@@ -200,5 +200,6 @@ else
     #restart the RIL and CPO
     SetUsbSuspend "auto"
     start icera-switcher
+    start ril-daemon
 
 fi
