@@ -13,7 +13,9 @@
 # limitations under the License.
 
 PRODUCT_PACKAGES += \
-                    libWVStreamControlAPI_L1 \
                     liboemcrypto \
-                    libwvdrm_L1 \
                     libwvdrmengine
+
+ifeq ($(TARGET_ARCH),arm64)
+PRODUCT_PACKAGES += libwvdrmengine_32
+endif
