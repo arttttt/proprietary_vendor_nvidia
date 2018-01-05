@@ -105,4 +105,5 @@ PRODUCT_PACKAGES += para_10_02_00_a0 \
                     para_10_0b_00_a0
 
 # Variant oemcrypto
-PRODUCT_PACKAGES += liboemcrypto.loki
+PRODUCT_PACKAGES += liboemcrypto.loki \
+                    liboemcrypto.darcy
