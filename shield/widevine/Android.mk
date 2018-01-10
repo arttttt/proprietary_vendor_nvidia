@@ -80,6 +80,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
+ifeq ("$(wildcard external/stlport/Android.mk)","")
 include $(CLEAR_VARS)
 LOCAL_MODULE := libstlport
 LOCAL_SRC_FILES := lib/libstlport.so
@@ -90,3 +91,4 @@ LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIB
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := widevine
 include $(BUILD_PREBUILT)
+endif
