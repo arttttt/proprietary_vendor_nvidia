@@ -21,7 +21,7 @@ LOCAL_SRC_FILES := bcm4354/sdio-ag-p2p-pno-aoe-pktfilter-keepalive-sr-mchan-pktc
 else ifeq ($(TARGET_TEGRA_VERSION),t210)
 LOCAL_SRC_FILES := bcm4354/sdio-ag-p2p-pno-aoe-pktfilter-keepalive-sr-mchan-pktctx-proptxstatus-ampduhostreorder-lpc-pwropt-txbf-wl11u-mfp-tdls-ltecx-wfds-mchandump-atv.bin
 else ifeq ($(TARGET_DEVICE),jetson)
-LOCAL_SRC_FILES := bcm4356/fw_bcmdhd.bin
+LOCAL_SRC_FILES := bcm4356/fw_bcmdhd_56.bin
 else ifneq ($(filter t114 t124,$(TARGET_TEGRA_VERSION)),)
 LOCAL_SRC_FILES := bcm43241/sdio-ag-pno-p2p-proptxstatus-dmatxrc-rxov-pktfilter-keepalive-aoe-vsdb-wapi-wl11d-sr-srvsdb-opt1.bin
 endif
@@ -53,11 +53,11 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := BCM2045A0-13d3-3488.hcd
+LOCAL_MODULE := bcm4356
 LOCAL_SRC_FILES := bcm4356/BCM2045A0-13d3-3488.hcd
 LOCAL_MODULE_SUFFIX := .hcd
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/firmware/brcm
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/firmware
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
@@ -110,6 +110,15 @@ include $(BUILD_PREBUILT)
 include $(CLEAR_VARS)
 LOCAL_MODULE := nvram_loki_e_antenna_tuned_4354
 LOCAL_SRC_FILES := bcm4354/nvram_loki_e_antenna_tuned_4354.txt
+LOCAL_MODULE_SUFFIX := .txt
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := nvram_4356
+LOCAL_SRC_FILES := bcm4356/nvram.txt
 LOCAL_MODULE_SUFFIX := .txt
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_TAGS := optional
