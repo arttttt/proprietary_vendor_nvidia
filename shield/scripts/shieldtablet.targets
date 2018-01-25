@@ -1,5 +1,5 @@
 hal/lib/hw/audio.primary.tegra.so
-hal/lib/hw/camera.tegra.so
+hal/lib/hw/camera.tegra.t124.so
 hal/lib/hw/gralloc.tegra.so
 hal/lib/hw/hwcomposer.tegra.so
 hal/lib/hw/keystore.tegra.so

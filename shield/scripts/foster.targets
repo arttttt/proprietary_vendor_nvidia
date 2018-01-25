@@ -1,5 +1,5 @@
 hal/lib/hw/audio.primary.tegra.so
-hal/lib/hw/camera.tegra.so
+hal/lib/hw/camera.tegra.t210.so
 hal/lib/hw/gralloc.tegra.so
 hal/lib/hw/hdmi_cec.tegra.so
 hal/lib/hw/hwcomposer.tegra.so
@@ -13,6 +13,9 @@ hal/lib64/hw/keystore.v0.tegra.so
 hal/lib64/hw/keystore.v1.tegra.so
 hal/lib64/hw/memtrack.tegra.so
 hal/lib64/hw/vulkan.tegra.so
+icera/lib64/libril-icera.so
+icera/bin64/icera-switcherd
+icera/bin64/downloader
 sensors/lib64/hw/sensors.default.api_v1.4.mpl530.nvs.so
 security/bin64/eks2_client
 security/bin64/tlk_daemon
