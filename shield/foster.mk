@@ -77,6 +77,7 @@ PRODUCT_PACKAGES += \
 # Scripts / non-binary
 PRODUCT_PACKAGES += run_ss_status.sh \
                     gps_select \
+                    modemnic \
                     eks2.dat \
                     eks2_darcy.dat \
                     hdcp1x \
