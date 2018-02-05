@@ -90,6 +90,7 @@ PRODUCT_PACKAGES += \
                     libnvcpl_32 \
                     libGLESv1_CM_tegra_32 \
                     libglcore_32 \
+                    libw_32 \
                     libGLESv2_tegra_32 \
                     libnvwsi_32 \
                     libEGL_tegra \
