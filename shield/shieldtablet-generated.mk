@@ -43,6 +43,7 @@ PRODUCT_PACKAGES += \
                     libnvfnet \
                     libnvfnetstorehdfx \
                     libnvfnetstoredefog \
+                    libprotobuf-cpp-lold \
                     libnvcamerahdr_v3 \
                     libnvcameranrr \
                     libnvcudautils \
