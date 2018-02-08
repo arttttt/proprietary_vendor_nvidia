@@ -494,10 +494,10 @@ libpiex
 pigz
 powertop
 pppd
-libprotobuf
-libprotobuf
-libprotobuf
-libprotobuf
+libprotobuf-c-full
+libprotobuf-c-lite
+libprotobuf-cpp-full
+libprotobuf-cpp-lite
 f54test
 rmi4update
 rmihidtool
