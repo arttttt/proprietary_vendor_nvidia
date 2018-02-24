@@ -1,16 +1,50 @@
 #!/system/bin/sh
-echo "cat BKB partition"
-BKB=$(cat /dev/block/platform/sdhci-tegra.3/by-name/BKB | grep -a XIAOMI)
-echo "cat of BKB partition was sucessfull"
-if [ "$BKB" = "" ]; then
-echo "BKB partition is NULL, generating the mac"
-Serialno=$(echo $(dmesg | grep -i androidboot.serialno) | sed 's|.*serialno=||' | awk '{print $1}')
-md5sumserialno=$(echo -n $Serialno | md5sum)
-mac="0c:1d:${md5sumserialno:7:2}:${md5sumserialno:9:2}:${md5sumserialno:11:2}:${md5sumserialno:14:2}"
-mount -o remount,rw /system
-echo $mac > /system/etc/mocha_macaddr.txt
-chmod 644 /system/etc/mocha_macaddr.txt
-mount -o remount,ro /system
-else
-echo "original mac address found"
-fi
+
+TAG="mac_generator"
+
+bkbIsBroken=0
+#for Android
+Serialno=$(getprop ro.serialno)
+#for big Linux systems
+#Serialno=$(echo $(dmesg | grep -i androidboot.serialno) | sed 's|.*serialno=||' | awk '{print $1}')
+md5serialno=$(echo -n $Serialno | md5sum)
+
+checkBkbPartion() {
+	echo "$TAG: attempt to read BKB partition"
+	local BKB=$(cat /dev/block/platform/sdhci-tegra.3/by-name/BKB | grep -a XIAOMI)
+	if [ "$BKB" = "" ]; then
+		bkbIsBroken=1
+	fi;
+}
+
+generateBtMac() {
+	echo "$TAG: generating bt mac address"
+	local btMac="${md5serialno:3:2}:${md5serialno:16:2}:${md5serialno:17:2}:${md5serialno:9:2}:${md5serialno:11:2}:${md5serialno:13:2}"
+	echo $btMac > /system/etc/mocha_btmacaddr.txt
+	chown bluetooth net_bt_stack /system/etc/mocha_btmacaddr.txt
+	setprop ro.bt.bdaddr_path /system/etc/mocha_btmacaddr.txt
+	setprop persist.service.bdroid.bdaddr $btMac
+	setprop ro.boot.btmacaddr $btMac
+}
+
+generateWifiMac() {
+	echo "$TAG: generating wifi mac address"
+	local wifiMac="0c:1d:${md5serialno:7:2}:${md5serialno:9:2}:${md5serialno:11:2}:${md5serialno:14:2}"
+	echo $wifiMac > /system/etc/mocha_macaddr.txt
+	chmod 644 /system/etc/mocha_macaddr.txt
+}
+
+main() {
+	checkBkbPartion
+
+	if [ "$bkbIsBroken" = 1 ]; then
+		mount -o remount,rw /system
+		generateBtMac
+		generateWifiMac
+		mount -o remount,ro /system
+	else
+		echo "$TAG: BKB partion is not broken"
+	fi;
+}
+
+main
