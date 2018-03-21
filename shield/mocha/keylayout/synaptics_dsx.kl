@@ -26,5 +26,5 @@
 
 key 139    APP_SWITCH    VIRTUAL
 key 102    HOME          VIRTUAL
-key 116    POWER         VIRTUAL WAKE
+key 116    POWER         VIRTUAL
 key 158    BACK          VIRTUAL
