@@ -377,16 +377,6 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := nvhost_nvdec_bl_no_wpr020
-LOCAL_SRC_FILES := tegra21x/nvhost_nvdec_bl_no_wpr020.fw
-LOCAL_MODULE_SUFFIX := .fw
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/firmware/tegra21x
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE := nvhost_nvenc050
 LOCAL_SRC_FILES := tegra21x/nvhost_nvenc050.fw
 LOCAL_MODULE_SUFFIX := .fw
