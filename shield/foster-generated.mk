@@ -74,9 +74,9 @@ PRODUCT_PACKAGES += \
                     keystore.v1.tegra \
                     memtrack.tegra \
                     vulkan.tegra \
-                    libril-icera \
-                    icera-switcherd \
-                    downloader \
+                    libril-icera_32 \
+                    icera-switcherd_32 \
+                    downloader_32 \
                     sensors.default.api_v1.4.mpl530.nvs \
                     libsensors.hal.nvs \
                     libsensors.hal-drivers.nvs \
