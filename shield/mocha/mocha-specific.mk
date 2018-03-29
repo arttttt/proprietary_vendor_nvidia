@@ -33,7 +33,6 @@ PRODUCT_PACKAGES += \
 
 # HAL
 PRODUCT_PACKAGES += \
-    lights.tegra \
     libsensors.lsm6db0 \
     libsensors.mpu6515
     
