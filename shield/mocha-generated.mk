@@ -16,7 +16,6 @@ PRODUCT_PACKAGES += \
                     libnvos \
                     libnvoice \
                     libnvaudiofx \
-                    camera.tegra \
                     libnvddk_2d_v2 \
                     libnvrm \
                     libnvrm_graphics \
