@@ -25,8 +25,8 @@ graphics/lib64/egl/libEGL_tegra.so
 graphics/lib64/egl/libGLESv1_CM_tegra.so
 graphics/lib64/egl/libGLESv2_tegra.so
 graphics/lib64/libnvwsi.so
-gps/bin64/glgps_nvidiaTegra2android
-gps/lib64/hw/gps.brcm.so
+gps/bin32/glgps_nvidiaTegra2android
+gps/lib/hw/gps.brcm.so
 nvmm/lib/libnvmm_audio.so
 nvmm/lib/libnvmm_msaudio.so
 nvmm/lib/libnvmm_parser.so

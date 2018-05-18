@@ -113,7 +113,7 @@ PRODUCT_PACKAGES += \
                     libnvRSCompiler \
                     libnvwsi \
                     glgps_nvidiaTegra2android_32 \
-                    gps.brcm \
+                    gps.brcm_32 \
                     libnvmm_audio_32 \
                     libnvmm_msaudio_32 \
                     libnvmm_parser_32 \
