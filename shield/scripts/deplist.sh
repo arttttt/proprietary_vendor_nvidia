@@ -12,13 +12,13 @@ finddep()
   filearr+=($(find .. -name "$1.so"))
   for possdep in ${filearr[@]};
   do
-    if [ "$(file -b ${possdep} |awk -F, '{ gsub(/^[ \t]+/,"",$2); print $2 }')" == "$2" ]; then
+    if [ "$(readelf -h ${possdep} |grep Machine |awk '{ print tolower($2) }')" == "$2" ]; then
       deploc=${possdep};
       break;
     fi;
   done;
 
-  if [ "${TARGETARCH}" == "aarch64" -a "${2}" == "ARM" ]; then
+  if [ "${TARGETARCH}" == "aarch64" -a "${2}" == "arm" ]; then
     depname=${1}_32;
   else
     depname=${1};
@@ -39,7 +39,7 @@ getdeps()
 {
   if [ -z "${1}" ]; then return; fi;
 
-  FILEARCH=$(file -b ${1} |awk -F, '{ gsub(/^[ \t]+/,"",$2); print $2 }');
+  FILEARCH=$(readelf -h ${1} |grep Machine |awk '{ print tolower($2) }');
   for dep in $(objdump -x ${1} |grep NEEDED |awk '{ print $2 }' |rev |cut -d. -f2- |rev); do
     if ! grep "^${dep} ${FILEARCH}$" deplist_checked.txt >/dev/null; then
       finddep ${dep} "${FILEARCH}"
@@ -74,7 +74,7 @@ echo "PRODUCT_PACKAGES += \\" > deplist_notfound.txt
 
 while read file; do
   filename="$(echo "${file}" |sed 's/.'${TARGETVERSION}'//' |rev |cut -d. -f2- |cut -d/ -f1 |rev)"
-  if [ "${TARGETARCH}" == "aarch64" -a "$(file -b ../${file} |awk -F, '{ gsub(/^[ \t]+/,"",$2); print $2 }')" == "ARM" ]; then
+  if [ "${TARGETARCH}" == "aarch64" -a "$(readelf -h ../${file} |grep Machine |awk '{ print tolower($2) }')" == "arm" ]; then
     filename=${filename}_32;
   fi;
   echo "                    ${filename} \\" >> ../${DEVICE}-generated.mk;
