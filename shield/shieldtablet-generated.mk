@@ -49,6 +49,7 @@ PRODUCT_PACKAGES += \
                     libnvcudautils \
                     gralloc.tegra \
                     libnvblit \
+                    hdmi_cec.tegra \
                     hwcomposer.tegra \
                     libnvhwc_service \
                     libtlk_secure_hdcp_up \
