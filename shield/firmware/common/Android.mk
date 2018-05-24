@@ -18,7 +18,7 @@ include $(CLEAR_VARS)
 LOCAL_MODULE := fw_bcmdhd
 ifeq ($(TARGET_DEVICE),hawkeye)
 LOCAL_SRC_FILES := bcm4354/sdio-ag-p2p-pno-aoe-pktfilter-keepalive-sr-mchan-pktctx-proptxstatus-ampduhostreorder-lpc-pwropt-txbf-wl11u-mfp-tdls-ltecx-wfds-mchandump-dfsago-tab.bin
-else ifeq ($(TARGET_TEGRA_VERSION),t210)
+else ifneq ($(filter t210 t186,$(TARGET_TEGRA_VERSION)),)
 LOCAL_SRC_FILES := bcm4354/sdio-ag-p2p-pno-aoe-pktfilter-keepalive-sr-mchan-pktctx-proptxstatus-ampduhostreorder-lpc-pwropt-txbf-wl11u-mfp-tdls-ltecx-wfds-mchandump-atv.bin
 else ifeq ($(TARGET_DEVICE),jetson)
 LOCAL_SRC_FILES := bcm4356/fw_bcmdhd_56.bin
