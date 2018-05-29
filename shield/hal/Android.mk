@@ -39,6 +39,17 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := gatekeeper.tlk.tegra
+LOCAL_SRC_FILES := lib/hw/gatekeeper.tlk.tegra.so
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_TARGET_ARCH := arm
+LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)/hw
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := gralloc.tegra
 ifeq ($(TARGET_TEGRA_VERSION),t114)
 LOCAL_SRC_FILES := lib/hw/gralloc.tegra.$(TARGET_TEGRA_VERSION).so
@@ -128,8 +139,8 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := gatekeeper.tegra
-LOCAL_SRC_FILES := lib64/hw/gatekeeper.tegra.so
+LOCAL_MODULE := gatekeeper.tlk.tegra
+LOCAL_SRC_FILES := lib64/hw/gatekeeper.tlk.tegra.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm64
