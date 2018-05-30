@@ -49,7 +49,6 @@ PRODUCT_COPY_FILES += \
     vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/pair_success_JARVIS.mp4:system/vendor/oem/media/blakepairing/pairing/pair_success_JARVIS.mp4 \
     vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/pair_success_PEPPER.mp4:system/vendor/oem/media/blakepairing/pairing/pair_success_PEPPER.mp4 \
     vendor/nvidia/shield/shieldtech/media/blakepairing/pairing/pair_success_THUNDERSTRIKE.mp4:system/vendor/oem/media/blakepairing/pairing/pair_success_THUNDERSTRIKE.mp4 \
-    vendor/nvidia/shield/shieldtech/media/blakepairing/battery/replace_pepper_battery.mp4:system/vendor/oem/media/blakepairing/battery/replace_pepper_battery.mp4 \
     vendor/nvidia/shield/shieldtech/media/blakepairing/first_pair/BJ/EU/first_pair_loop.mp4:system/vendor/oem/media/blakepairing/first_pair/BJ/EU/first_pair_loop.mp4 \
     vendor/nvidia/shield/shieldtech/media/blakepairing/first_pair/BJ/first_pair_loop.mp4:system/vendor/oem/media/blakepairing/first_pair/BJ/first_pair_loop.mp4 \
     vendor/nvidia/shield/shieldtech/media/blakepairing/first_pair/BJ/first_pair_start.mp4:system/vendor/oem/media/blakepairing/first_pair/BJ/first_pair_start.mp4 \
