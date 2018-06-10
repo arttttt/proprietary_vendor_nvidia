@@ -29,7 +29,7 @@ PRODUCT_PACKAGES += \
     vendor.nvidia.hardware.shieldtech.inputflinger@1.0-service \
     vendor.nvidia.hardware.shieldtech.inputflinger@1.0-service.rc \
     vendor.nvidia.hardware.shieldtech.inputflinger@1.0 \
-    vendor.nvidia.hardware.shieldtech.input@1.0.so
+    vendor.nvidia.hardware.shieldtech.input@1.0
 
 ifeq ($(TARGET_ARCH),arm64)
 PRODUCT_PACKAGES += \
