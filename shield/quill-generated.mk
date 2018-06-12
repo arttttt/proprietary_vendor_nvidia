@@ -17,9 +17,12 @@ PRODUCT_PACKAGES += \
                     libnvos_32 \
                     libnvoice_32 \
                     libnvaudiofx_32 \
+                    gatekeeper.trusty.tegra_32 \
+                    libtrusty_32 \
                     gralloc.tegra_32 \
                     libnvgr_32 \
                     libnvrm_32 \
+                    libnvcolorutil_32 \
                     libnvrm_graphics_32 \
                     libnvblit_32 \
                     libnvddk_vic_32 \
@@ -36,54 +39,57 @@ PRODUCT_PACKAGES += \
                     libnvgr \
                     libnvos \
                     libnvrm \
+                    libnvcolorutil \
                     libnvrm_graphics \
                     libnvblit \
                     libnvddk_vic \
                     libnvrm_gpu \
                     hwcomposer.tegra \
                     libnvhwc_service \
+                    libnvdc \
+                    libnvimp \
                     libtlk_secure_hdcp_up \
                     libtsechdcp \
-                    gatekeeper.tegra \
+                    gatekeeper.trusty.tegra \
+                    libtrusty \
                     keystore.v0.tegra \
                     keystore.v1.tegra \
                     memtrack.tegra \
                     vulkan.tegra \
-                    sensors.default.api_v1.4.mpl530.nvs \
+                    sensors.t210ref.api_v1.4.mpl530.nvs \
                     libsensors.hal.nvs \
                     libsensors.hal-drivers.nvs \
                     libsensors.fusion.mpl530.nvs \
-                    libsensors.prefusion.mpl530.nvs \
                     libmplmpu \
                     libmllite \
                     eks2_client \
-                    tlk_daemon \
                     ss_status \
                     libEGL_tegra_32 \
-                    libtsec_wrapper_32 \
                     libnvglsi_32 \
                     libnvrmapi_tegra_32 \
                     libnvcpl_32 \
-                    libphs_32 \
+                    libnvphs_32 \
                     libGLESv1_CM_tegra_32 \
                     libglcore_32 \
-                    libw_32 \
+                    libnvdc_32 \
+                    libnvimp_32 \
                     libGLESv2_tegra_32 \
                     libnvRSDriver_32 \
                     libcuda_32 \
+                    libnvidia-fatbinaryloader_32 \
                     libnvRSCompiler_32 \
                     libnvwsi_32 \
                     libEGL_tegra \
-                    libtsec_wrapper \
                     libnvglsi \
                     libnvrmapi_tegra \
                     libnvcpl \
-                    libphs \
+                    libnvphs \
                     libGLESv1_CM_tegra \
                     libglcore \
                     libGLESv2_tegra \
                     libnvRSDriver \
                     libcuda \
+                    libnvidia-fatbinaryloader \
                     libnvRSCompiler \
                     libnvwsi \
                     libnvmm_audio_32 \

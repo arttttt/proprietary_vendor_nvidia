@@ -1,4 +1,5 @@
 hal/lib/hw/audio.primary.tegra.so
+hal/lib/hw/gatekeeper.trusty.tegra.so
 hal/lib/hw/gralloc.tegra.so
 hal/lib/hw/hdmi_cec.tegra.so
 hal/lib/hw/hwcomposer.tegra.so
@@ -7,14 +8,13 @@ hal/lib/hw/vulkan.tegra.so
 hal/lib64/hw/hdmi_cec.tegra.so
 hal/lib64/hw/gralloc.tegra.so
 hal/lib64/hw/hwcomposer.tegra.so
-hal/lib64/hw/gatekeeper.tegra.so
+hal/lib64/hw/gatekeeper.trusty.tegra.so
 hal/lib64/hw/keystore.v0.tegra.so
 hal/lib64/hw/keystore.v1.tegra.so
 hal/lib64/hw/memtrack.tegra.so
 hal/lib64/hw/vulkan.tegra.so
-sensors/lib64/hw/sensors.default.api_v1.4.mpl530.nvs.so
+sensors/lib64/hw/sensors.t210ref.api_v1.4.mpl530.nvs.so
 security/bin64/eks2_client
-security/bin64/tlk_daemon
 security/bin64/ss_status
 graphics/lib/egl/libEGL_tegra.so
 graphics/lib/egl/libGLESv1_CM_tegra.so
