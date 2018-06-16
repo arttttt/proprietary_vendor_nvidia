@@ -92,6 +92,8 @@ PRODUCT_PACKAGES += \
                     eks2_client \
                     tlk_daemon \
                     ss_status \
+                    libtsec_wrapper_32 \
+                    libtsec_wrapper \
                     libEGL_tegra_32 \
                     libnvglsi_32 \
                     libnvrmapi_tegra_32 \

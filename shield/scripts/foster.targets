@@ -21,6 +21,8 @@ sensors/lib64/hw/sensors.t210ref.api_v1.4.mpl530.nvs.so
 security/bin64/eks2_client
 security/bin64/tlk_daemon
 security/bin64/ss_status
+security/lib/libtsec_wrapper.t210.so
+security/lib64/libtsec_wrapper.so
 graphics/lib/egl/libEGL_tegra.so
 graphics/lib/egl/libGLESv1_CM_tegra.so
 graphics/lib/egl/libGLESv2_tegra.so
