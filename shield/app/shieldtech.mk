@@ -25,12 +25,7 @@ PRODUCT_PACKAGES += \
     liblota \
     libhidraw \
     libnvcontrol_jni \
-    libnvhwc_service \
-    libnvwifi-service \
-    vendor.nvidia.hardware.shieldtech.inputflinger@1.0-service \
-    vendor.nvidia.hardware.shieldtech.inputflinger@1.0-service.rc \
-    vendor.nvidia.hardware.shieldtech.inputflinger@1.0 \
-    vendor.nvidia.hardware.shieldtech.input@1.0
+    libnvhwc_service
 
 ifeq ($(TARGET_ARCH),arm64)
 PRODUCT_PACKAGES += \
@@ -39,7 +34,6 @@ PRODUCT_PACKAGES += \
     libhidraw_32 \
     libnvcontrol_jni_32 \
     libnvhwc_service_32 \
-    vendor.nvidia.hardware.shieldtech.inputflinger@1.0
 endif
 
 endif
