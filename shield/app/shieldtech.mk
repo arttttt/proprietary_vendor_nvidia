@@ -26,6 +26,7 @@ PRODUCT_PACKAGES += \
     libhidraw \
     libnvcontrol_jni \
     libnvhwc_service \
+    libnvwifi-service \
     vendor.nvidia.hardware.shieldtech.inputflinger@1.0-service \
     vendor.nvidia.hardware.shieldtech.inputflinger@1.0-service.rc \
     vendor.nvidia.hardware.shieldtech.inputflinger@1.0 \
