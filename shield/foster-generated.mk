@@ -115,8 +115,8 @@ PRODUCT_PACKAGES += \
                     libnvidia-fatbinaryloader \
                     libnvRSCompiler \
                     libnvwsi \
-                    glgps_nvidiaTegra2android_32 \
-                    gps.brcm_32 \
+                    glgps_nvidiaTegra2android \
+                    gps.brcm \
                     libnvmm_audio_32 \
                     libnvmm_msaudio_32 \
                     libnvmm_parser_32 \
