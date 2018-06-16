@@ -33,7 +33,7 @@ PRODUCT_PACKAGES += \
     liblota_32 \
     libhidraw_32 \
     libnvcontrol_jni_32 \
-    libnvhwc_service_32 \
+    libnvhwc_service_32
 endif
 
 endif

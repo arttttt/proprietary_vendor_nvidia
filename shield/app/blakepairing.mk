@@ -15,7 +15,9 @@
 ifeq ($(NV_ANDROID_FRAMEWORK_ENHANCEMENTS_BLAKE),TRUE)
 
 # Apk
-PRODUCT_PACKAGES += BlakePairing
+PRODUCT_PACKAGES += \
+    BlakePairing \
+    NvRpxService
 
 # Bins
 PRODUCT_PACKAGES += \
