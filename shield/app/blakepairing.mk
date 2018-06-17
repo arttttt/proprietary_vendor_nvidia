@@ -37,6 +37,14 @@ PRODUCT_PACKAGES += \
     vendor.nvidia.hardware.shieldtech.inputflinger@1.0_32
 endif
 
+# Controller firmware updates
+PRODUCT_COPY_FILES += \
+    vendor/nvidia/shield/shieldtech/firmware/Blake.blkz:system/vendor/oem/firmware/Blake.blkz \
+    vendor/nvidia/shield/shieldtech/firmware/Jarvis.blkz:system/vendor/oem/firmware/Jarvis.blkz \
+    vendor/nvidia/shield/shieldtech/firmware/Pepper.blkz:system/vendor/oem/firmware/Pepper.blkz \
+    vendor/nvidia/shield/shieldtech/firmware/Thunderstrike.blkz:system/vendor/oem/firmware/Thunderstrike.blkz \
+    vendor/nvidia/shield/shieldtech/firmware/Thunderstrike_locale.blkz:system/vendor/oem/firmware/Thunderstrike_locale.blkz
+
 # Media files
 PRODUCT_COPY_FILES += \
     vendor/nvidia/shield/shieldtech/media/sync_test.mp4:system/vendor/oem/media/sync_test.mp4 \
