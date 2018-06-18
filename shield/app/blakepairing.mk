@@ -19,6 +19,10 @@ PRODUCT_PACKAGES += \
     BlakePairing \
     NvRpxService
 
+ifeq ($(PRODUCT_IS_ATV),true)
+    PRODUCT_PACKAGES += AccessoryUiTv
+endif
+
 # Bins
 PRODUCT_PACKAGES += \
     blake \
