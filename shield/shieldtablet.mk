@@ -37,6 +37,8 @@ PRODUCT_PACKAGES += \
                     model_frontal \
                     nvram_43241 \
                     bcm43241 \
+                    nvram_4329 \
+                    bcm4329 \
                     fw_bcmdhd \
                     public.libraries \
                     nvavp_aacdec_ucode \
