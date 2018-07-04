@@ -42,9 +42,14 @@ nvmm/lib/libnvmm_writer.so
 nvmm/lib/libnvmmlite_audio.so
 nvmm/lib/libnvmmlite_image.so
 nvmm/lib/libnvmmlite_video.t210.so
+nvmm/lib64/libnvmm_parser.so
+nvmm/lib64/libnvmmlite_image.so
+nvmm/lib64/libnvmmlite_video.so
 media/lib/libnvomx.so
 media/lib/libnvomxadaptor.so
 media/lib/libnvomxilclient.so
+media/lib64/libnvomx.so
+media/lib64/libnvomxadaptor.so
 raydium/bin32/rm_ts_server
 raydium/lib/hw/ts.default.so
 raydium/lib/librm31080.so

@@ -132,9 +132,26 @@ PRODUCT_PACKAGES += \
                     libnvmmlite_video_32 \
                     libnvtnr_32 \
                     libnvmedia_32 \
+                    libnvmm_parser \
+                    libnvmm_utils \
+                    libnvavp \
+                    libnvmm_contentpipe \
+                    libnvmmlite_image \
+                    libnvmmlite_utils \
+                    libnvmmlite \
+                    libnvparser \
+                    libnvtvmr \
+                    libnvddk_2d_v2 \
+                    libnvmmlite_video \
+                    libnvtnr \
+                    libnvmedia \
                     libnvomx_32 \
                     libnvomxadaptor_32 \
                     libnvomxilclient_32 \
+                    libnvomx \
+                    libnvmm \
+                    libnvvpp \
+                    libnvomxadaptor \
                     rm_ts_server_32 \
                     librm_ts_service_32 \
                     ts.default_32 \
