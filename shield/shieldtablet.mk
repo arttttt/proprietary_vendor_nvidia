@@ -59,6 +59,9 @@ PRODUCT_PACKAGES += \
                     nvhost_tsec \
                     vic03_ucode
 
+# Camera workaround
+PRODUCT_PACKAGES += libscf
+
 # Raydium support
 PRODUCT_PACKAGES += para_10_02_00_a0 \
                     para_10_03_00_20 \

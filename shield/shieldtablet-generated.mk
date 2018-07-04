@@ -47,6 +47,19 @@ PRODUCT_PACKAGES += \
                     keystore.tegra \
                     memtrack.tegra \
                     vulkan.tegra \
+                    libnvscf \
+                    libnvisp_v3 \
+                    libnvisp \
+                    libnvmm_camera_v3 \
+                    libnvodm_imager \
+                    libnvcamv4l2 \
+                    libnvvicsi_v3 \
+                    libcuda \
+                    libnvphs \
+                    libnvidia-fatbinaryloader \
+                    libnvfnet \
+                    libnvfnetstorehdfx \
+                    libnvfnetstoredefog \
                     sensors.default.api_v1.3.mpl520.nvs \
                     libsensors.hal.nvs \
                     libsensors.hal-drivers.nvs \
@@ -68,15 +81,12 @@ PRODUCT_PACKAGES += \
                     libnvglsi \
                     libnvrmapi_tegra \
                     libnvcpl \
-                    libnvphs \
                     libGLESv1_CM_tegra \
                     libglcore \
                     libnvdc \
                     libnvimp \
                     libGLESv2_tegra \
                     libnvRSDriver \
-                    libcuda \
-                    libnvidia-fatbinaryloader \
                     libnvRSCompiler \
                     libnvwsi \
                     glgps_nvidiaTegra2android \

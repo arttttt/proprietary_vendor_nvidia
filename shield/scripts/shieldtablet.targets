@@ -6,6 +6,7 @@ hal/lib/hw/hwcomposer.tegra.so
 hal/lib/hw/keystore.tegra.so
 hal/lib/hw/memtrack.tegra.so
 hal/lib/hw/vulkan.tegra.so
+camera/lib/libnvscf.so
 sensors/lib/hw/sensors.default.api_v1.3.mpl520.nvs.so
 icera/lib/libril-icera.so
 icera/bin32/icera-switcherd
