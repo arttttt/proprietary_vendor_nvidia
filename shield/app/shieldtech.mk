@@ -26,7 +26,8 @@ PRODUCT_PACKAGES += \
     liblota \
     libhidraw \
     libnvcontrol_jni \
-    libnvhwc_service
+    libnvhwc_service \
+    libadaptordecoder
 
 ifeq ($(TARGET_ARCH),arm64)
 PRODUCT_PACKAGES += \
