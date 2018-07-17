@@ -21,6 +21,12 @@ $(call inherit-product, vendor/nvidia/shield/app/consoleui.mk)
 $(call inherit-product, vendor/nvidia/shield/ussrd/ussrd.mk)
 $(call inherit-product, vendor/nvidia/shield/widevine/widevine.mk)
 
+# Bootloader update
+PRODUCT_PACKAGES += \
+                    darcy.blob \
+                    foster_e.blob \
+                    foster_e_hdd.blob
+
 # Firmware
 PRODUCT_PACKAGES += \
                     model_frontal \
