@@ -33,6 +33,16 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE := fw_bcmdhd-4354-N
+LOCAL_SRC_FILES := bcm4354/sdio-ag-p2p-pno-aoe-pktfilter-keepalive-sr-mchan-pktctx-proptxstatus-ampduhostreorder-lpc-pwropt-txbf-wl11u-mfp-tdls-ltecx-wfds-mchandump-atv-N.bin
+LOCAL_MODULE_SUFFIX := .bin
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_OWNER := nvidia
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := bcm4350
 LOCAL_SRC_FILES := bcm4354/BCM4354_003.001.012.0163.0000_Nvidia_NV54_TEST_ONLY.hcd
 LOCAL_MODULE_SUFFIX := .hcd

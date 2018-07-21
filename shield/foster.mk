@@ -36,6 +36,7 @@ PRODUCT_PACKAGES += \
                     nvram_loki_e_4354 \
                     nvram_loki_e_antenna_tuned_4354 \
                     fw_bcmdhd \
+                    fw_bcmdhd-4354-N \
                     bcm4350 \
                     public.libraries \
                     adsp \
