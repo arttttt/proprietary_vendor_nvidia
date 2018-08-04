@@ -83,8 +83,7 @@ PRODUCT_PACKAGES += \
                     libnvcpl \
                     libGLESv1_CM_tegra \
                     libglcore \
-                    libnvdc \
-                    libnvimp \
+                    libw \
                     libGLESv2_tegra \
                     libnvRSDriver \
                     libnvRSCompiler \
