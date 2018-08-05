@@ -21,6 +21,7 @@ PRODUCT_PACKAGES += \
                     libnvddk_2d_v2 \
                     libnvrm \
                     libnvrm_graphics \
+                    libnvcolorutil \
                     libnvddk_vic \
                     libnvgr \
                     libnvmm_utils \
