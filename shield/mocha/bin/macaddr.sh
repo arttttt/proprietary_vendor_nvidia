@@ -21,7 +21,7 @@ generateBtMac() {
 	echo "$TAG: generating bt mac address"
 	local btMac="${md5serialno:3:2}:${md5serialno:16:2}:${md5serialno:17:2}:${md5serialno:9:2}:${md5serialno:11:2}:${md5serialno:13:2}"
 	echo $btMac > /vendor/etc/mocha_btmacaddr.txt
-	chown bluetooth bluetooth /vendor/etc/mocha_btmacaddr.txt
+	chown bluetooth:bluetooth /vendor/etc/mocha_btmacaddr.txt
 	setprop ro.bt.bdaddr_path /vendor/etc/mocha_btmacaddr.txt
 	setprop persist.service.bdroid.bdaddr $btMac
 	setprop ro.boot.btmacaddr $btMac
