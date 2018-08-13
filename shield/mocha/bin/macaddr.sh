@@ -9,7 +9,7 @@ Serialno=$(getprop ro.serialno)
 #Serialno=$(echo $(dmesg | grep -i androidboot.serialno) | sed 's|.*serialno=||' | awk '{print $1}')
 md5serialno=$(echo -n $Serialno | md5sum)
 
-checkBkbPartion() {
+checkBkbPartition() {
 	echo "$TAG: attempt to read BKB partition"
 	local BKB=$(cat /dev/block/platform/sdhci-tegra.3/by-name/BKB | grep -a XIAOMI)
 	if [ "$BKB" = "" ]; then
@@ -35,7 +35,7 @@ generateWifiMac() {
 }
 
 main() {
-	checkBkbPartion
+	checkBkbPartition
 
 	if [ "$bkbIsBroken" = 1 ]; then
 		mount -o remount,rw /system
