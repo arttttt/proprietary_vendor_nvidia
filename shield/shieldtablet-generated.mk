@@ -29,13 +29,22 @@ PRODUCT_PACKAGES += \
                     libnvtvmr \
                     libnvcam_imageencoder \
                     libnvmm \
+                    libnvmm_camera_v3 \
+                    libnvodm_imager \
+                    libnvcamerautils \
                     libnvcamlog \
-                    libnvcamerahdr_v3 \
+                    libnvcamv4l2 \
+                    libnvisp_v3 \
+                    libnvvicsi_v3 \
+                    libnvcspline \
                     libopencv24_tegra \
                     libtbb \
-                    libnvcameranrr \
-                    libnvcudautils \
-                    libnvcamerautils \
+                    libnvscf \
+                    libnvisp \
+                    libnvphs \
+                    libnvfnet \
+                    libnvfnetstorehdfx \
+                    libnvfnetstoredefog \
                     gralloc.tegra \
                     libnvblit \
                     libnvrm_gpu \
@@ -49,17 +58,6 @@ PRODUCT_PACKAGES += \
                     memtrack.tegra \
                     vulkan.tegra \
                     libnvscf \
-                    libnvisp_v3 \
-                    libnvisp \
-                    libnvmm_camera_v3 \
-                    libnvodm_imager \
-                    libnvcamv4l2 \
-                    libnvvicsi_v3 \
-                    libnvcspline \
-                    libnvphs \
-                    libnvfnet \
-                    libnvfnetstorehdfx \
-                    libnvfnetstoredefog \
                     sensors.default.api_v1.3.mpl520.nvs \
                     libsensors.hal.nvs \
                     libsensors.hal-drivers.nvs \

@@ -60,8 +60,7 @@ PRODUCT_PACKAGES += \
                     vic03_ucode
 
 # Camera workaround
-PRODUCT_PACKAGES += libscf \
-                    libphs
+PRODUCT_PACKAGES += libphs
 
 # Raydium support
 PRODUCT_PACKAGES += para_10_02_00_a0 \

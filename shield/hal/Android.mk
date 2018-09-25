@@ -29,7 +29,7 @@ endif
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := camera.tegra
-LOCAL_SRC_FILES := lib/hw/camera.tegra.$(TARGET_TEGRA_VERSION).so
+LOCAL_SRC_FILES := lib/hw/camera.tegra.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
