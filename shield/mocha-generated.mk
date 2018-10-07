@@ -26,27 +26,18 @@ PRODUCT_PACKAGES += \
                     libnvtvmr \
                     libnvcam_imageencoder \
                     libnvmm \
-                    libscf \
                     libnvcamlog \
-                    libnvcamerautils \
-                    libcuda \
-                    libphs \
-                    libnvrm_gpu \
-                    libnvisp_v3 \
-                    libnvmm_camera_v3 \
-                    libnvodm_imager \
-                    libnvvicsi_v3 \
+                    libnvcamerahdr_v3 \
                     libopencv24_tegra \
                     libtbb \
-                    libnvfnet \
-                    libnvfnetstorehdfx \
-                    libnvfnetstoredefog \
-                    libprotobuf-cpp-lold \
-                    libnvcamerahdr_v3 \
                     libnvcameranrr \
                     libnvcudautils \
+                    libnvcamerautils \
                     gralloc.tegra \
                     libnvblit \
+                    libnvrm_gpu \
+                    libnvcolorutil \
+                    hdmi_cec.tegra \
                     hwcomposer.tegra \
                     libnvhwc_service \
                     libtlk_secure_hdcp_up \
@@ -54,16 +45,30 @@ PRODUCT_PACKAGES += \
                     keystore.tegra \
                     memtrack.tegra \
                     vulkan.tegra \
+                    libnvscf \
+                    libnvisp_v3 \
+                    libnvisp \
+                    libnvmm_camera_v3 \
+                    libnvodm_imager \
+                    libnvcamv4l2 \
+                    libnvvicsi_v3 \
+                    libnvcspline \
+                    libnvphs \
+                    libnvfnet \
+                    libnvfnetstorehdfx \
+                    libnvfnetstoredefog \
                     libmplmpu \
                     libmllite \
+                    libril-icera \
+                    icera-switcherd \
                     downloader \
                     tlk_daemon \
                     ss_status \
+                    libtsec_wrapper \
                     rm_ts_server \
                     librm_ts_service \
                     ts.default \
                     libEGL_tegra \
-                    libtsec_wrapper \
                     libnvglsi \
                     libnvrmapi_tegra \
                     libnvcpl \
@@ -72,6 +77,8 @@ PRODUCT_PACKAGES += \
                     libw \
                     libGLESv2_tegra \
                     libnvRSDriver \
+                    libcuda \
+                    libnvidia-fatbinaryloader \
                     libnvRSCompiler \
                     libnvwsi \
                     libnvmm_audio \
