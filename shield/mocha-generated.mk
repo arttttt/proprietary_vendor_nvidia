@@ -53,6 +53,7 @@ PRODUCT_PACKAGES += \
                     libnvcamv4l2 \
                     libnvvicsi_v3 \
                     libnvcspline \
+                    libphs \
                     libnvphs \
                     libnvfnet \
                     libnvfnetstorehdfx \
