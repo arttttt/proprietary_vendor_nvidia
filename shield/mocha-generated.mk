@@ -14,8 +14,6 @@
 
 PRODUCT_PACKAGES += \
                     libnvos \
-                    libnvoice \
-                    libnvaudiofx \
                     libnvddk_2d_v2 \
                     libnvrm \
                     libnvrm_graphics \
@@ -24,26 +22,10 @@ PRODUCT_PACKAGES += \
                     libnvmm_utils \
                     libnvavp \
                     libnvtvmr \
-                    libnvcam_imageencoder \
                     libnvmm \
-                    libscf \
-                    libnvcamlog \
-                    libnvcamerautils \
                     libcuda \
                     libphs \
                     libnvrm_gpu \
-                    libnvisp_v3 \
-                    libnvmm_camera_v3 \
-                    libnvodm_imager \
-                    libnvvicsi_v3 \
-                    libopencv24_tegra \
-                    libtbb \
-                    libnvfnet \
-                    libnvfnetstorehdfx \
-                    libnvfnetstoredefog \
-                    libnvcamerahdr_v3 \
-                    libnvcameranrr \
-                    libnvcudautils \
                     gralloc.tegra \
                     libnvblit \
                     hwcomposer.tegra \

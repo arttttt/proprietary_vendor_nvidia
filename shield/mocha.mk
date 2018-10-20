@@ -13,10 +13,6 @@
 # limitations under the License.
 
 $(call inherit-product, vendor/nvidia/shield/mocha-generated.mk)
-$(call inherit-product, vendor/nvidia/shield/app/shieldtech.mk)
-$(call inherit-product, vendor/nvidia/shield/app/blakepairing.mk)
-#$(call inherit-product, vendor/nvidia/shield/app/consoleui.mk)
-#$(call inherit-product, vendor/nvidia/shield/app/nvcamera.mk)
 $(call inherit-product, vendor/nvidia/shield/ussrd/ussrd.mk)
 $(call inherit-product, vendor/nvidia/shield/widevine/widevine.mk)
 $(call inherit-product, vendor/nvidia/shield/mocha/mocha-specific.mk)

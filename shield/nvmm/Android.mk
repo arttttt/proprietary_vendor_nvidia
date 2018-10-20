@@ -93,11 +93,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libnvmm_utils
-ifeq ($(TARGET_TEGRA_VERSION),t114)
-LOCAL_SRC_FILES := lib/libnvmm_utils.$(TARGET_TEGRA_VERSION).so
-else
 LOCAL_SRC_FILES := lib/libnvmm_utils.so
-endif
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
@@ -152,7 +148,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libnvmmlite_video
-LOCAL_SRC_FILES := lib/libnvmmlite_video.$(TARGET_TEGRA_VERSION).so
+LOCAL_SRC_FILES := lib/libnvmmlite_video.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
