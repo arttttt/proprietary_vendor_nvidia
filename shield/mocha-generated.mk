@@ -50,7 +50,6 @@ PRODUCT_PACKAGES += \
                     libnvcpl \
                     libGLESv1_CM_tegra \
                     libglcore \
-                    libw \
                     libGLESv2_tegra \
                     libnvRSDriver \
                     libnvRSCompiler \
