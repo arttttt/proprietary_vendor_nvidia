@@ -12,12 +12,20 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Wireless
+# Audio
 PRODUCT_PACKAGES += \
-    mocha_fw_bcmdhd \
-    mocha_fw_bcmdhd_apsta \
-    mocha_bcm4350 \
-    mocha_nvram
+    audio.primary.vendor.tegra \
+    libaudioavp \
+    libbt-client-api \
+    libnvaudioservice \
+    libnvcapaudioservice \
+    libnvcapclk \
+    libnvoice \
+    alsaold
+
+# Executables & Apps
+PRODUCT_PACKAGES += \
+    macaddr.sh
 
 # Firmware
 PRODUCT_PACKAGES += \
@@ -25,17 +33,20 @@ PRODUCT_PACKAGES += \
     bq27520_atl \
     bq27520_lgc
 
+# HAL
+PRODUCT_PACKAGES += \
+    libsensors.lsm6db0 \
+    libsensors.mpu6515
+
 # Keylayout
 PRODUCT_PACKAGES += \
     atmel-maxtouch \
     synaptics_dsx \
     tegra-rt5671_headphone_detect
 
-# HAL
+# Wireless
 PRODUCT_PACKAGES += \
-    libsensors.lsm6db0 \
-    libsensors.mpu6515
-    
-# Executables & Apps
-PRODUCT_PACKAGES += \
-    macaddr.sh
+    mocha_fw_bcmdhd \
+    mocha_fw_bcmdhd_apsta \
+    mocha_bcm4350 \
+    mocha_nvram
