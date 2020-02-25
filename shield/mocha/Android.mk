@@ -146,7 +146,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := audio.primary.vendor.tegra
-L_SRC_FILES := audio/lib/hw/audio.primary.vendor.tegra.so
+LOCAL_SRC_FILES := audio/lib/hw/audio.primary.vendor.tegra.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
@@ -157,7 +157,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libaudioavp
-L_SRC_FILES := audio/lib/libaudioavp.so
+LOCAL_SRC_FILES := audio/lib/libaudioavp.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
@@ -168,7 +168,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libbt-client-api
-L_SRC_FILES := audio/lib/libbt-client-api.so
+LOCAL_SRC_FILES := audio/lib/libbt-client-api.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
@@ -179,7 +179,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libnvaudioservice
-L_SRC_FILES := audio/lib/libnvaudioservice.so
+LOCAL_SRC_FILES := audio/lib/libnvaudioservice.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
@@ -190,7 +190,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libnvcapaudioservice
-L_SRC_FILES := audio/lib/libnvcapaudioservice.so
+LOCAL_SRC_FILES := audio/lib/libnvcapaudioservice.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
@@ -201,7 +201,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libnvcapclk
-L_SRC_FILES := audio/lib/libnvcapclk.so
+LOCAL_SRC_FILES := audio/lib/libnvcapclk.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
@@ -212,7 +212,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libnvoice
-L_SRC_FILES := audio/lib/libnvoice.so
+LOCAL_SRC_FILES := audio/lib/libnvoice.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
@@ -223,7 +223,7 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := alsaold
-L_SRC_FILES := audio/lib/alsaold.so
+LOCAL_SRC_FILES := audio/lib/alsaold.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
