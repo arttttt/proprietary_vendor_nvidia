@@ -18,10 +18,12 @@ $(call inherit-product, vendor/nvidia/shield/widevine/widevine.mk)
 $(call inherit-product, vendor/nvidia/shield/mocha/mocha-specific.mk)
 
 # Scripts and non exe/shared objects
-PRODUCT_PACKAGES += run_ss_status.sh \
+PRODUCT_PACKAGES += \
                     hdcp1x \
                     hdcp2x \
-                    hdcp2xtest
+                    hdcp2xtest \
+                    ss_status \
+                    tlk_daemon
 
 # Firmware
 PRODUCT_PACKAGES += \

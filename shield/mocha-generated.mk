@@ -13,7 +13,6 @@
 # limitations under the License.
 
 PRODUCT_PACKAGES += \
-                    libnvos \
                     libnvddk_2d_v2 \
                     libnvrm \
                     libnvrm_graphics \
@@ -24,7 +23,6 @@ PRODUCT_PACKAGES += \
                     libnvtvmr \
                     libnvmm \
                     libcuda \
-                    libphs \
                     libnvrm_gpu \
                     gralloc.tegra \
                     libnvblit \
@@ -68,4 +66,79 @@ PRODUCT_PACKAGES += \
                     libnvtnr \
                     libnvomx \
                     libnvomxadaptor \
-                    libnvomxilclient
+                    libnvomxilclient \
+                    libstagefrighthw \
+		    libcuda \
+		    libnvavp \
+		    libnvparser \
+		    libnvtnr \
+		    libnvtvmr \
+		    libnvrm_mem \
+		    libnvrm_host1x \
+		    libnvwsi \
+		    libnvrm_stream \
+		    libnvsocsys \
+		    libnvrm_surface \
+		    libnvrm_sync \
+		    libnvrmvkif \
+		    libnvimp \
+		    libnvrm_chip \
+		    libnvidia-ptxjitcompiler \
+		    libnvidia-glvkspirv \
+		    libnvdc \
+		    libnvcucompat \
+		    libnvcolorutil \
+		    libmempoollocal \
+		    libdolbycontrol \
+		    libnvhwcomposer.dolby \
+		    libnvos
+
+# App
+#PRODUCT_PACKAGES += \
+#		    SimpleKeyboard
+
+# Audio
+PRODUCT_PACKAGES += \
+		    libaptX_encoder \
+		    libaptXHD_encoder
+
+# Camera	    
+PRODUCT_PACKAGES += \
+		    camera.tegra \
+		    libnvcamerahdr_v3 \
+		    libnvcameranrr \
+		    libnvcamerautils \
+		    libnvcam_imageencoder \
+		    libnvcamlog \
+		    libnvcudautils \
+		    libnvfnet \
+		    libnvfnetstoredefog \
+		    libnvfnetstorehdfx \
+		    libnvisp_v3 \
+		    libnvmm_camera_v3 \
+		    libnvodm_imager \
+		    libscf \
+		    libnvvicsi_v3 \
+		    libnvtstitching \
+		    libnvidia_v3 \
+		    libopencv24_tegra \
+		    libprotobuf-cpp-lold \
+		    libtbb 
+
+# nvphs
+PRODUCT_PACKAGES += \
+		    libnvgov_boot \
+		    libnvgov_camera \
+		    libnvgov_force \
+		    libnvgov_generic \
+		    libnvgov_gpucompute \
+		    libnvgov_graphics \
+		    libnvgov_il \
+		    libnvgov_spincircle \
+		    libnvgov_tbc \
+		    libnvgov_ui \
+		    libnvphsd \
+		    libnvphs \
+		    libnvphens \
+		    public.libraries \
+		    vendor.nvidia.hardware.phs@1.0-impl
