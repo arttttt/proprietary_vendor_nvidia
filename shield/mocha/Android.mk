@@ -45,7 +45,7 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := mocha_nvram
+LOCAL_MODULE := nvram
 LOCAL_SRC_FILES := wireless/nvram.txt
 LOCAL_MODULE_SUFFIX := .txt
 LOCAL_MODULE_CLASS := ETC
