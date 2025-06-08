@@ -13,5 +13,7 @@
 # limitations under the License.
 
 PRODUCT_PACKAGES += \
+                    android.hardware.drm@1.2-service.widevine \
                     liboemcrypto \
-                    libwvdrmengine
+                    libwvdrmengine \
+		    libwvhidl
