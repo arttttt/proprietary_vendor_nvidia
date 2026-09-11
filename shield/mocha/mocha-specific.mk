@@ -12,17 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Audio
-PRODUCT_PACKAGES += \
-    audio.primary.vendor.tegra \
-    libaudioavp \
-    libbt-client-api \
-    libnvaudioservice \
-    libnvcapaudioservice \
-    libnvcapclk \
-    libnvoice \
-    alsaold
-
 # Firmware
 PRODUCT_PACKAGES += \
     lp5521 \
