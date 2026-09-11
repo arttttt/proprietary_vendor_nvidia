@@ -136,15 +136,6 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := macaddr.sh
-LOCAL_SRC_FILES := bin/macaddr.sh
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_EXECUTABLES)
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE := audio.primary.vendor.tegra
 LOCAL_SRC_FILES := audio/lib/hw/audio.primary.vendor.tegra.so
 LOCAL_MODULE_SUFFIX := .so

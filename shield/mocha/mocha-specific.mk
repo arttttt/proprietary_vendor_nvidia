@@ -23,10 +23,6 @@ PRODUCT_PACKAGES += \
     libnvoice \
     alsaold
 
-# Executables & Apps
-PRODUCT_PACKAGES += \
-    macaddr.sh
-
 # Firmware
 PRODUCT_PACKAGES += \
     lp5521 \
