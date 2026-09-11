@@ -28,7 +28,6 @@ PRODUCT_PACKAGES += \
                     libnvrm_gpu \
                     gralloc.tegra \
                     libnvblit \
-                    libnvhwc_service \
                     libtlk_secure_hdcp_up \
                     libtsechdcp \
                     keystore.tegra \
