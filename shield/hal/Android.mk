@@ -36,22 +36,16 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
-# hwcomposer.tegra is NOT built from here.
-#
-# The blob is the HWC1 module this board shipped with. It is replaced by
-# hardware/nvidia/hwcomposer, which builds a module of the same name to the
-# same path -- so declaring both makes the build stop outright:
+# hwcomposer.tegra does not come from here, and neither does the HWC1 blob that
+# used to sit in lib/hw/. The module of that name is built by
+# hardware/nvidia/hwcomposer; declaring it in both places stops the build
+# outright, with
 #
 #   vendor/nvidia/shield/hal: MODULE.TARGET.SHARED_LIBRARIES.hwcomposer.tegra
 #   already defined by hardware/nvidia/hwcomposer.
 #
-# Building one directory at a time hid this, since only the named directories
-# are scanned; the first whole-image build found it at once.
-#
-# The blob itself is kept in lib/hw/. It is what the board ran before, it is
-# the reference for how the display controller is actually driven, and
-# nothing about leaving a file in place costs an image that does not install
-# it.
+# The old blob is in this repository's history if it is ever wanted as a
+# reference for how the display controller was driven.
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := keystore.tegra
