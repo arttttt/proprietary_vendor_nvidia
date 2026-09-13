@@ -20,8 +20,7 @@ PRODUCT_PACKAGES += \
 
 # HAL
 PRODUCT_PACKAGES += \
-    libsensors.lsm6db0 \
-    libsensors.mpu6515
+    libsensors.lsm6db0
 
 # Keylayout
 PRODUCT_PACKAGES += \
