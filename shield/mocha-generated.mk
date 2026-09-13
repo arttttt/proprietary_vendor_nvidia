@@ -65,5 +65,4 @@ PRODUCT_PACKAGES += \
                     libnvmmlite_video \
                     libnvtnr \
                     libnvomx \
-                    libnvomxadaptor \
                     libnvomxilclient

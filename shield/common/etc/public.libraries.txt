@@ -1,4 +1,3 @@
-libnvomxadaptor.so 32
 libtsec_wrapper.so
 libnvos.so
 libnvrm.so
