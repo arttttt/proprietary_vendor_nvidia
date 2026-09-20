@@ -14,8 +14,12 @@
 
 LOCAL_PATH := $(call my-dir)
 
+# Installed under the name the wrapper does not take. The device tree builds
+# its own allocator as gralloc.tegra, which is the name ro.board.platform
+# selects, and opens this one by full path. The file in this repository keeps
+# the name NVIDIA gave it; only what it is installed as changes.
 include $(CLEAR_VARS)
-LOCAL_MODULE := gralloc.tegra
+LOCAL_MODULE := gralloc.nvidia
 LOCAL_SRC_FILES := lib/hw/gralloc.tegra.so
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
