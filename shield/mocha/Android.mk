@@ -126,5 +126,6 @@ LOCAL_MODULE_OWNER := nvidia
 # the sensors multihal opens it by (hidl/sensors/multihal.cpp in the device
 # tree). R's ELF check would insist the SONAME match the file.
 LOCAL_CHECK_ELF_FILES := false
-LOCAL_SHARED_LIBRARIES := liblog libcutils libutils libstdc++
+LOCAL_PREBUILT_MODULE_FILE := $(call shield-intrinsics-fixed,$(LOCAL_PATH)/hal/libsensors.lsm6db0.so)
+LOCAL_SHARED_LIBRARIES := liblog libcutils libutils libstdc++ libw
 include $(BUILD_PREBUILT)

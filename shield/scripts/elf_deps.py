@@ -57,12 +57,13 @@ from the build itself:
 libc, libm, libdl and libc++ are left out of the lists: the build gives them
 to every prebuilt itself (build/make/core/cc_prebuilt_internal.mk).
 
-One kind of undefined symbol is not resolved but allowed. Blobs built before
-Android 8 call __aeabi_* helpers that libc no longer exports; the device
-tree's intrinsics-fixup rewrites those blobs to libw after they are
-installed, which is after this check runs. Such a blob gets
-LOCAL_ALLOW_UNDEFINED_SYMBOLS := true, marked in elf_extra_deps.txt as
-+allow_undefined.
+Blobs built before Android 8 call __aeabi_* helpers that libc no longer
+exports. Those are not resolved here but repaired: a blob that depends on
+libm and calls one of them gets
+LOCAL_PREBUILT_MODULE_FILE := $(call shield-intrinsics-fixed,...), which
+installs a copy rewritten by fixup-intrinsics.py to libw.so and s_aeabi_*
+(see ../Android.mk), and its list names libw where the blob named libm.
+The ELF check then reads that copy, and libw answers.
 
 Some symbols are answered by a shim the device tree attaches at run time
 through TARGET_LD_SHIM_LIBS; no built tree shows those as reachable, so
@@ -88,14 +89,18 @@ IMPLICIT = ["libc", "libm", "libdl", "libc++"]
 ELF_CLASSES = {"SHARED_LIBRARIES", "EXECUTABLES"}
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EXTRA_FILE = os.path.join(ROOT, "scripts", "elf_extra_deps.txt")
-ALLOW = "+allow_undefined"
-
-# What device/xiaomi/mocha/intrinsics-fixup rewrites to libw after install.
+# What fixup-intrinsics.py rewrites to libw; keep the two lists in step.
 FIXUP_AEABI = {
     "__aeabi_uldivmod", "__aeabi_ldivmod", "__aeabi_d2lz", "__aeabi_d2ulz",
     "__aeabi_l2d", "__aeabi_ul2d", "__aeabi_f2lz", "__aeabi_f2ulz",
     "__aeabi_l2f", "__aeabi_ul2f",
 }
+
+
+def needs_fixup(path):
+    """The test fixup-intrinsics.py applies before rewriting a blob."""
+    data = open(path, "rb").read()
+    return b"libm.so" in data and any(s.encode() in data for s in FIXUP_AEABI)
 
 
 def tool(env, names):
@@ -183,20 +188,29 @@ def process(mk, readelf, extra, problems):
         if cls and mod and src and cls.group(1) in ELF_CLASSES \
                 and "$(BUILD_PREBUILT)" in block:
             name = mod.group(1)
-            needed, soname = dynamic(readelf, os.path.join(base, src.group(1)))
-            libs = [n[:-3] for n in needed
-                    if n.endswith(".so") and n[:-3] not in IMPLICIT]
-            more = extra.get(name, [])
-            libs += [l for l in more if l != ALLOW and l not in libs]
-            block = re.sub(r"^LOCAL_SHARED_LIBRARIES\s*:=.*\n", "", block,
-                           flags=re.M)
-            block = re.sub(r"^LOCAL_ALLOW_UNDEFINED_SYMBOLS\s*:=.*\n", "",
-                           block, flags=re.M)
+            path = os.path.join(base, src.group(1))
+            needed, soname = dynamic(readelf, path)
+            fixup = needs_fixup(path)
+            libs = []
+            for n in needed:
+                if not n.endswith(".so"):
+                    continue
+                n = n[:-3]
+                if n == "libm" and fixup:
+                    libs.append("libw")
+                elif n not in IMPLICIT:
+                    libs.append(n)
+            libs += [l for l in extra.get(name, []) if l not in libs]
+            for var in ("LOCAL_SHARED_LIBRARIES", "LOCAL_PREBUILT_MODULE_FILE",
+                        "LOCAL_ALLOW_UNDEFINED_SYMBOLS"):
+                block = re.sub(r"^%s\s*:=.*\n" % var, "", block, flags=re.M)
             add = ""
+            if fixup:
+                add += ("LOCAL_PREBUILT_MODULE_FILE := $(call "
+                        "shield-intrinsics-fixed,$(LOCAL_PATH)/%s)\n"
+                        % src.group(1))
             if libs:
                 add += "LOCAL_SHARED_LIBRARIES := " + " ".join(libs) + "\n"
-            if ALLOW in more:
-                add += "LOCAL_ALLOW_UNDEFINED_SYMBOLS := true\n"
             block = block.replace("include $(BUILD_PREBUILT)",
                                   add + "include $(BUILD_PREBUILT)", 1)
             installed = name + ".so"
@@ -273,12 +287,11 @@ def resolve(obj, out_path, only_path=None):
                 closure.add(lib)
                 todo += needed_of(lib)
 
-        data = open(path, "rb").read()
-        fixed_up = b"libm.so" in data
-        extra, allow = [], False
+        fixed_up = needs_fixup(path)
+        extra = []
         for sym in sorted(missing):
+            # Repaired by fixup-intrinsics.py and answered by libw.
             if sym in FIXUP_AEABI and fixed_up:
-                allow = True
                 continue
             cands = [p for p in providers.get(sym, []) if p != mod]
             if not cands:
@@ -289,9 +302,8 @@ def resolve(obj, out_path, only_path=None):
                 or sorted(cands)[0]
             if pick not in extra and pick not in needed:
                 extra.append(pick)
-        if extra or allow:
-            lines.append("%s: %s" % (mod, " ".join(extra +
-                                                  ([ALLOW] if allow else []))))
+        if extra:
+            lines.append("%s: %s" % (mod, " ".join(extra)))
 
     with open(out_path, "w") as f:
         f.write("# Libraries these blobs use without naming them in "

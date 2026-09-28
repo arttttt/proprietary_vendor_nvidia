@@ -14,5 +14,36 @@
 
 ifeq ($(TARGET_TEGRA_VARIANT),shield)
 LOCAL_PATH := $(call my-dir)
+
+# Blobs built before Android 8 call __aeabi_* helpers libc no longer exports.
+# scripts/fixup-intrinsics.py points them at libw instead (libm.so -> libw.so,
+# __aeabi_x -> s_aeabi_x, same lengths, rewritten in place). It runs here, on
+# a copy in the intermediates, and the module installs that copy -- so R's
+# ELF check, which reads the prebuilt before it is installed, sees the blob
+# as it will ship rather than one that looks broken until a later step
+# repairs it. The files in this repository stay as NVIDIA shipped them.
+#
+#   LOCAL_PREBUILT_MODULE_FILE := $(call shield-intrinsics-fixed,$(LOCAL_PATH)/lib/x.so)
+#
+# scripts/elf_deps.py writes that line for every blob that needs it.
+SHIELD_INTRINSICS_FIXUP := $(LOCAL_PATH)/scripts/fixup-intrinsics.py
+
+define shield-intrinsics-fixed
+$(strip $(eval _sif_out := $(TARGET_OUT_INTERMEDIATES)/SHIELD_INTRINSICS_FIXUP/$(1))\
+$(if $(filter $(_sif_out),$(SHIELD_INTRINSICS_FIXED)),,\
+$(eval SHIELD_INTRINSICS_FIXED += $(_sif_out))\
+$(eval $(call _shield-intrinsics-fixed-rule,$(1),$(_sif_out))))\
+$(_sif_out))
+endef
+
+# One output per blob, and the script is handed that one file, so parallel
+# jobs never write the same path.
+define _shield-intrinsics-fixed-rule
+$(2): $(1) $(SHIELD_INTRINSICS_FIXUP)
+	@mkdir -p $$(dir $$@)
+	$$(hide) cp -f $$< $$@
+	$$(hide) python3 $(SHIELD_INTRINSICS_FIXUP) $$@ >/dev/null
+endef
+
 include $(call all-makefiles-under,$(LOCAL_PATH))
 endif

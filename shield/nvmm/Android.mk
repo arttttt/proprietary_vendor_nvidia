@@ -143,7 +143,8 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
-LOCAL_SHARED_LIBRARIES := libnvos libnvrm libnvrm_graphics libnvmmlite_utils libnvmmlite libnvmm_utils libnvparser libnvtvmr libnvddk_2d_v2 libnvtnr libcutils libcuda libnvavp
+LOCAL_PREBUILT_MODULE_FILE := $(call shield-intrinsics-fixed,$(LOCAL_PATH)/lib/libnvmmlite_video.so)
+LOCAL_SHARED_LIBRARIES := libnvos libnvrm libnvrm_graphics libnvmmlite_utils libnvmmlite libnvmm_utils libnvparser libnvtvmr libnvddk_2d_v2 libnvtnr libcutils libcuda libnvavp libw
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)

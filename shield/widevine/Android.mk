@@ -23,7 +23,8 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)/mediadrm
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := widevine
-LOCAL_SHARED_LIBRARIES := libcutils liblog libprotobuf-cpp-lite-v29 libstagefright_foundation libutils
+LOCAL_PREBUILT_MODULE_FILE := $(call shield-intrinsics-fixed,$(LOCAL_PATH)/lib/mediadrm/libwvdrmengine.so)
+LOCAL_SHARED_LIBRARIES := libcutils liblog libprotobuf-cpp-lite-v29 libstagefright_foundation libutils libw
 include $(BUILD_PREBUILT)
 
 # libwvdrmengine is the Pixel C plugin from Android 8.1, built against the

@@ -1,20 +1,17 @@
 # Libraries these blobs use without naming them in DT_NEEDED, resolved
 # against a built tree by elf_deps.py --resolve. See that script.
-libEGL_tegra: liblog +allow_undefined
-libcuda: +allow_undefined
+libEGL_tegra: liblog
 libnvRSCompiler: libLLVM_android
 libnvcpl: liblog
-libnvglsi: +allow_undefined
 libnvgr: liblog
 libnvmm_utils: liblog
 libnvomx: liblog
-libnvrmapi_tegra: +allow_undefined
 
 # Added by hand: the library that answers is attached at run time through
 # TARGET_LD_SHIM_LIBS in the device tree, so no built tree can show it as a
 # provider the blob already reaches.
 #
 # android::CallStack moved out of libutils into libutilscallstack in R.
-libglcore: liblog libutilscallstack +allow_undefined
+libglcore: liblog libutilscallstack
 # The pre-8.0 GraphicBufferMapper::lock the RenderScript driver still calls.
 libnvRSDriver: libshim_rs
