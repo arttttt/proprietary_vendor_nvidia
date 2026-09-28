@@ -63,18 +63,6 @@ LOCAL_SHARED_LIBRARIES := libnvos libnvrm libnvmm libnvrm_graphics libnvmm_utils
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libnvmm_manager
-LOCAL_SRC_FILES := lib/libnvmm_manager.so
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_TARGET_ARCH := arm
-LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-LOCAL_SHARED_LIBRARIES := libnvavp libnvos libnvrm libstdc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE := libnvmm_parser
 LOCAL_SRC_FILES := lib/libnvmm_parser.so
 LOCAL_MODULE_SUFFIX := .so
@@ -84,18 +72,6 @@ LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIB
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 LOCAL_SHARED_LIBRARIES := libnvmm_utils libnvos libnvrm libnvmm_contentpipe
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := libnvmm_service
-LOCAL_SRC_FILES := lib/libnvmm_service.so
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_TARGET_ARCH := arm
-LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-LOCAL_SHARED_LIBRARIES := libnvmm_manager libnvos libnvrm libnvrm_graphics libstdc++
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)

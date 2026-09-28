@@ -14,19 +14,6 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_ARCH),arm)
-include $(CLEAR_VARS)
-LOCAL_MODULE := nvcgcserver
-LOCAL_SRC_FILES := bin32/nvcgcserver
-LOCAL_MODULE_CLASS := EXECUTABLES
-LOCAL_MODULE_TARGET_ARCH := arm
-LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_EXECUTABLES)
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-LOCAL_SHARED_LIBRARIES := libardrv_dynamic libnvcpl libnvddk_2d libnvos libnvrm libnvrm_graphics libstdc++
-include $(BUILD_PREBUILT)
-endif
-
 include $(CLEAR_VARS)
 LOCAL_MODULE := libnvRSCompiler
 LOCAL_SRC_FILES := lib/libnvRSCompiler.so
@@ -52,30 +39,6 @@ LOCAL_SHARED_LIBRARIES := libRS_internal libRSCpuRef liblog libcutils libutils l
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := libardrv_dynamic
-LOCAL_SRC_FILES := lib/libardrv_dynamic.so
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_TARGET_ARCH := arm
-LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-LOCAL_SHARED_LIBRARIES := libnvos libnvrm libnvrm_graphics libstdc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := libcgdrv
-LOCAL_SRC_FILES := lib/libcgdrv.so
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_TARGET_ARCH := arm
-LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-LOCAL_SHARED_LIBRARIES := libnvos libstdc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE := libnvblit
 LOCAL_SRC_FILES := lib/libnvblit.so
 LOCAL_MODULE_SUFFIX := .so
@@ -97,18 +60,6 @@ LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIB
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 LOCAL_SHARED_LIBRARIES := libcutils libutils libbinder
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := libnvddk_2d
-LOCAL_SRC_FILES := lib/libnvddk_2d.so
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_TARGET_ARCH := arm
-LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-LOCAL_SHARED_LIBRARIES := libnvos libnvrm libnvrm_graphics libstdc++
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -267,38 +218,3 @@ LOCAL_MODULE_OWNER := nvidia
 LOCAL_SHARED_LIBRARIES := libnvos libnvrm libnvrm_graphics libglcore
 include $(BUILD_PREBUILT)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE := libEGL_tegra_impl
-LOCAL_SRC_FILES := lib/egl/libEGL_tegra_impl.so
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_TARGET_ARCH := arm
-LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_SHARED_LIBRARIES)/egl
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-LOCAL_SHARED_LIBRARIES := libcutils liblog libnvcpl libnvglsi libnvos libnvrm libnvrm_graphics libnvwsi libstdc++ libtsec_wrapper libz
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := libGLESv1_CM_tegra_impl
-LOCAL_SRC_FILES := lib/egl/libGLESv1_CM_tegra_impl.so
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_TARGET_ARCH := arm
-LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_SHARED_LIBRARIES)/egl
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-LOCAL_SHARED_LIBRARIES := libnvcpl libnvos libnvrm libnvrm_graphics libstdc++
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := libGLESv2_tegra_impl
-LOCAL_SRC_FILES := lib/egl/libGLESv2_tegra_impl.so
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_TARGET_ARCH := arm
-LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_SHARED_LIBRARIES)/egl
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-LOCAL_SHARED_LIBRARIES := libardrv_dynamic libnvcpl libnvddk_2d libnvos libnvrm libnvrm_graphics libstdc++
-include $(BUILD_PREBUILT)

@@ -34,18 +34,6 @@ LOCAL_CHECK_ELF_FILES := false
 LOCAL_SHARED_LIBRARIES := liblog libcutils libsync libnvgr libnvos libnvrm libnvrm_graphics libnvblit
 include $(BUILD_PREBUILT)
 
-include $(CLEAR_VARS)
-LOCAL_MODULE := hdmi_cec.tegra
-LOCAL_SRC_FILES := lib/hw/hdmi_cec.tegra.so
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_TARGET_ARCH := arm
-LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)/hw
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-LOCAL_SHARED_LIBRARIES := liblog libcutils
-include $(BUILD_PREBUILT)
-
 # hwcomposer.tegra does not come from here, and neither does the HWC1 blob that
 # used to sit in lib/hw/. The module of that name is built by
 # hardware/nvidia/hwcomposer; declaring it in both places stops the build
@@ -79,18 +67,6 @@ LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIB
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
 LOCAL_SHARED_LIBRARIES := liblog libcutils
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
-LOCAL_MODULE := pbc.tegra
-LOCAL_SRC_FILES := lib/hw/pbc.tegra.so
-LOCAL_MODULE_SUFFIX := .so
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_MODULE_TARGET_ARCH := arm
-LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)/hw
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-LOCAL_SHARED_LIBRARIES := libcutils liblog
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
