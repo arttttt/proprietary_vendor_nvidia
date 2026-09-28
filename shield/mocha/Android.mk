@@ -122,4 +122,9 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+# Built as sensors.lsm6db0.so and shipped as libsensors.lsm6db0.so, the name
+# the sensors multihal opens it by (hidl/sensors/multihal.cpp in the device
+# tree). R's ELF check would insist the SONAME match the file.
+LOCAL_CHECK_ELF_FILES := false
+LOCAL_SHARED_LIBRARIES := liblog libcutils libutils libstdc++
 include $(BUILD_PREBUILT)

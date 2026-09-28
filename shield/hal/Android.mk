@@ -27,6 +27,11 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)/hw
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+# The SONAME stays gralloc.tegra.so while the file is installed as
+# gralloc.nvidia.so, and that is the whole point of the rename above; R's ELF
+# check would insist the two match.
+LOCAL_CHECK_ELF_FILES := false
+LOCAL_SHARED_LIBRARIES := liblog libcutils libsync libnvgr libnvos libnvrm libnvrm_graphics libnvblit
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -38,6 +43,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)/hw
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := liblog libcutils
 include $(BUILD_PREBUILT)
 
 # hwcomposer.tegra does not come from here, and neither does the HWC1 blob that
@@ -60,6 +66,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)/hw
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := liblog
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -71,6 +78,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)/hw
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := liblog libcutils
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -82,6 +90,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)/hw
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libcutils liblog
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -93,4 +102,5 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)/hw
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := liblog libEGL libutils
 include $(BUILD_PREBUILT)

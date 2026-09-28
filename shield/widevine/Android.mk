@@ -23,6 +23,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)/mediadrm
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := widevine
+LOCAL_SHARED_LIBRARIES := libcutils liblog libprotobuf-cpp-lite libstagefright_foundation libutils
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -34,6 +35,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libnvavp libnvos libnvrm liblog libtlk_secure_hdcp_up libcutils
 include $(BUILD_PREBUILT)
 
 ifeq ("$(wildcard external/stlport/Android.mk)","")
@@ -46,5 +48,6 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := widevine
+LOCAL_SHARED_LIBRARIES := libstdc++
 include $(BUILD_PREBUILT)
 endif

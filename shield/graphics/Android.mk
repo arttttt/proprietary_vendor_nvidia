@@ -23,6 +23,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_EXECUTABLES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libardrv_dynamic libnvcpl libnvddk_2d libnvos libnvrm libnvrm_graphics libstdc++
 include $(BUILD_PREBUILT)
 endif
 
@@ -35,6 +36,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libLLVM libutils libcutils liblog
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -46,6 +48,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libRS_internal libRSCpuRef liblog libcutils libutils libEGL libGLESv1_CM libGLESv2 libbcinfo libLLVM libui libgui libsync libhardware libcuda libnvgr libnvrm libnvRSCompiler
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -57,6 +60,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libnvos libnvrm libnvrm_graphics libstdc++
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -68,6 +72,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libnvos libstdc++
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -79,6 +84,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libhardware liblog libnvddk_vic libnvos libnvrm libnvrm_gpu libnvrm_graphics libnvgr libsync
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -90,6 +96,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libcutils libutils libbinder
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -101,6 +108,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libnvos libnvrm libnvrm_graphics libstdc++
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -112,6 +120,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libnvrm libnvrm_graphics libnvos libnvddk_vic
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -123,6 +132,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := liblog libnvos libnvrm libnvrm_graphics libsync libnvgr
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -134,6 +144,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libnvos libcutils libutils libz
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -145,6 +156,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libnvos libnvrm liblog libsync
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -156,6 +168,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libnvos libnvrm
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -167,6 +180,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libz libnvrm_gpu libnvrm libnvos libnvrm_graphics
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -178,6 +192,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libcutils libz libnvrmapi_tegra
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -189,6 +204,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libcutils libnvos libnvrm libnvrm_graphics libnvgr libhardware liblog libsync libphs
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -200,6 +216,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libhardware libcutils libsync
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -211,6 +228,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libphs libcutils libutils libhardware libnvrm libs libz libnvrmapi_tegra libnvcpl libnvgr libnvglsi
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -222,6 +240,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)/egl
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libtsec_wrapper libsync libcutils libz libnvglsi libnvrm libnvrm_graphics libnvos libnvcpl libphs
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -233,6 +252,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)/egl
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libnvos libnvrm libnvrm_graphics libglcore
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -244,6 +264,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)/egl
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libnvos libnvrm libnvrm_graphics libglcore
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -255,6 +276,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_SHARED_LIBRARIES)/egl
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libcutils liblog libnvcpl libnvglsi libnvos libnvrm libnvrm_graphics libnvwsi libstdc++ libtsec_wrapper libz
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -266,6 +288,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_SHARED_LIBRARIES)/egl
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libnvcpl libnvos libnvrm libnvrm_graphics libstdc++
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
@@ -277,4 +300,5 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_SHARED_LIBRARIES)/egl
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
+LOCAL_SHARED_LIBRARIES := libardrv_dynamic libnvcpl libnvddk_2d libnvos libnvrm libnvrm_graphics libstdc++
 include $(BUILD_PREBUILT)
