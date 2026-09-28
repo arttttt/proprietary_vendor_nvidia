@@ -83,7 +83,7 @@ LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := nvidia
-LOCAL_SHARED_LIBRARIES := libnvos libnvrm libnvrm_graphics libcutils libnvavp
+LOCAL_SHARED_LIBRARIES := libnvos libnvrm libnvrm_graphics libcutils libnvavp liblog
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
