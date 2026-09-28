@@ -19,8 +19,8 @@ LOCAL_PATH := $(call my-dir)
 # selects, and opens this one by full path. The file in this repository keeps
 # the name NVIDIA gave it; only what it is installed as changes.
 include $(CLEAR_VARS)
-LOCAL_MODULE := gralloc.nvidia
-LOCAL_PREBUILT_MODULE_FILE := $(call shield-soname-fixed,$(LOCAL_PATH)/lib/hw/gralloc.tegra.so,gralloc.nvidia.so)
+LOCAL_MODULE := gralloc.nvgpu
+LOCAL_PREBUILT_MODULE_FILE := $(call shield-renamed,$(LOCAL_PATH)/lib/hw/gralloc.tegra.so,gralloc.tegra.so=gralloc.nvgpu.so)
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm

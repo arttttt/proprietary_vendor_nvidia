@@ -26,7 +26,7 @@ PRODUCT_PACKAGES += \
                     libcuda \
                     libphs \
                     libnvrm_gpu \
-                    gralloc.nvidia \
+                    gralloc.nvgpu \
                     libnvblit \
                     libtlk_secure_hdcp_up \
                     libtsechdcp \

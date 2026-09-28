@@ -16,30 +16,28 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libwvdrmengine
-LOCAL_PREBUILT_MODULE_FILE := $(call shield-intrinsics-fixed,$(LOCAL_PATH)/lib/mediadrm/libwvdrmengine.so)
+LOCAL_PREBUILT_MODULE_FILE := $(call shield-renamed,$(call shield-intrinsics-fixed,$(LOCAL_PATH)/lib/mediadrm/libwvdrmengine.so),libprotobuf-cpp-lite.so=libprotobuf-lite-v29.so)
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)/mediadrm
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := widevine
-LOCAL_SHARED_LIBRARIES := libcutils liblog libprotobuf-cpp-lite-v29 libstagefright_foundation libutils libw
+LOCAL_SHARED_LIBRARIES := libcutils liblog libprotobuf-lite-v29 libstagefright_foundation libutils libw
 include $(BUILD_PREBUILT)
 
 # libwvdrmengine is the Pixel C plugin from Android 8.1, built against the
-# protobuf of its day. R's libprotobuf-cpp-lite is 3.9.1 under a versioned
-# SONAME and no longer exports what the plugin calls
-# (google::protobuf::internal::empty_string_ among others), so the plugin's
-# DT_NEEDED was rewritten with patchelf to libprotobuf-cpp-lite-v29.so, and
-# this ships the Android 10 build of that library under the name -- the fix
-# LineageOS device trees of this age carry on 18.1. Taken straight from the
-# tree's own VNDK v29 snapshot rather than copied in here.
+# protobuf of its day. R's libprotobuf-cpp-lite is 3.9.1 and no longer exports
+# what the plugin calls (google::protobuf::internal::empty_string_ among
+# others), so the plugin's DT_NEEDED is renamed to libprotobuf-lite-v29.so in
+# the copy above, and this ships the Android 10 build of the library under
+# that name, taken from the tree's own VNDK v29 snapshot -- the fix LineageOS
+# trees of this age carry on 18.1, done with a same-length rename instead of
+# patchelf. Its SONAME, libprotobuf-cpp-lite.so, is also R's own library's
+# name in /system/lib, so it is renamed as well.
 include $(CLEAR_VARS)
-LOCAL_MODULE := libprotobuf-cpp-lite-v29
-# The snapshot built it with SONAME libprotobuf-cpp-lite.so, which is also
-# the name R's own protobuf answers to in /system/lib; the copy carries the
-# name it ships as, so the two cannot be mistaken for each other.
-LOCAL_PREBUILT_MODULE_FILE := $(call shield-soname-fixed,prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-lite.so,libprotobuf-cpp-lite-v29.so)
+LOCAL_MODULE := libprotobuf-lite-v29
+LOCAL_PREBUILT_MODULE_FILE := $(call shield-renamed,prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-lite.so,libprotobuf-cpp-lite.so=libprotobuf-lite-v29.so)
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm

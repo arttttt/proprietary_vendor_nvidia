@@ -45,27 +45,29 @@ $(2): $(1) $(SHIELD_INTRINSICS_FIXUP)
 	$$(hide) python3 $(SHIELD_INTRINSICS_FIXUP) $$@ >/dev/null
 endef
 
-# A blob installed under a name other than its DT_SONAME gets the name it
-# ships as written into a copy, the same way: R's ELF check requires the two
-# to match, and so does the linker once two libraries could answer to one
-# SONAME.
+# A library whose name has to change -- its SONAME, or a DT_NEEDED entry
+# naming a library that ships under another name -- is renamed in a copy by
+# scripts/elf_rename.py, always to a name of the same length, rewriting only
+# the whole NUL-terminated string in place. Nothing in the file moves; patchelf
+# moved the program headers, and bionic refused what it produced.
 #
-#   LOCAL_PREBUILT_MODULE_FILE := $(call shield-soname-fixed,<source>,<soname>)
-SHIELD_PATCHELF := prebuilts/extract-tools/linux-x86/bin/patchelf-0_9
+#   LOCAL_PREBUILT_MODULE_FILE := $(call shield-renamed,<source>,OLD=NEW ...)
+#
+# The source may itself be a shield-intrinsics-fixed copy.
+SHIELD_RENAME := $(LOCAL_PATH)/scripts/elf_rename.py
 
-define shield-soname-fixed
-$(strip $(eval _ssf_out := $(TARGET_OUT_INTERMEDIATES)/SHIELD_SONAME_FIXED/$(2)/$(notdir $(1)))\
-$(if $(filter $(_ssf_out),$(SHIELD_SONAME_FIXED)),,\
-$(eval SHIELD_SONAME_FIXED += $(_ssf_out))\
-$(eval $(call _shield-soname-fixed-rule,$(1),$(_ssf_out),$(2))))\
-$(_ssf_out))
+define shield-renamed
+$(strip $(eval _srn_out := $(TARGET_OUT_INTERMEDIATES)/SHIELD_RENAMED/$(subst =,-,$(firstword $(2)))/$(notdir $(1)))\
+$(if $(filter $(_srn_out),$(SHIELD_RENAMED)),,\
+$(eval SHIELD_RENAMED += $(_srn_out))\
+$(eval $(call _shield-renamed-rule,$(1),$(_srn_out),$(2))))\
+$(_srn_out))
 endef
 
-define _shield-soname-fixed-rule
-$(2): $(1) $(SHIELD_PATCHELF)
+define _shield-renamed-rule
+$(2): $(1) $(SHIELD_RENAME)
 	@mkdir -p $$(dir $$@)
-	$$(hide) cp -f $$< $$@
-	$$(hide) $(SHIELD_PATCHELF) --set-soname $(3) $$@
+	$$(hide) python3 $(SHIELD_RENAME) $$< $$@ $(3)
 endef
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
