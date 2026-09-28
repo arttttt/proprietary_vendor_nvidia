@@ -261,6 +261,19 @@ def resolve(obj, out_path, only_path=None):
         mod = os.path.basename(os.path.dirname(path))[:-len("_intermediates")]
         if os.path.basename(path) == mod + ".so":
             libs[mod] = path
+    # Soong libraries reach obj/ only when a make module links them; the
+    # rest are found where soong leaves them, as out/soong/.intermediates/
+    # <dir>/<module>/android_arm_<cpu>_shared/<module>.so.
+    soong = os.path.join(os.path.dirname(os.path.dirname(
+        os.path.dirname(os.path.dirname(os.path.abspath(obj))))),
+        "soong", ".intermediates")
+    for path in glob.glob(os.path.join(soong, "**", "android_arm_*_shared",
+                                       "*.so"), recursive=True):
+        variant = os.path.dirname(path)
+        mod = os.path.basename(os.path.dirname(variant))
+        if os.path.basename(path) == mod + ".so" and mod not in libs \
+                and "_vendor" not in variant and "_apex" not in variant:
+            libs[mod] = path
     blobs = {}
     for mk in makefiles():
         for mod, cls, path in blocks(mk):
