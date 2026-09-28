@@ -16,23 +16,65 @@
 
 """Write each blob's LOCAL_SHARED_LIBRARIES from the blob itself.
 
-From R on, the build runs check_elf_file on every prebuilt ELF module: each
-DT_NEEDED entry has to be named in LOCAL_SHARED_LIBRARIES, and a library's
-DT_SONAME has to match the file name it installs under. The blobs already
-say what they need, so the list is read out of them with readelf rather than
-kept by hand, and rerunning this after a blob update keeps the two in step.
+From R on, the build runs check_elf_file on every prebuilt ELF module, and
+it asks two things. Every DT_NEEDED entry has to be named in
+LOCAL_SHARED_LIBRARIES, and every symbol the blob leaves undefined has to be
+defined by one of the libraries named there. A library's DT_SONAME also has
+to match the file name it installs under.
 
-    shield/scripts/elf_deps.py           rewrite the Android.mk files
-    shield/scripts/elf_deps.py --check   exit 1 if anything is out of date
+The first is read straight out of the blob with readelf. The second is where
+these 2016 blobs fall short: plenty of them call into liblog, libnvos or
+libnvrm without listing it, and got away with it because a neighbour had
+already loaded the library into the process. Which library defines each such
+symbol is worked out once, against a built tree, and kept in
+elf_extra_deps.txt next to this script, so the everyday run needs nothing but
+the blobs:
 
-libc, libm, libdl and libc++ are left out: the build supplies them to every
-prebuilt on its own (build/make/core/cc_prebuilt_internal.mk).
+    elf_deps.py                    rewrite the Android.mk files
+    elf_deps.py --check            exit 1 if anything is out of date
+    elf_deps.py --resolve OBJ OUT [ONLY]
+                                   work out the extra libraries against a
+                                   built tree's obj directory (for example
+                                   out/target/product/mocha/obj) and write
+                                   them to OUT; copy OUT over
+                                   elf_extra_deps.txt and run without flags.
+                                   ONLY, a file of module names, limits it
+                                   to the blobs the product really builds
+
+--resolve reads nothing but OBJ and the blobs, and writes nothing but OUT,
+so it can run on the build machine without touching the checkout there.
+
+ONLY matters because this repository carries blobs no product installs, and
+the build checks only what it builds. Several of the unused ones (the
+*_tegra_impl GL libraries, nvcgcserver, libnvmm_service) were built against
+an older libnvrm and name symbols no blob here defines; resolving them would
+be a list of failures about files that never reach an image. The list comes
+from the build itself:
+
+    ninja -f out/combined-<product>.ninja -t commands droid \
+        | grep -o 'obj/[A-Z_]*/[^/ ]*_intermediates/check_elf_files' ...
+
+libc, libm, libdl and libc++ are left out of the lists: the build gives them
+to every prebuilt itself (build/make/core/cc_prebuilt_internal.mk).
+
+One kind of undefined symbol is not resolved but allowed. Blobs built before
+Android 8 call __aeabi_* helpers that libc no longer exports; the device
+tree's intrinsics-fixup rewrites those blobs to libw after they are
+installed, which is after this check runs. Such a blob gets
+LOCAL_ALLOW_UNDEFINED_SYMBOLS := true, marked in elf_extra_deps.txt as
++allow_undefined.
+
+Some symbols are answered by a shim the device tree attaches at run time
+through TARGET_LD_SHIM_LIBS; no built tree shows those as reachable, so
+they are added to elf_extra_deps.txt by hand, under their own comment.
+Keep that section when copying a fresh --resolve result over the file.
 
 A SONAME that does not match the installed name is reported, not fixed. Where
 the mismatch is deliberate the module carries LOCAL_CHECK_ELF_FILES := false
 by hand, with the reason next to it, and this script leaves it alone.
 
-Set READELF to pick the tool; otherwise llvm-readelf or readelf from PATH.
+Set READELF and NM to pick the tools; otherwise llvm-readelf and llvm-nm
+(or readelf and nm) from PATH.
 """
 
 import glob
@@ -42,34 +84,96 @@ import shutil
 import subprocess
 import sys
 
-IMPLICIT = {"libc", "libm", "libdl", "libc++"}
+IMPLICIT = ["libc", "libm", "libdl", "libc++"]
 ELF_CLASSES = {"SHARED_LIBRARIES", "EXECUTABLES"}
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+EXTRA_FILE = os.path.join(ROOT, "scripts", "elf_extra_deps.txt")
+ALLOW = "+allow_undefined"
+
+# What device/xiaomi/mocha/intrinsics-fixup rewrites to libw after install.
+FIXUP_AEABI = {
+    "__aeabi_uldivmod", "__aeabi_ldivmod", "__aeabi_d2lz", "__aeabi_d2ulz",
+    "__aeabi_l2d", "__aeabi_ul2d", "__aeabi_f2lz", "__aeabi_f2ulz",
+    "__aeabi_l2f", "__aeabi_ul2f",
+}
 
 
-def readelf_tool():
-    tool = os.environ.get("READELF")
-    if tool:
-        return tool
-    for name in ("llvm-readelf", "readelf"):
-        path = shutil.which(name)
-        if path:
-            return path
-    sys.exit("no readelf: set READELF or put llvm-readelf in PATH")
+def tool(env, names):
+    path = os.environ.get(env)
+    if path:
+        return path
+    for name in names:
+        found = shutil.which(name)
+        if found:
+            return found
+    sys.exit("no %s: set %s or put %s in PATH" % (names[0], env, names[0]))
+
+
+def run(args):
+    return subprocess.run(args, capture_output=True, text=True,
+                          check=True).stdout
 
 
 def dynamic(readelf, path):
-    out = subprocess.run([readelf, "-d", path], capture_output=True,
-                         text=True, check=True).stdout
+    out = run([readelf, "-d", path])
     needed = re.findall(r"\(NEEDED\)\s+Shared library: \[(.+?)\]", out)
     soname = re.findall(r"\(SONAME\)\s+Library soname: \[(.+?)\]", out)
     return needed, soname[0] if soname else None
 
 
-def process(mk, readelf, problems):
+def strip_version(sym):
+    return sym.split("@", 1)[0]
+
+
+def undefined(nm, path):
+    """Strong undefined dynamic symbols; weak ones may stay unresolved."""
+    syms = set()
+    for line in run([nm, "-D", "--undefined-only", path]).splitlines():
+        parts = line.split()
+        if len(parts) >= 2 and parts[-2] == "U":
+            syms.add(strip_version(parts[-1]))
+    return syms
+
+
+def defined(nm, path):
+    syms = set()
+    for line in run([nm, "-D", "--defined-only", path]).splitlines():
+        parts = line.split()
+        if parts:
+            syms.add(strip_version(parts[-1]))
+    return syms
+
+
+def blocks(mk):
+    """Yield (module, class, source path) for every prebuilt ELF module."""
     base = os.path.dirname(mk)
-    text = open(mk).read()
-    parts = re.split(r"(include \$\(CLEAR_VARS\))", text)
+    for block in re.split(r"include \$\(CLEAR_VARS\)", open(mk).read())[1:]:
+        cls = re.search(r"^LOCAL_MODULE_CLASS\s*:=\s*(\S+)", block, re.M)
+        mod = re.search(r"^LOCAL_MODULE\s*:=\s*(\S+)", block, re.M)
+        src = re.search(r"^LOCAL_SRC_FILES\s*:=\s*(\S+)", block, re.M)
+        if cls and mod and src and cls.group(1) in ELF_CLASSES \
+                and "$(BUILD_PREBUILT)" in block:
+            yield mod.group(1), cls.group(1), os.path.join(base, src.group(1))
+
+
+def makefiles():
+    return sorted(glob.glob(os.path.join(ROOT, "**", "Android.mk"),
+                            recursive=True))
+
+
+def read_extra():
+    extra = {}
+    if os.path.exists(EXTRA_FILE):
+        for line in open(EXTRA_FILE):
+            line = line.split("#", 1)[0].split()
+            if line:
+                extra[line[0].rstrip(":")] = line[1:]
+    return extra
+
+
+def process(mk, readelf, extra, problems):
+    base = os.path.dirname(mk)
+    parts = re.split(r"(include \$\(CLEAR_VARS\))", open(mk).read())
     out = [parts[0]]
     for i in range(1, len(parts), 2):
         block = parts[i + 1]
@@ -78,18 +182,24 @@ def process(mk, readelf, problems):
         src = re.search(r"^LOCAL_SRC_FILES\s*:=\s*(\S+)", block, re.M)
         if cls and mod and src and cls.group(1) in ELF_CLASSES \
                 and "$(BUILD_PREBUILT)" in block:
-            path = os.path.join(base, src.group(1))
-            needed, soname = dynamic(readelf, path)
+            name = mod.group(1)
+            needed, soname = dynamic(readelf, os.path.join(base, src.group(1)))
             libs = [n[:-3] for n in needed
                     if n.endswith(".so") and n[:-3] not in IMPLICIT]
+            more = extra.get(name, [])
+            libs += [l for l in more if l != ALLOW and l not in libs]
             block = re.sub(r"^LOCAL_SHARED_LIBRARIES\s*:=.*\n", "", block,
                            flags=re.M)
+            block = re.sub(r"^LOCAL_ALLOW_UNDEFINED_SYMBOLS\s*:=.*\n", "",
+                           block, flags=re.M)
+            add = ""
             if libs:
-                block = block.replace(
-                    "include $(BUILD_PREBUILT)",
-                    "LOCAL_SHARED_LIBRARIES := " + " ".join(libs) +
-                    "\ninclude $(BUILD_PREBUILT)", 1)
-            installed = mod.group(1) + ".so"
+                add += "LOCAL_SHARED_LIBRARIES := " + " ".join(libs) + "\n"
+            if ALLOW in more:
+                add += "LOCAL_ALLOW_UNDEFINED_SYMBOLS := true\n"
+            block = block.replace("include $(BUILD_PREBUILT)",
+                                  add + "include $(BUILD_PREBUILT)", 1)
+            installed = name + ".so"
             if cls.group(1) == "SHARED_LIBRARIES" and soname \
                     and soname != installed \
                     and "LOCAL_CHECK_ELF_FILES := false" not in block:
@@ -99,14 +209,115 @@ def process(mk, readelf, problems):
     return "".join(out)
 
 
+def resolve(obj, out_path, only_path=None):
+    readelf = tool("READELF", ["llvm-readelf", "readelf"])
+    nm = tool("NM", ["llvm-nm", "nm"])
+
+    # Every library the build knows, by module name: our blobs from their
+    # sources, everything else from what the build produced.
+    libs = {}
+    for path in glob.glob(os.path.join(obj, "SHARED_LIBRARIES",
+                                       "*_intermediates", "*.so")):
+        mod = os.path.basename(os.path.dirname(path))[:-len("_intermediates")]
+        if os.path.basename(path) == mod + ".so":
+            libs[mod] = path
+    blobs = {}
+    for mk in makefiles():
+        for mod, cls, path in blocks(mk):
+            blobs[mod] = path
+            if cls == "SHARED_LIBRARIES":
+                libs[mod] = path
+
+    cache = {}
+
+    def syms_of(mod):
+        if mod not in cache:
+            cache[mod] = defined(nm, libs[mod]) if mod in libs else set()
+        return cache[mod]
+
+    def needed_of(mod):
+        if mod not in libs:
+            return []
+        return [n[:-3] for n in dynamic(readelf, libs[mod])[0]
+                if n.endswith(".so")]
+
+    providers = {}
+    for mod in libs:
+        for sym in syms_of(mod):
+            providers.setdefault(sym, []).append(mod)
+
+    only = None
+    if only_path:
+        only = set(open(only_path).read().split())
+
+    lines, unsolved = [], []
+    for mod in sorted(blobs):
+        if only is not None and mod not in only:
+            continue
+        path = blobs[mod]
+        needed = [n[:-3] for n in dynamic(readelf, path)[0]
+                  if n.endswith(".so")]
+        have = set()
+        for lib in set(needed) | set(IMPLICIT):
+            have |= syms_of(lib)
+        missing = undefined(nm, path) - have
+        if not missing:
+            continue
+
+        # The libraries this blob reaches through its own DT_NEEDED chain are
+        # the ones that really answer at run time; prefer them.
+        closure, todo = set(), list(needed)
+        while todo:
+            lib = todo.pop()
+            if lib not in closure:
+                closure.add(lib)
+                todo += needed_of(lib)
+
+        data = open(path, "rb").read()
+        fixed_up = b"libm.so" in data
+        extra, allow = [], False
+        for sym in sorted(missing):
+            if sym in FIXUP_AEABI and fixed_up:
+                allow = True
+                continue
+            cands = [p for p in providers.get(sym, []) if p != mod]
+            if not cands:
+                unsolved.append("%s: %s defined nowhere" % (mod, sym))
+                continue
+            pick = next((c for c in cands if c in closure), None) \
+                or next((c for c in cands if c in blobs), None) \
+                or sorted(cands)[0]
+            if pick not in extra and pick not in needed:
+                extra.append(pick)
+        if extra or allow:
+            lines.append("%s: %s" % (mod, " ".join(extra +
+                                                  ([ALLOW] if allow else []))))
+
+    with open(out_path, "w") as f:
+        f.write("# Libraries these blobs use without naming them in "
+                "DT_NEEDED, resolved\n# against a built tree by "
+                "elf_deps.py --resolve. See that script.\n")
+        for line in lines:
+            f.write(line + "\n")
+    for u in unsolved:
+        print("unresolved: " + u, file=sys.stderr)
+    return 1 if unsolved else 0
+
+
 def main():
-    check = "--check" in sys.argv[1:]
-    readelf = readelf_tool()
+    args = sys.argv[1:]
+    if args[:1] == ["--resolve"]:
+        if len(args) not in (3, 4):
+            sys.exit("usage: elf_deps.py --resolve OBJ_DIR OUT_FILE [ONLY]")
+        return resolve(*args[1:])
+
+    check = "--check" in args
+    readelf = tool("READELF", ["llvm-readelf", "readelf"])
+    extra = read_extra()
     problems, stale = [], []
-    for mk in sorted(glob.glob(os.path.join(ROOT, "**", "Android.mk"),
-                               recursive=True)):
+    for mk in makefiles():
         old = open(mk).read()
-        new = process(mk, readelf, problems)
+        new = process(mk, readelf, extra, problems)
         if new != old:
             stale.append(os.path.relpath(mk, ROOT))
             if not check:
