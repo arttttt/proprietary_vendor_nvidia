@@ -16,14 +16,13 @@ LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libwvdrmengine
-LOCAL_SRC_FILES := lib/mediadrm/libwvdrmengine.so
+LOCAL_PREBUILT_MODULE_FILE := $(call shield-intrinsics-fixed,$(LOCAL_PATH)/lib/mediadrm/libwvdrmengine.so)
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)/mediadrm
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := widevine
-LOCAL_PREBUILT_MODULE_FILE := $(call shield-intrinsics-fixed,$(LOCAL_PATH)/lib/mediadrm/libwvdrmengine.so)
 LOCAL_SHARED_LIBRARIES := libcutils liblog libprotobuf-cpp-lite-v29 libstagefright_foundation libutils libw
 include $(BUILD_PREBUILT)
 

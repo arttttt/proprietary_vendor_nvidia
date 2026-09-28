@@ -149,16 +149,31 @@ def defined(nm, path):
     return syms
 
 
+FIXED_RE = re.compile(r"^LOCAL_PREBUILT_MODULE_FILE\s*:=\s*\$\(call "
+                      r"shield-intrinsics-fixed,\$\(LOCAL_PATH\)/(\S+)\)", re.M)
+
+
+def source_of(block):
+    """A blob's path relative to its makefile. A fixed-up blob names it only
+    in its shield-intrinsics-fixed call: R rejects LOCAL_SRC_FILES beside
+    LOCAL_PREBUILT_MODULE_FILE as unused sources."""
+    src = re.search(r"^LOCAL_SRC_FILES\s*:=\s*(\S+)", block, re.M)
+    if src:
+        return src.group(1)
+    fixed = FIXED_RE.search(block)
+    return fixed.group(1) if fixed else None
+
+
 def blocks(mk):
     """Yield (module, class, source path) for every prebuilt ELF module."""
     base = os.path.dirname(mk)
     for block in re.split(r"include \$\(CLEAR_VARS\)", open(mk).read())[1:]:
         cls = re.search(r"^LOCAL_MODULE_CLASS\s*:=\s*(\S+)", block, re.M)
         mod = re.search(r"^LOCAL_MODULE\s*:=\s*(\S+)", block, re.M)
-        src = re.search(r"^LOCAL_SRC_FILES\s*:=\s*(\S+)", block, re.M)
+        src = source_of(block)
         if cls and mod and src and cls.group(1) in ELF_CLASSES \
                 and "$(BUILD_PREBUILT)" in block:
-            yield mod.group(1), cls.group(1), os.path.join(base, src.group(1))
+            yield mod.group(1), cls.group(1), os.path.join(base, src)
 
 
 def makefiles():
@@ -184,11 +199,11 @@ def process(mk, readelf, extra, problems):
         block = parts[i + 1]
         cls = re.search(r"^LOCAL_MODULE_CLASS\s*:=\s*(\S+)", block, re.M)
         mod = re.search(r"^LOCAL_MODULE\s*:=\s*(\S+)", block, re.M)
-        src = re.search(r"^LOCAL_SRC_FILES\s*:=\s*(\S+)", block, re.M)
+        src = source_of(block)
         if cls and mod and src and cls.group(1) in ELF_CLASSES \
                 and "$(BUILD_PREBUILT)" in block:
             name = mod.group(1)
-            path = os.path.join(base, src.group(1))
+            path = os.path.join(base, src)
             needed, soname = dynamic(readelf, path)
             fixup = needs_fixup(path)
             libs = []
@@ -201,14 +216,25 @@ def process(mk, readelf, extra, problems):
                 elif n not in IMPLICIT:
                     libs.append(n)
             libs += [l for l in extra.get(name, []) if l not in libs]
-            for var in ("LOCAL_SHARED_LIBRARIES", "LOCAL_PREBUILT_MODULE_FILE",
-                        "LOCAL_ALLOW_UNDEFINED_SYMBOLS"):
-                block = re.sub(r"^%s\s*:=.*\n" % var, "", block, flags=re.M)
-            add = ""
+            block = re.sub(r"^LOCAL_SHARED_LIBRARIES\s*:=.*\n", "", block,
+                           flags=re.M)
+            block = re.sub(r"^LOCAL_ALLOW_UNDEFINED_SYMBOLS\s*:=.*\n", "",
+                           block, flags=re.M)
+            # The source is named in one place only: LOCAL_SRC_FILES for a
+            # blob installed as shipped, the fixup call for one that is not.
+            fixed_line = ("LOCAL_PREBUILT_MODULE_FILE := $(call "
+                          "shield-intrinsics-fixed,$(LOCAL_PATH)/%s)" % src)
+            src_line = "LOCAL_SRC_FILES := %s" % src
             if fixup:
-                add += ("LOCAL_PREBUILT_MODULE_FILE := $(call "
-                        "shield-intrinsics-fixed,$(LOCAL_PATH)/%s)\n"
-                        % src.group(1))
+                if re.search(r"^LOCAL_SRC_FILES\s*:=", block, re.M):
+                    block = re.sub(FIXED_RE.pattern + r"\n", "", block,
+                                   flags=re.M)
+                    block = re.sub(r"^LOCAL_SRC_FILES\s*:=.*$",
+                                   lambda m: fixed_line, block, count=1,
+                                   flags=re.M)
+            else:
+                block = FIXED_RE.sub(lambda m: src_line, block, count=1)
+            add = ""
             if libs:
                 add += "LOCAL_SHARED_LIBRARIES := " + " ".join(libs) + "\n"
             block = block.replace("include $(BUILD_PREBUILT)",
