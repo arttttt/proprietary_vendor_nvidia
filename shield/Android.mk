@@ -45,5 +45,28 @@ $(2): $(1) $(SHIELD_INTRINSICS_FIXUP)
 	$$(hide) python3 $(SHIELD_INTRINSICS_FIXUP) $$@ >/dev/null
 endef
 
+# A blob installed under a name other than its DT_SONAME gets the name it
+# ships as written into a copy, the same way: R's ELF check requires the two
+# to match, and so does the linker once two libraries could answer to one
+# SONAME.
+#
+#   LOCAL_PREBUILT_MODULE_FILE := $(call shield-soname-fixed,<source>,<soname>)
+SHIELD_PATCHELF := prebuilts/extract-tools/linux-x86/bin/patchelf-0_9
+
+define shield-soname-fixed
+$(strip $(eval _ssf_out := $(TARGET_OUT_INTERMEDIATES)/SHIELD_SONAME_FIXED/$(2)/$(notdir $(1)))\
+$(if $(filter $(_ssf_out),$(SHIELD_SONAME_FIXED)),,\
+$(eval SHIELD_SONAME_FIXED += $(_ssf_out))\
+$(eval $(call _shield-soname-fixed-rule,$(1),$(_ssf_out),$(2))))\
+$(_ssf_out))
+endef
+
+define _shield-soname-fixed-rule
+$(2): $(1) $(SHIELD_PATCHELF)
+	@mkdir -p $$(dir $$@)
+	$$(hide) cp -f $$< $$@
+	$$(hide) $(SHIELD_PATCHELF) --set-soname $(3) $$@
+endef
+
 include $(call all-makefiles-under,$(LOCAL_PATH))
 endif

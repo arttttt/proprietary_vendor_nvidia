@@ -36,16 +36,16 @@ include $(BUILD_PREBUILT)
 # tree's own VNDK v29 snapshot rather than copied in here.
 include $(CLEAR_VARS)
 LOCAL_MODULE := libprotobuf-cpp-lite-v29
-LOCAL_PREBUILT_MODULE_FILE := prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-lite.so
+# The snapshot built it with SONAME libprotobuf-cpp-lite.so, which is also
+# the name R's own protobuf answers to in /system/lib; the copy carries the
+# name it ships as, so the two cannot be mistaken for each other.
+LOCAL_PREBUILT_MODULE_FILE := $(call shield-soname-fixed,prebuilts/vndk/v29/arm/arch-arm-armv7-a-neon/shared/vndk-core/libprotobuf-cpp-lite.so,libprotobuf-cpp-lite-v29.so)
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
 LOCAL_MODULE_PATH := $($(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_VENDOR_SHARED_LIBRARIES)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_OWNER := widevine
-# Its SONAME stays libprotobuf-cpp-lite.so, which is how the snapshot built
-# it; the file name is what the plugin now asks for.
-LOCAL_CHECK_ELF_FILES := false
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)

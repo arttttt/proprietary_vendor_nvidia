@@ -70,9 +70,11 @@ through TARGET_LD_SHIM_LIBS; no built tree shows those as reachable, so
 they are added to elf_extra_deps.txt by hand, under their own comment.
 Keep that section when copying a fresh --resolve result over the file.
 
-A SONAME that does not match the installed name is reported, not fixed. Where
-the mismatch is deliberate the module carries LOCAL_CHECK_ELF_FILES := false
-by hand, with the reason next to it, and this script leaves it alone.
+A SONAME that does not match the installed name is reported, not fixed:
+whether the file or the name is wrong is a decision. Where the installed
+name is the right one, the module takes its file through
+$(call shield-soname-fixed,<source>,<soname>) by hand (see ../Android.mk),
+and this script reads the source from that call and leaves the line alone.
 
 Set READELF and NM to pick the tools; otherwise llvm-readelf and llvm-nm
 (or readelf and nm) from PATH.
@@ -149,6 +151,8 @@ def defined(nm, path):
     return syms
 
 
+SONAME_RE = re.compile(r"^LOCAL_PREBUILT_MODULE_FILE\s*:=\s*\$\(call "
+                       r"shield-soname-fixed,\$\(LOCAL_PATH\)/([^,\s]+),", re.M)
 FIXED_RE = re.compile(r"^LOCAL_PREBUILT_MODULE_FILE\s*:=\s*\$\(call "
                       r"shield-intrinsics-fixed,\$\(LOCAL_PATH\)/(\S+)\)", re.M)
 
@@ -160,7 +164,7 @@ def source_of(block):
     src = re.search(r"^LOCAL_SRC_FILES\s*:=\s*(\S+)", block, re.M)
     if src:
         return src.group(1)
-    fixed = FIXED_RE.search(block)
+    fixed = FIXED_RE.search(block) or SONAME_RE.search(block)
     return fixed.group(1) if fixed else None
 
 
@@ -225,7 +229,9 @@ def process(mk, readelf, extra, problems):
             fixed_line = ("LOCAL_PREBUILT_MODULE_FILE := $(call "
                           "shield-intrinsics-fixed,$(LOCAL_PATH)/%s)" % src)
             src_line = "LOCAL_SRC_FILES := %s" % src
-            if fixup:
+            if SONAME_RE.search(block):
+                pass
+            elif fixup:
                 if re.search(r"^LOCAL_SRC_FILES\s*:=", block, re.M):
                     block = re.sub(FIXED_RE.pattern + r"\n", "", block,
                                    flags=re.M)
@@ -242,7 +248,7 @@ def process(mk, readelf, extra, problems):
             installed = name + ".so"
             if cls.group(1) == "SHARED_LIBRARIES" and soname \
                     and soname != installed \
-                    and "LOCAL_CHECK_ELF_FILES := false" not in block:
+                    and not SONAME_RE.search(block):
                 problems.append("%s: %s has SONAME %s" %
                                 (mk, installed, soname))
         out += [parts[i], block]
