@@ -15,3 +15,11 @@ libnvomx: liblog
 libglcore: liblog libutilscallstack
 # The pre-8.0 GraphicBufferMapper::lock the RenderScript driver still calls.
 libnvRSDriver: libshim_rs
+# Built in 2019 against an NDK whose libEGL stub versioned its symbols, so it
+# asks for egl*@LIBEGL. R keeps the platform libEGL and its released NDK
+# stubs unversioned on purpose (unversioned_until: "current" in
+# frameworks/native/opengl/libs/Android.bp); only the current NDK stub
+# carries LIBEGL. That stub describes the ABI the blob was built against,
+# and lives outside the image, so it is named for the check alone -- at run
+# time the blob binds to the system libEGL as before.
+vulkan.tegra: libEGL.ndk.current
