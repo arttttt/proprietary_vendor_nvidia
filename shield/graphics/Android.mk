@@ -172,7 +172,9 @@ include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
 LOCAL_MODULE := libglcore
-LOCAL_PREBUILT_MODULE_FILE := $(call shield-intrinsics-fixed,$(LOCAL_PATH)/lib/libglcore.so)
+# realloc=glrealc: the blob grows a buffer by a fixed step per call, which
+# R's scudo turns into a move per step; libs grows it geometrically.
+LOCAL_PREBUILT_MODULE_FILE := $(call shield-renamed,$(call shield-intrinsics-fixed,$(LOCAL_PATH)/lib/libglcore.so),realloc=glrealc)
 LOCAL_MODULE_SUFFIX := .so
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_MODULE_TARGET_ARCH := arm
