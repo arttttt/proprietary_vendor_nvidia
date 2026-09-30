@@ -25,16 +25,6 @@ LOCAL_MODULE_OWNER := nvidia
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := mocha_fw_bcmdhd_apsta
-LOCAL_SRC_FILES := wireless/fw_bcmdhd_apsta.bin
-LOCAL_MODULE_SUFFIX := .bin
-LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)/firmware
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_OWNER := nvidia
-include $(BUILD_PREBUILT)
-
-include $(CLEAR_VARS)
 LOCAL_MODULE := mocha_bcm4350
 LOCAL_SRC_FILES := wireless/bcm4350.hcd
 LOCAL_MODULE_SUFFIX := .hcd

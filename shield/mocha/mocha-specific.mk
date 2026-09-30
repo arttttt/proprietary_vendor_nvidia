@@ -31,6 +31,5 @@ PRODUCT_PACKAGES += \
 # Wireless
 PRODUCT_PACKAGES += \
     mocha_fw_bcmdhd \
-    mocha_fw_bcmdhd_apsta \
     mocha_bcm4350 \
     mocha_nvram
