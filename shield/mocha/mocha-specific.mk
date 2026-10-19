@@ -18,10 +18,6 @@ PRODUCT_PACKAGES += \
     bq27520_atl \
     bq27520_lgc
 
-# HAL
-PRODUCT_PACKAGES += \
-    sensors.lsm6db0
-
 # Keylayout
 PRODUCT_PACKAGES += \
     atmel-maxtouch \
